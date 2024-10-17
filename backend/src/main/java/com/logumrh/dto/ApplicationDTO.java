@@ -1,21 +1,29 @@
 package com.logumrh.dto;
 
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ApplicationDTO {
 
+    @NotNull(message = "ID cannot be null")
+    private Long id;
+
     @NotNull(message = "User ID is required")
-    private Integer userId;
+    private Long userId;
 
     @NotNull(message = "Job Vacancy ID is required")
-    private Integer jobVacancyId;
+    private Long jobVacancyId;
 
     @NotNull(message = "Resume ID is required")
-    private Integer resumeId;
+    private Long resumeId;
+
+    @NotNull(message = "Application date is required")
+    private LocalDateTime applicationDate;
 }
