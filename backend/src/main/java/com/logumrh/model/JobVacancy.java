@@ -1,7 +1,11 @@
 package com.logumrh.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -9,49 +13,74 @@ import java.util.List;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class JobVacancy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
-    @Column(nullable = false)
+    @NotNull
+    @Size(max = 255)
+    @Column(length = 255, nullable = false)
     private String title;
 
-    @Column(unique = true, length = 10)
+    @NotNull
+    @Size(max = 10)
+    @Column(length = 10, nullable = false, unique = true)
     private String code;
 
-    @Column(nullable = false)
+    @NotNull
+    @Size(max = 50)
+    @Column(length = 50, nullable = false)
     private String modality;
 
+    @NotNull
+    @Lob
+    private String description;
+
+    @Size(max = 255)
+    @Column(length = 255)
     private String location;
-    private String neighborhood;
-    private String city;
+
+    @ManyToOne
+    @JoinColumn(name = "address_id", nullable = false)
+    private Address address;
 
     @ManyToOne
     @JoinColumn(name = "company_id", nullable = false)
     private Company company;
 
     @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
+    @Lob
     private String objectiveRequirements;
+
+    @Lob
     private String subjectiveRequirements;
+
+    @Lob
     private String benefits;
 
     @Lob
-    @Column(nullable = false)
-    private String description;
-
     private String schedule;
+
+    @NotNull
+    @Column(nullable = false)
     private BigDecimal salary;
 
     @ElementCollection
     private List<String> tags;
 
+    @Size(max = 50)
+    @Column(length = 50)
     private String contractType;
 
-    private LocalDateTime announcementDate = LocalDateTime.now();
     private LocalDateTime closeDate;
-    private Boolean isActive = true;
+
+    @Column(nullable = false)
+    private boolean isActive;
 }
