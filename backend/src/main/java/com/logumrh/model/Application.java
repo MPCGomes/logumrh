@@ -1,17 +1,21 @@
 package com.logumrh.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Application {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -22,8 +26,9 @@ public class Application {
     private JobVacancy jobVacancy;
 
     @ManyToOne
-    @JoinColumn(name = "resume_id")
+    @JoinColumn(name = "resume_id", nullable = false)
     private Resume resume;
 
-    private LocalDateTime applicationDate = LocalDateTime.now();
+    @Column(nullable = false)
+    private LocalDateTime applicationDate;
 }
