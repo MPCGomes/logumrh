@@ -2,6 +2,12 @@ package com.logumrh.repository;
 
 import com.logumrh.model.Application;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ApplicationRepository extends JpaRepository<Application, Integer> {
+import java.util.List;
+
+@Repository
+public interface ApplicationRepository extends JpaRepository<Application, Long> {
+    List<Application> findByUserId(Long userId);
+    List<Application> findByJobVacancyId(Long jobVacancyId);
 }

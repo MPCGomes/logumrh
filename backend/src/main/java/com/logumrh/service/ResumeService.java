@@ -1,10 +1,11 @@
 package com.logumrh.service;
 
+import com.logumrh.dto.ResumeDTO;
 import com.logumrh.model.Resume;
 import com.logumrh.repository.ResumeRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
 
 @Service
 public class ResumeService {
@@ -15,15 +16,19 @@ public class ResumeService {
         this.resumeRepository = resumeRepository;
     }
 
-    public Resume createResume(Resume resume) {
+    public Resume createResume(ResumeDTO resumeDTO) {
+        Resume resume = new Resume();
+        resume.setTitle(resumeDTO.getTitle());
+        resume.setAreaOfExpertise(resumeDTO.getAreaOfExpertise());
+        resume.setFile(resumeDTO.getFile());
         return resumeRepository.save(resume);
     }
 
-    public Optional<Resume> findById(Integer id) {
-        return resumeRepository.findById(id);
+    public List<Resume> findByUserId(Long userId) {
+        return resumeRepository.findByUserId(userId);
     }
 
-    public void deleteResume(Integer id) {
+    public void deleteResume(Long id) {
         resumeRepository.deleteById(id);
     }
 }

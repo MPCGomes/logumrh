@@ -1,35 +1,40 @@
 package com.logumrh.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.time.LocalDateTime;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Resume {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(nullable = false)
+    @NotNull
+    @Size(max = 255)
+    @Column(length = 255, nullable = false)
     private String title;
 
-    @Column(nullable = false)
+    @NotNull
+    @Size(max = 255)
+    @Column(length = 255, nullable = false)
     private String areaOfExpertise;
 
     @Lob
-    @Column(nullable = false)
+    @NotNull
     private byte[] file;
 
-    @ManyToOne
-    private EducationLevel educationLevel;
-
-    private LocalDateTime createdAt = LocalDateTime.now();
-    private LocalDateTime updatedAt;
+    @Column(nullable = false)
+    private boolean isActive;
 }
