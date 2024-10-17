@@ -1,10 +1,11 @@
 package com.logumrh.service;
 
+import com.logumrh.dto.CompanyDTO;
 import com.logumrh.model.Company;
 import com.logumrh.repository.CompanyRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CompanyService {
@@ -15,15 +16,23 @@ public class CompanyService {
         this.companyRepository = companyRepository;
     }
 
-    public List<Company> getAllCompanies() {
-        return companyRepository.findAll();
-    }
-
-    public Company createCompany(Company company) {
+    public Company createCompany(CompanyDTO companyDTO) {
+        Company company = new Company();
+        company.setName(companyDTO.getName());
+        company.setLegalName(companyDTO.getLegalName());
+        company.setNationalId(companyDTO.getNationalId());
+        company.setIndustry(companyDTO.getIndustry());
+        company.setEmail(companyDTO.getEmail());
+        company.setPhone(companyDTO.getPhone());
+        company.setContactPerson(companyDTO.getContactPerson());
         return companyRepository.save(company);
     }
 
-    public void deleteCompany(Integer id) {
+    public Optional<Company> findByNationalId(String nationalId) {
+        return companyRepository.findByNationalId(nationalId);
+    }
+
+    public void deleteCompany(Long id) {
         companyRepository.deleteById(id);
     }
 }
