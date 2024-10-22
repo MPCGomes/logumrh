@@ -1,0 +1,18 @@
+@import '../../styles/variables';
+
+.btnSecondary{
+  background-color: transparent;
+  border-radius: 50px;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  font-size: $fs-400;
+  font-weight: normal;
+  padding: 15px 30px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    transition: all .3s ease-in-out;
+  }
+}
