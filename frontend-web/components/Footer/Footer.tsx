@@ -7,7 +7,7 @@ const Footer = () => {
       <div className='container'>
         <div className={styles.footerContainer}>
           <img
-            src='/logo.svg'
+            src='/logo-white.png'
             alt="Logo"
           />
           <div className={styles.linkGroup}>
