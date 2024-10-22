@@ -1,0 +1,36 @@
+@import '../../styles/variables';
+
+.navbar div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+
+  img{
+    width: 200px;
+  }
+}
+
+.linksContainer{
+  display: flex;
+  gap: 15px;
+
+  .linkItem{
+    color: var(--text-color);
+  }
+}
+
+.buttonContainer{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu{
+  background-color: transparent;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-top: 10px;
+  cursor: pointer;
+}
