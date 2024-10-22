@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './ButtonPrimary.module.scss'
 
 interface ButtonPrimaryProps {
   text: string;
@@ -6,7 +7,7 @@ interface ButtonPrimaryProps {
 
 const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({ text }) => {
   return (
-    <button>
+    <button className={styles.btnPrimary}>
       {text}
     </button>
   )
