@@ -1,0 +1,88 @@
+@import '../../styles/variables';
+
+.vacancyCard {
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0px 7px 20px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 20px;
+  color: var(--text-color);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.idGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    background-color: #fa8f0d80;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: $fs-300;
+  }
+
+  .share {
+    padding-top: 10px;
+    background-color: transparent;
+    font-size: 2rem;
+    border: 0;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+}
+
+.vacancy {
+  text-transform: uppercase;
+
+  .title {
+    font-weight: bold;
+    font-size: $fs-500;
+  }
+
+  .infoGroup {
+    display: flex;
+    gap: 10px;
+    font-size: $fs-300;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-transform: uppercase;
+  font-size: $fs-300;
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  span {
+    color: var(--primary-color);
+  }
+}
+
+.requirements {
+  text-transform: uppercase;
+  font-size: $fs-300;
+
+  .title {
+    font-weight: bold;
+  }
+}
+
+.activities {
+  font-size: $fs-300;
+
+  .title {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
