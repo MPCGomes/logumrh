@@ -126,7 +126,7 @@ CREATE TABLE applications (
     updated_by INT REFERENCES users(id)
 );
 
--- Indexes for faster queries
+-- Indexes
 CREATE INDEX idx_users_email ON users(email);
 CREATE INDEX idx_applications_user_id ON applications(user_id);
 CREATE INDEX idx_applications_job_vacancy_id ON applications(job_vacancy_id);
@@ -134,3 +134,7 @@ CREATE INDEX idx_resumes_user_id ON resumes(user_id);
 CREATE INDEX idx_job_vacancies_company ON job_vacancies(company_id);
 CREATE INDEX idx_job_vacancies_address ON job_vacancies(address_id);
 CREATE INDEX idx_companies_address ON companies(address_id);
+
+-- Roles
+INSERT INTO roles (id, name) VALUES (1, 'USER');
+INSERT INTO roles (id, name) VALUES (2, 'ADMIN');
