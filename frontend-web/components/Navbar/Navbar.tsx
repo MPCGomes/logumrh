@@ -2,6 +2,8 @@ import React from 'react'
 import styles from './Navbar.module.scss'
 import { IoMenu } from "react-icons/io5";
 import Link from 'next/link'
+import ButtonSecondary from '../ButtonSecondary/ButtonSecondary';
+import ButtonPrimary from '../ButtonPrimary/ButtonPrimary';
 
 const Navbar = () => {
   return (
@@ -33,12 +35,12 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={styles.buttonContainer}>
-          <button>
-            adas
-          </button>
-          <button>
-            asdas
-          </button>
+          <ButtonSecondary
+            text='Entrar'
+          />
+          <ButtonPrimary
+            text='Cadastrar'
+          />
           <button className={styles.menu}>
             <IoMenu />
           </button>
