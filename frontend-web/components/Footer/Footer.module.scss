@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+
+.footer {
+  background-color: var(--primary-color);
+  padding: 45px 0;
+  color: var(--background-color);
+}
+
+.footerContainer {
+  display: grid;
+  place-items: center;
+  gap: 20px;
+  text-align: center;
+  margin-bottom: 70px;
+
+  img {
+    max-width: 325px;
+    width: 100%;
+  }
+
+  @media (min-width: 641px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.itemGroup{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.title{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: $fs-600;
+  margin-bottom: 15px;
+}
+
+.copyright{
+  text-align: center;
+  font-size: $fs-300;
+}
