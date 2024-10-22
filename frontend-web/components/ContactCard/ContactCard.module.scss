@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+
+.contactCard a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover{
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+  }
+}
+
+.iconContainer{
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: 2px solid var(--primary-color);
+  margin-bottom: 10px;
+
+  .icon{
+    font-size: 1.65rem;
+    margin-top: 10%;
+    color: var(--primary-color);
+  }
+}
+
+.title{
+  font-weight: bold;
+  color: var(--text-color);
+  font-size: $fs-500;
+}
+
+.contact{
+  color: var(--text-color);
+  text-align: center;
+  font-size: $fs-400;
+}
