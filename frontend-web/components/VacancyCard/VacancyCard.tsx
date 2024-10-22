@@ -3,7 +3,6 @@ import styles from './VacancyCard.module.scss'
 import { HiOutlineShare } from "react-icons/hi";
 import { FaBriefcase, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import classNames from 'classnames';
 import ButtonSecondary from '../ButtonSecondary/ButtonSecondary';
 import ButtonPrimary from '../ButtonPrimary/ButtonPrimary';
 
