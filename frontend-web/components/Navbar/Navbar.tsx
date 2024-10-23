@@ -1,7 +1,8 @@
-import React from 'react'
-import styles from './Navbar.module.scss'
+import React from 'react';
+import styles from './Navbar.module.scss';
 import { IoMenu } from "react-icons/io5";
-import Link from 'next/link'
+import Link from 'next/link';
+import Image from 'next/image';
 import ButtonSecondary from '../ButtonSecondary/ButtonSecondary';
 import ButtonPrimary from '../ButtonPrimary/ButtonPrimary';
 
@@ -11,7 +12,7 @@ const Navbar = () => {
       <div className='container'>
         <Link
           href={''}>
-          <img
+          <Image
             src='/logo.svg'
             alt="Logo"
           />
