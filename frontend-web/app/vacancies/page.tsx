@@ -1,6 +1,6 @@
 import React from 'react';
 import VacancyCard from '@/components/VacancyCard/VacancyCard';
-import styles from '../page.module.scss';
+import styles from './page.module.scss';
 
 const vacancies = [
   {
@@ -79,7 +79,7 @@ const vacancies = [
 
 const Vacancies: React.FC = () => {
   return (
-    <div className={styles.container}>
+    <div className="container">
       <div className={styles.grid}>
         {vacancies.map((vacancy) => (
           <VacancyCard key={vacancy.id} {...vacancy} />
