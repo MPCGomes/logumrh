@@ -10,6 +10,8 @@ const Footer = () => {
           <Image
             src='/logo-white.png'
             alt="Logo"
+            width={20}
+            height={20}
           />
           <div className={styles.linkGroup}>
             <p className={styles.title}>
