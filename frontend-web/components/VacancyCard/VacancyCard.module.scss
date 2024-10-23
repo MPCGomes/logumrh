@@ -1,8 +1,7 @@
-@import '../../styles/variables';
+@use '../../styles/variables' as *;
 
 .vacancyCard {
   max-width: 400px;
-  width: 100%;
   box-shadow: 0px 7px 20px 4px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   padding: 20px;
