@@ -5,12 +5,11 @@ import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import VacancyCard from '@/components/VacancyCard/VacancyCard';
 import Link from 'next/link';
+import CTA from '@/components/CTA/CTA';
 import { IoMail } from "react-icons/io5";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa6";
-
 import { GoArrowDown } from "react-icons/go";
-import CTA from '@/components/CTA/CTA';
 
 const Home = () => {
   return (
