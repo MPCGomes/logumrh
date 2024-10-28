@@ -25,7 +25,7 @@ const Navbar = () => {
           </Link>
           <Link
             className={styles.linkItem}
-            href={''}>
+            href={'vacancies'}>
             Vagas
           </Link>
           <Link
@@ -35,9 +35,13 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={styles.buttonContainer}>
-          <ButtonSecondary
-            text='Entrar'
-          />
+          <Link 
+          href={'login'} >
+            <ButtonSecondary
+              text='Entrar'
+            />
+          </Link>
+
           <ButtonPrimary
             text='Cadastrar'
           />
