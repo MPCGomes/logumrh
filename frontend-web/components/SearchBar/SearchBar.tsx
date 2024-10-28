@@ -4,31 +4,38 @@ import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled } from '@mui/material/styles';
 
-const StyledInputBase = styled(InputBase)({
-  width: '100%',
+const StyledSearchInput = styled(InputBase)({
+  width: '80%',
   borderRadius: 50,
-  backgroundColor: 'rgba(58, 38, 64, 0.5)',
+  backgroundColor: 'purple',
   padding: '5px 15px',
-  color: '#FFFFFF',
+  color: 'white',
   '& .MuiInputBase-input': {
-    color: '#FFFFFF',
+    color: 'white',
     '&::placeholder': {
-      color: '#B0B0B0',
+      color: 'gray',
     },
   },
+  '& .MuiSvgIcon-root': {
+    color: 'red',
+  },
   '&:hover': {
-    borderColor: '#3A2640',
+    borderColor: 'blue',
   },
   '&.Mui-focused': {
-    borderColor: '#3A2640',
+    borderColor: 'green',
   },
 });
 
-const SearchBar = ({ placeholder = 'Search...' }) => (
-  <StyledInputBase
-    startAdornment={
-      <InputAdornment position="start">
-        <SearchIcon style={{ color: '#B0B0B0' }} />
+interface SearchBarProps {
+  placeholder?: string;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ placeholder = 'Search...' }) => (
+  <StyledSearchInput
+    endAdornment={
+      <InputAdornment position="end">
+        <SearchIcon />
       </InputAdornment>
     }
     placeholder={placeholder}
