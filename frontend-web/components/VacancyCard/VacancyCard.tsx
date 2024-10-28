@@ -70,9 +70,11 @@ const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, mo
         </p>
         <p>{activities}</p>
       </div>
+      <div className={styles.buttons}>
+        <ButtonSecondary text='VER MAIS' />
+        <ButtonPrimary text='APLICAR' />
+      </div>
 
-      <ButtonSecondary text='VER DETALHES'/>
-      <ButtonPrimary text='APLICAR'/>
 
     </div>
   )
