@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import './variables';
+@use './variables';
 
 * {
   margin: 0;
@@ -45,7 +44,7 @@ html{
 
 .subtitle{
   color: var(--text-color);
-  font-size: $fs-800;
+  font-size: variables.$fs-800;
   margin-bottom: 50px;
   text-align: center;
 }
