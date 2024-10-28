@@ -1,64 +1,79 @@
 import React from 'react';
-import InputBase from '@mui/material/InputBase';
-import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
 import { styled } from '@mui/material/styles';
 
-const StyledInputBase = styled(InputBase)({
+const StyledDropdownSelect = styled(Select)({
   borderRadius: 50,
-  backgroundColor: 'red',
-  padding: '5px 15px',
-  color: 'red',
-  '& .MuiInputBase-input': {
-    color: 'red',
-    '&::placeholder': {
-      color: 'red',
-    },
-  },
-  '&:hover': {
-    borderColor: '#3A2640',
-  },
-  '&.Mui-focused': {
-    borderColor: '#3A2640',
-  },
-});
+  backgroundColor: 'purple',
+  padding: '5px 10px',
+  color: 'white',
 
-const StyledSelect = styled(Select)({
-  borderRadius: 50,
-  backgroundColor: 'rgba(58, 38, 64, 0.5)',
-  padding: '5px 15px',
-  color: '#FFFFFF',
   '& .MuiSelect-select': {
-    color: '#FFFFFF',
-    '&:focus': {
-      backgroundColor: 'rgba(58, 38, 64, 0.5)',
-    },
+    color: 'white',
+    padding: '5px 10px'
   },
+
+  '& .MuiSvgIcon-root': {
+    color: 'red',
+  },
+
   '&:hover .MuiOutlinedInput-notchedOutline': {
-    borderColor: '#3A2640',
+    borderColor: 'blue',
   },
   '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-    borderColor: '#3A2640',
+    borderColor: 'red',
   },
 });
 
-interface DropdownProps {
-  placeholder: string;
-  options: string[];
-}
+const DropdownMenuItem = styled(MenuItem)({
+  backgroundColor: 'navy',
+  color: 'yellow',
+  '&:hover': {
+    backgroundColor: 'red',
+    color: 'black',
+  },
+  '&.Mui-selected': {
+    backgroundColor: 'green',
+    color: 'white',
+    '&:hover': {
+      backgroundColor: 'darkgreen',
+      color: 'white',
+    },
+  },
+  '&.Mui-focusVisible': {
+    backgroundColor: 'orange',
+    color: 'black',
+  },
+});
 
-const Dropdown: React.FC<DropdownProps> = ({ placeholder = 'Select an option', options = [] }) => (
-  <StyledSelect
+const MenuProps = {
+  PaperProps: {
+    style: {
+      backgroundColor: 'navy',
+      margin: 0,
+    },
+  },
+  MenuListProps: {
+    sx: {
+      paddingTop: 0,
+      paddingBottom: 0,
+    },
+  },
+};
+
+const Dropdown = ({ placeholder = 'Select an option', options = [] }) => (
+  <StyledDropdownSelect
     displayEmpty
-    input={<StyledInputBase />}
     renderValue={(selected) => (selected ? (selected as string) : placeholder)}
+    MenuProps={MenuProps}
   >
     {options.map((option, index) => (
-      <MenuItem key={index} value={option}>
+      <DropdownMenuItem key={index} value={option}>
         {option}
-      </MenuItem>
+      </DropdownMenuItem>
     ))}
-  </StyledSelect>
+  </StyledDropdownSelect>
 );
 
 export default Dropdown;
