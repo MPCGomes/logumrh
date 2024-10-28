@@ -16,6 +16,7 @@ const StyledPagination = styled(Pagination)(({ theme }) => ({
   '.Mui-selected': {
     color: 'blue', 
     fontWeight: 'bold',
+    backgroundColor: 'yellow'
   },
 }));
 
