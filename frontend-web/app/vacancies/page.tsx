@@ -1,92 +1,78 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect, useState } from 'react';
 import VacancyCard from '@/components/VacancyCard/VacancyCard';
+import CustomPagination from '@/components/Pagination/Pagination';
+import SearchBar from '@/components/SearchBar/SearchBar';
+import Dropdown from '@/components/Dropdown/Dropdown';
+import { useRouter, useSearchParams } from 'next/navigation';
 import styles from './page.module.scss';
 
-const vacancies = [
-  {
-    id: 1,
-    vacancy: 'Desenvolvedor Front-end',
-    firm: 'Tech Solutions',
-    sector: 'Tecnologia',
-    modality: 'Tempo Integral',
-    period: 'Turno da Manhã',
-    scale: '40 horas/semana',
-    location: 'São Paulo, SP',
-    requirements: 'Experiência com JavaScript, React, CSS.',
-    activities: 'Desenvolver e manter aplicações web.'
-  },
-  {
-    id: 2,
-    vacancy: 'Especialista em Marketing',
-    firm: 'Marketing Pros',
-    sector: 'Marketing',
-    modality: 'Meio Período',
-    period: 'Turno da Tarde',
-    scale: '20 horas/semana',
-    location: 'Rio de Janeiro, RJ',
-    requirements: 'Conhecimento em ferramentas de marketing digital.',
-    activities: 'Gerenciar campanhas e redes sociais.'
-  },
-  {
-    id: 3,
-    vacancy: 'Designer Gráfico',
-    firm: 'Creative Minds',
-    sector: 'Design',
-    modality: 'Remoto',
-    period: 'Flexível',
-    scale: '30 horas/semana',
-    location: 'Remoto',
-    requirements: 'Proficiência com Adobe Creative Suite.',
-    activities: 'Criar conceitos visuais para clientes.'
-  },
-  {
-    id: 4,
-    vacancy: 'Analista de Dados',
-    firm: 'Data Insights',
-    sector: 'Tecnologia',
-    modality: 'Tempo Integral',
-    period: 'Turno da Tarde',
-    scale: '40 horas/semana',
-    location: 'Belo Horizonte, MG',
-    requirements: 'Experiência com SQL, Python, Power BI.',
-    activities: 'Analisar e interpretar dados para relatórios.'
-  },
-  {
-    id: 5,
-    vacancy: 'Gestor de Projetos',
-    firm: 'Enterprise Co.',
-    sector: 'Consultoria',
-    modality: 'Tempo Integral',
-    period: 'Turno Integral',
-    scale: '40 horas/semana',
-    location: 'Curitiba, PR',
-    requirements: 'Conhecimento em gestão ágil e metodologias PM.',
-    activities: 'Gerenciar e coordenar projetos estratégicos.'
-  },
-  {
-    id: 6,
-    vacancy: 'Suporte Técnico',
-    firm: 'Tech Assist',
-    sector: 'Tecnologia',
-    modality: 'Meio Período',
-    period: 'Turno da Noite',
-    scale: '20 horas/semana',
-    location: 'Fortaleza, CE',
-    requirements: 'Conhecimento em redes e suporte técnico.',
-    activities: 'Atender e resolver problemas técnicos dos clientes.'
-  }
-];
-
 const Vacancies: React.FC = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  useEffect(() => {
+    const pageFromQuery = parseInt(searchParams.get('page') || '1', 10);
+    setCurrentPage(pageFromQuery);
+  }, [searchParams]);
+
+  const vacancies = Array.from({ length: 100 }, (_, index) => ({
+    id: index + 1,
+    vacancy: 'Título',
+    firm: 'Empresa',
+    sector: 'Setor',
+    modality: 'Modalidade',
+    period: 'Período',
+    scale: 'Escala',
+    location: 'Rua, Número - Bairro, Cidade - UF',
+    requirements: 'Requisitos.',
+    activities: 'Atividades.'
+  }));
+
+  const itemsPerPage = 9;
+  const totalPages = Math.ceil(vacancies.length / itemsPerPage);
+  const displayedVacancies = vacancies.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    router.replace(`?page=${page}`);
+  };
+
+  const dropdownOptions = [
+    ['Option 1A', 'Option 1B', 'Option 1C'],
+    ['Option 2A', 'Option 2B', 'Option 2C'],
+    ['Option 3A', 'Option 3B', 'Option 3C'],
+    ['Option 4A', 'Option 4B', 'Option 4C'],
+    ['Option 5A', 'Option 5B', 'Option 5C']
+  ];
+
   return (
     <div className="container">
+      <div className={styles.centeredElements}>
+        <SearchBar placeholder="Search for a vacancy..." />
+        <div className={styles.dropdownContainer}>
+          {dropdownOptions.map((options, index) => (
+            <Dropdown key={index} placeholder={`Filter ${index + 1}`} options={options} />
+          ))}
+        </div>
+      </div>
       <div className={styles.grid}>
-        {vacancies.map((vacancy) => (
+        {displayedVacancies.map((vacancy) => (
           <VacancyCard key={vacancy.id} {...vacancy} />
         ))}
       </div>
+      <CustomPagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+      />
     </div>
-  )
-}
+  );
+};
 
 export default Vacancies;
