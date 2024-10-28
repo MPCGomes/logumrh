@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import './variables';
 
 * {
   margin: 0;
@@ -7,6 +8,10 @@
   font-family: "Inter", sans-serif;
   text-decoration: none;
   list-style: none;
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -31,4 +36,16 @@
   @media (min-width: 1024px) {
     max-width: 1440px;
   }
+}
+
+.paddingSection{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.subtitle{
+  color: var(--text-color);
+  font-size: $fs-800;
+  margin-bottom: 50px;
+  text-align: center;
 }

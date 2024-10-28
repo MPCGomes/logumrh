@@ -1,0 +1,147 @@
+@import '../styles/variables';
+
+//Header
+.header {
+  background-color: var(--background-color);
+  text-align: center;
+  color: var(--text-color);
+  padding: 100px 0;
+
+  background-image: url('../public/header-waves.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+
+  @media (min-width: 1024px) {
+    text-align: start;
+  }
+}
+
+.headerContainer {
+  @media (min-width: 1024px) {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+
+  img {
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: block;
+    }
+  }
+
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  h1 {
+    font-size: $fs-900;
+
+    span {
+      color: var(--accent-color);
+    }
+  }
+
+  h2 {
+    font-size: $fs-700;
+    font-weight: normal;
+  }
+
+  button {
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width:1024px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.textGroup {
+  margin-top: 50px;
+
+  @media (min-width: 1024px) {
+    text-align: center;
+
+  }
+
+  p {
+    font-size: $fs-500;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    color: var(--text-color);
+  }
+
+  span {
+    font-size: 2rem;
+  }
+}
+
+.bounce {
+  animation: bounce 1.5s infinite;
+
+}
+
+//Bounce Animation
+@keyframes bounce {
+
+  20%,
+  50%,
+  80%,
+  to {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-20px);
+  }
+
+  70% {
+    transform: translateY(-12px);
+  }
+
+  90% {
+    transform: translateY(-4px);
+  }
+}
+
+//Recent Vacancies
+.vancacyButton p{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.recentVacancies {
+  display: grid;
+  place-items: center;
+  gap: 20px;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+
+
+//Contact
+.contact{
+  background-color: var(--background-color);
+}
+
+.contactContainer{
+  display: grid;
+  place-items: center;
+  gap: 40px;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

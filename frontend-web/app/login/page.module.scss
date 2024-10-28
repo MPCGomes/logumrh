@@ -1,0 +1,76 @@
+@import '../../styles/variables';
+
+.login{
+  padding: 150px 0;
+}
+
+.loginContainer{
+  margin: auto;
+  max-width: 1024px;
+  width: 100%;
+  box-shadow: 0 4px 20px 8px rgba(0, 0, 0, 0.082) ;
+  padding: 10px;
+  border-radius: 15px;
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+  }
+}
+
+.leftSide{
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    text-align: center;
+
+    p{
+      color: var(--background-color);
+      font-weight: bold;
+      font-size: $fs-500;
+      margin-top: 25%;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.rightSide{
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+
+  h3{
+    font-size: $fs-800;
+  }
+
+  p{
+    text-align: center;
+  }
+}
+
+.inputContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.link{
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.orLine{
+  p{
+    margin-top: -12px;
+    color: #A9A9A9;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+  }
+}

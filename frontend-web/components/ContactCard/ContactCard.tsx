@@ -9,7 +9,6 @@ interface ContactCardProps {
   link: string;
 }
 
-
 const ContactCard: React.FC<ContactCardProps> = ({icon, title, contact, link }) => {
   return (
     <div className={styles.contactCard}>
