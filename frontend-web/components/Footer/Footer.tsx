@@ -10,7 +10,6 @@ const Footer = () => {
           <Image
             src='/logo-white.png'
             alt="Logo"
-            layout='reponsive'
             width={325}
             height={100}
           />
