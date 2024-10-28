@@ -1,21 +1,36 @@
-import { FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material'
-import React from 'react'
+import { FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import React from 'react';
 
-const RadioInput = () => {
-  return (
-    <FormControl>
-      <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
-      <RadioGroup
-        aria-labelledby="demo-radio-buttons-group-label"
-        defaultValue="female"
-        name="radio-buttons-group"
-      >
-        <FormControlLabel value="female" control={<Radio />} label="Female" />
-        <FormControlLabel value="male" control={<Radio />} label="Male" />
-        <FormControlLabel value="other" control={<Radio />} label="Other" />
-      </RadioGroup>
-    </FormControl>
-  )
+interface Option {
+  value: string;
+  label: string;
 }
 
-export default RadioInput
+interface RadioInputProps {
+  options: Option[];
+  label: string;
+}
+
+const RadioInput: React.FC<RadioInputProps> = ({ options = [], label = '' }) => {
+  return (
+    <FormControl>
+      <FormLabel id="demo-radio-buttons-group-label">{label}</FormLabel>
+      <RadioGroup
+        aria-labelledby="demo-radio-buttons-group-label"
+        defaultValue={options[0]?.value || ''}
+        name="radio-buttons-group"
+      >
+        {options.map((option) => (
+          <FormControlLabel
+            key={option.value}
+            value={option.value}
+            control={<Radio />}
+            label={option.label}
+          />
+        ))}
+      </RadioGroup>
+    </FormControl>
+  );
+};
+
+export default RadioInput;
