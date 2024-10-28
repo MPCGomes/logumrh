@@ -11,23 +11,17 @@ interface InputProps {
 
 const CustomTextField = styled(TextField)({
   width: '100%',
-  '& .MuiFilledInput-root': {
+  '& .MuiOutlinedInput-root': { 
     borderRadius: '10px',
-    backgroundColor: '#3a264015',
-    borderBottom: 'none',
-    '&:before, &:after': {
-      borderBottom: 'none',
+    '& fieldset': {
+      borderColor: '#3a2640',
     },
-    '&:hover:before': {
-      borderBottom: 'none',
+    '&:hover fieldset': {
+      borderColor: '#3a2640',
     },
-    '&:hover': {
-      backgroundColor: '#3a264020',
-      borderBottom: 'none',
+    '&.Mui-focused fieldset': {
+      borderColor: '#3a2640',
     },
-  },
-  '& .MuiInputLabel-root': {
-    color: '#3a2640',
   },
 });
 
@@ -36,7 +30,7 @@ const TextInput: React.FC<InputProps> = ({ label }) => {
     <div className={styles.input}>
       <CustomTextField
         label={label}
-        variant="filled"
+        variant="outlined"
       />
     </div>
   );

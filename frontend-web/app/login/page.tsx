@@ -3,6 +3,7 @@ import TextInput from '@/components/TextInput/TextInput'
 import Link from 'next/link'
 import styles from './page.module.scss'
 import ButtonPrimary from '@/components/ButtonPrimary/ButtonPrimary'
+import PasswordInput from '@/components/PasswordInput/PasswordInput'
 
 const page = () => {
   return (
@@ -21,6 +22,9 @@ const page = () => {
             <div className={styles.inputContainer}>
               <TextInput
                 label={'E-mail'}
+              />
+              <PasswordInput
+
               />
               <Link
                 className={styles.link}
