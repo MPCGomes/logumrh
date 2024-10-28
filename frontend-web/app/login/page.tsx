@@ -24,7 +24,7 @@ const page = () => {
                 label={'E-mail'}
               />
               <PasswordInput
-
+                label={'Senha'}
               />
               <Link
                 className={styles.link}

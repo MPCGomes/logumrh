@@ -6,6 +6,24 @@ import React from 'react';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
+interface PasswordInputProps {
+  label: string;
+}
+
+const CustomFormControl = styled(FormControl)({
+  width: '100%',
+});
+
+const CustomInputLabel = styled(InputLabel)({
+  color: '#3a2640',
+  '&.Mui-focused': {
+    color: '#3a2640',
+  },
+  '&.MuiFormLabel-filled, &.MuiInputLabel-shrink': {
+    transform: 'translate(14px, -10px) scale(0.8)', 
+  },
+});
+
 const CustomOutlinedInput = styled(OutlinedInput)({
   '&.MuiOutlinedInput-root': {
     borderRadius: '10px',
@@ -19,12 +37,9 @@ const CustomOutlinedInput = styled(OutlinedInput)({
       borderColor: '#3a2640',
     },
   },
-  '& .MuiInputLabel-root': {
-    color: '#3a2640',
-  },
 });
 
-const PasswordInput = () => {
+const PasswordInput: React.FC<PasswordInputProps> = ({ label }) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((prev) => !prev);
@@ -34,8 +49,8 @@ const PasswordInput = () => {
   };
 
   return (
-    <FormControl sx={{ m: 0, width: '100%' }} variant="outlined">
-      <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+    <CustomFormControl variant="outlined">
+      <CustomInputLabel htmlFor="outlined-adornment-password">{label}</CustomInputLabel>
       <CustomOutlinedInput
         id="outlined-adornment-password"
         type={showPassword ? 'text' : 'password'}
@@ -51,9 +66,9 @@ const PasswordInput = () => {
             </IconButton>
           </InputAdornment>
         }
-        label="Password"
+        label={label}
       />
-    </FormControl>
+    </CustomFormControl>
   );
 }
 

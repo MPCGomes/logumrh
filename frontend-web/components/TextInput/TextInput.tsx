@@ -23,6 +23,15 @@ const CustomTextField = styled(TextField)({
       borderColor: '#3a2640',
     },
   },
+  '& .MuiInputLabel-root': {
+    color: '#3a2640',
+    '&.Mui-focused': {
+      color: '#3a2640',
+    },
+    '&.MuiInputLabel-shrink': {
+      color: '#3a2640',
+    },
+  },
 });
 
 const TextInput: React.FC<InputProps> = ({ label }) => {
@@ -36,4 +45,4 @@ const TextInput: React.FC<InputProps> = ({ label }) => {
   );
 };
 
-export default TextInput
+export default TextInput;
