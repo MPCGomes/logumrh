@@ -4,19 +4,19 @@ import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 
 const StyledPagination = styled(Pagination)(({}) => ({
-  color: 'red', 
+  color: 'white', 
 
   '.MuiPaginationItem-root': {
     '&:hover': {
-      color: 'green',
-      backgroundColor: 'pink'
+      color: '#3a2640',
+      backgroundColor: '#ededef'
     },
   },
   
   '.Mui-selected': {
-    color: 'blue', 
+    color: '#3a2640', 
     fontWeight: 'bold',
-    backgroundColor: 'yellow'
+    backgroundColor: '#E6E4E6'
   },
 }));
 

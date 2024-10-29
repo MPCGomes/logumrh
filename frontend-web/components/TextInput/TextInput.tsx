@@ -3,7 +3,6 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
-import styles from './TextInput.module.scss';
 
 interface InputProps {
   label: string;
@@ -36,7 +35,7 @@ const CustomTextField = styled(TextField)({
 
 const TextInput: React.FC<InputProps> = ({ label }) => {
   return (
-    <div className={styles.input}>
+    <div>
       <CustomTextField
         label={label}
         variant="outlined"
