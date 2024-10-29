@@ -11,19 +11,19 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className='container'>
         <Link
-          href={''}>
+          href={'/'}>
           <Image
             src='/logo.svg'
             alt="Logo"
-            width={20}
-            height={20}
+            width={130}
+            height={65}
           />
         </Link>
 
         <div className={styles.linksContainer}>
           <Link
             className={styles.linkItem}
-            href={''}>
+            href={'/'}>
             Ínicio
           </Link>
           <Link
