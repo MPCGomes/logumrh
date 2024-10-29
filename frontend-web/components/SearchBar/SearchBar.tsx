@@ -7,17 +7,17 @@ import { styled } from '@mui/material/styles';
 const StyledSearchInput = styled(InputBase)({
   width: '80%',
   borderRadius: 50,
-  backgroundColor: 'purple',
-  padding: '5px 15px',
+  backgroundColor: '#3a264015',
+  padding: '12px 20px',
   color: 'white',
   '& .MuiInputBase-input': {
-    color: 'white',
+    color: '#3a2640',
     '&::placeholder': {
-      color: 'gray',
+      color: '#3a2640',
     },
   },
   '& .MuiSvgIcon-root': {
-    color: 'red',
+    color: '#3a2640',
   },
   '&:hover': {
     borderColor: 'blue',

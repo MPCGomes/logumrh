@@ -5,40 +5,36 @@ import { styled } from '@mui/material/styles';
 
 const StyledDropdownSelect = styled(Select)({
   borderRadius: 50,
-  backgroundColor: 'purple',
-  padding: '5px 10px',
-  color: 'white',
-
-  '& .MuiSelect-select': {
-    color: 'white',
-    padding: '5px 10px'
+  backgroundColor: '#3a264015',
+  padding: '1px 20px',
+  color: '#3a264070',
+  border: 'none',
+  
+  '& .MuiOutlinedInput-notchedOutline': {
+    border: 'none',
   },
-
-  '& .MuiSvgIcon-root': {
-    color: 'red',
-  },
-
   '&:hover .MuiOutlinedInput-notchedOutline': {
-    borderColor: 'blue',
+    border: 'none',
   },
   '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-    borderColor: 'red',
+    border: 'none',
   },
 });
 
+
 const DropdownMenuItem = styled(MenuItem)({
-  backgroundColor: 'navy',
-  color: 'yellow',
+  backgroundColor: '#fff',
+  color: '#3a2640',
   '&:hover': {
-    backgroundColor: 'red',
+    backgroundColor: '#efedef',
     color: 'black',
   },
   '&.Mui-selected': {
-    backgroundColor: 'green',
-    color: 'white',
+    backgroundColor: '#E6E4E6',
+    color: '#3a2640',
     '&:hover': {
-      backgroundColor: 'darkgreen',
-      color: 'white',
+      backgroundColor: '#E6E4E6',
+      color: '#3a2640',
     },
   },
   '&.Mui-focusVisible': {

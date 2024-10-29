@@ -52,18 +52,26 @@ const Vacancies: React.FC = () => {
   ];
 
   return (
-    <div className="container">
+    <div className="container paddingSection">
+      <h2 className='subtitle'>Confira nossas vagas!</h2>
       <div className={styles.centeredElements}>
-        <SearchBar placeholder="Search for a vacancy..." />
+        <SearchBar
+          placeholder="Pesquisar vaga..."
+        />
         <div className={styles.dropdownContainer}>
           {dropdownOptions.map((options, index) => (
-            <Dropdown key={index} placeholder={`Filter ${index + 1}`} options={options} />
+            <Dropdown
+              key={index}
+              placeholder={`Filter ${index + 1}`}
+              options={options} />
           ))}
         </div>
       </div>
       <div className={styles.grid}>
         {displayedVacancies.map((vacancy) => (
-          <VacancyCard key={vacancy.id} {...vacancy} />
+          <VacancyCard
+            key={vacancy.id} {...vacancy}
+          />
         ))}
       </div>
       <CustomPagination
