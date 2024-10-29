@@ -33,7 +33,7 @@
 
 }
 
-.textContainer {
+.heroContainer {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -83,6 +83,7 @@
   }
 }
 
+//Bounce animation
 .bounce {
   animation: bounce 1.5s infinite;
 

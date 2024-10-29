@@ -16,7 +16,7 @@ const Home = () => {
       <header className={styles.header}>
         <div className="container">
           <div className={styles.headerContainer}>
-            <div className={styles.textContainer}>
+            <div className={styles.heroContainer}>
               <h1>
                 Lorem ipsum dolor<br></br>
                 <span> sit amet</span>
@@ -31,8 +31,8 @@ const Home = () => {
             <Image
               src="./hero-img.svg"
               alt=""
-              height={300}
-              width={300}
+              height={470}
+              width={470}
             />
           </div>
           <div className={styles.textGroup}>
