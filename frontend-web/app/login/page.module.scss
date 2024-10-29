@@ -1,7 +1,10 @@
 @use '../../styles/variables' as *;;
 
 .login{
-  padding: 150px 0;
+  height: 85dvh;
+  display: grid;
+  place-items: center;
+  padding: 0 20px;
 }
 
 .loginContainer{
@@ -22,17 +25,17 @@
   display: none;
 
   @media (min-width: 1024px) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: var(--primary-color);
     border-radius: 10px;
-    text-align: center;
 
     p{
       color: var(--background-color);
       font-weight: bold;
       font-size: $fs-500;
-      margin-top: 25%;
-      margin-bottom: 10px;
     }
   }
 }
