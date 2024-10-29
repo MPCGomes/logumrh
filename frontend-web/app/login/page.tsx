@@ -1,9 +1,10 @@
 import React from 'react'
-import Input from '@/components/Input/Input'
+import TextInput from '@/components/TextInput/TextInput'
 import Link from 'next/link'
 import styles from './page.module.scss'
 import ButtonPrimary from '@/components/ButtonPrimary/ButtonPrimary'
 import Image from 'next/image'
+import PasswordInput from '@/components/PasswordInput/PasswordInput'
 
 const page = () => {
   return (
@@ -22,15 +23,11 @@ const page = () => {
           <div className={styles.rightSide}>
             <h3>Entrar</h3>
             <div className={styles.inputContainer}>
-              <Input
-                label={'E-Mail'}
-                placeholder={'Digite seu e-mail'}
-                type={'text'}
+              <TextInput
+                label={'E-mail'}
               />
-              <Input
+              <PasswordInput
                 label={'Senha'}
-                placeholder={'Digite sua senha'}
-                type={'password'}
               />
               <Link
                 className={styles.link}
@@ -47,11 +44,11 @@ const page = () => {
               <p>OU</p>
             </div>
             <p>Não tem uma conta? <Link
-                className={styles.link}
-                href={''}
-              >
-                Criar conta
-              </Link>
+              className={styles.link}
+              href={''}
+            >
+              Criar conta
+            </Link>
             </p>
           </div>
         </div>
