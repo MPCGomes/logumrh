@@ -3,6 +3,7 @@ import TextInput from '@/components/TextInput/TextInput'
 import Link from 'next/link'
 import styles from './page.module.scss'
 import ButtonPrimary from '@/components/ButtonPrimary/ButtonPrimary'
+import Image from 'next/image'
 import PasswordInput from '@/components/PasswordInput/PasswordInput'
 
 const page = () => {
@@ -12,9 +13,11 @@ const page = () => {
         <div className={styles.loginContainer}>
           <div className={styles.leftSide}>
             <p>Bem-vindo de volta!</p>
-            <img
+            <Image
               src="./login.svg"
               alt=""
+              height={300}
+              width={300}
             />
           </div>
           <div className={styles.rightSide}>

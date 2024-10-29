@@ -12,6 +12,11 @@
   gap: 10px;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 .idGroup {
   display: flex;
   justify-content: space-between;

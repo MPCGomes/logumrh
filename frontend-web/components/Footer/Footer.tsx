@@ -1,14 +1,17 @@
-import React from 'react'
-import styles from './Footer.module.scss'
+import React from 'react';
+import Image from 'next/image';
+import styles from './Footer.module.scss';
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className='container'>
         <div className={styles.footerContainer}>
-          <img
+          <Image
             src='/logo-white.png'
             alt="Logo"
+            width={325}
+            height={100}
           />
           <div className={styles.linkGroup}>
             <p className={styles.title}>

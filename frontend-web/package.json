@@ -21,11 +21,12 @@
     "sass": "^1.80.3"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/node": "^22.7.9",
+    "@types/react": "^18.3.12",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "15.0.0",
+    "eslint-config-next": "^15.0.1",
+    "sass": "^1.80.4",
     "typescript": "^5"
   }
 }

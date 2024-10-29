@@ -1,4 +1,4 @@
-@use '../../styles/variables' as *;
+@use '../../styles/variables'as *;
 
 .footer {
   background-color: var(--primary-color);
@@ -13,30 +13,25 @@
   text-align: center;
   margin-bottom: 70px;
 
-  img {
-    max-width: 325px;
-    width: 100%;
-  }
-
   @media (min-width: 641px) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-.itemGroup{
+.itemGroup {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.title{
+.title {
   text-transform: uppercase;
   font-weight: bold;
   font-size: $fs-600;
   margin-bottom: 15px;
 }
 
-.copyright{
+.copyright {
   text-align: center;
   font-size: $fs-300;
 }

@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@use '../../styles/variables' as *;;
 
 .login{
   padding: 150px 0;
