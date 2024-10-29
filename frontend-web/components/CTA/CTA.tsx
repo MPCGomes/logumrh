@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './CTA.module.scss'
-import ButtonSecondary from '../ButtonSecondary/ButtonSecondary'
 
 const CTA = () => {
   return (

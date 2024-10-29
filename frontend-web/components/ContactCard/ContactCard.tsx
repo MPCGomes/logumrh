@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styles from './ContactCard.module.scss'
 import Link from 'next/link';
 
 interface ContactCardProps {
-  icon: string;
+  icon: ReactNode;
   title: string;
   contact: string;
   link: string;

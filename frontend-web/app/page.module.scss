@@ -1,6 +1,5 @@
-@import '../styles/variables';
+@use '../styles/variables';
 
-//Header
 .header {
   background-color: var(--background-color);
   text-align: center;
@@ -40,7 +39,7 @@
   gap: 40px;
 
   h1 {
-    font-size: $fs-900;
+    font-size: variables.$fs-900;
 
     span {
       color: var(--accent-color);
@@ -48,7 +47,7 @@
   }
 
   h2 {
-    font-size: $fs-700;
+    font-size: variables.$fs-700;
     font-weight: normal;
   }
 
@@ -73,7 +72,7 @@
   }
 
   p {
-    font-size: $fs-500;
+    font-size: variables.$fs-500;
     text-transform: uppercase;
     margin-bottom: 25px;
     color: var(--text-color);
@@ -89,7 +88,6 @@
 
 }
 
-//Bounce Animation
 @keyframes bounce {
 
   20%,
@@ -112,7 +110,6 @@
   }
 }
 
-//Recent Vacancies
 .vancacyButton p{
   text-align: center;
   margin-top: 50px;
@@ -128,10 +125,6 @@
   }
 }
 
-
-
-
-//Contact
 .contact{
   background-color: var(--background-color);
 }

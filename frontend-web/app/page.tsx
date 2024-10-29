@@ -1,8 +1,6 @@
 import styles from './page.module.scss'
 import ButtonPrimary from "@/components/ButtonPrimary/ButtonPrimary";
 import ContactCard from '@/components/ContactCard/ContactCard';
-import Footer from "@/components/Footer/Footer";
-import Navbar from "@/components/Navbar/Navbar";
 import VacancyCard from '@/components/VacancyCard/VacancyCard';
 import Link from 'next/link';
 import CTA from '@/components/CTA/CTA';
@@ -10,11 +8,11 @@ import { IoMail } from "react-icons/io5";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa6";
 import { GoArrowDown } from "react-icons/go";
+import Image from 'next/image'
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
       <header className={styles.header}>
         <div className="container">
           <div className={styles.headerContainer}>
@@ -30,9 +28,11 @@ const Home = () => {
                 text="OFERECER VAGAS"
               />
             </div>
-            <img
+            <Image
               src="./hero-img.svg"
               alt=""
+              height={300}
+              width={300}
             />
           </div>
           <div className={styles.textGroup}>
@@ -47,8 +47,6 @@ const Home = () => {
           </div>
         </div>
       </header>
-
-      {/* Recent Vacancies */}
       <section
         id='recentVacancies'
         className={styles.vacancies}
@@ -105,15 +103,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
-
-      {/* About Logum */}
-
-      {/* Mini CTA */}
       <CTA />
-
-      {/* Mission, values and vision */}
-
-      {/* Contact */}
       <section className={styles.contact}>
         <div className='container paddingSection'>
           <h3 className='subtitle'>
@@ -141,7 +131,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };
