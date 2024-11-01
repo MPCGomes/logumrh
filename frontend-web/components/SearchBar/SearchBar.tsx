@@ -7,7 +7,8 @@ import { styled } from '@mui/material/styles';
 const StyledSearchInput = styled(InputBase)({
   width: '80%',
   borderRadius: 50,
-  backgroundColor: '#3a264015',
+  outline: '1px solid #3a264040',
+  backgroundColor: 'transparent',
   padding: '12px 20px',
   color: 'white',
   '& .MuiInputBase-input': {
@@ -20,10 +21,11 @@ const StyledSearchInput = styled(InputBase)({
     color: '#3a2640',
   },
   '&:hover': {
-    borderColor: 'blue',
+    borderColor: '#3a2640',
   },
   '&.Mui-focused': {
-    borderColor: 'green',
+    outline: '2px solid #3a2640',
+    borderColor: '#3a2640',
   },
 });
 
