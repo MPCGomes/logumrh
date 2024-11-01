@@ -40,7 +40,7 @@ const page = () => {
               />
             </div>
             <div className={styles.orLine}>
-              <hr />
+              <hr/>
               <p>OU</p>
             </div>
             <p>Não tem uma conta? <Link

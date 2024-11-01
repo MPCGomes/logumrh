@@ -22,11 +22,11 @@ const Vacancies: React.FC = () => {
     id: index + 1,
     vacancy: 'Título',
     firm: 'Empresa',
+    salary: 1500,
     sector: 'Setor',
     modality: 'Modalidade',
     period: 'Período',
     scale: 'Escala',
-    salary: 1500,
     location: 'Rua, Número - Bairro, Cidade - UF',
     requirements: 'Requisitos.',
     activities: 'Atividades.'

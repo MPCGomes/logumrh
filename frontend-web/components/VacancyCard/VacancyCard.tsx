@@ -11,11 +11,11 @@ interface VacancyCardProps {
   id: number;
   vacancy: string;
   firm: string;
+  salary: number;
   sector: string;
   modality: string;
   period: string;
   scale: string;
-  salary: number;
   location: string;
   requirements: string;
   activities: string;
@@ -41,16 +41,16 @@ const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, mo
       <div className={styles.info}>
         <p>
           <span>
-            <FaBriefcase />
-          </span>
-          {modality} • {period}
-        </p>
-        <p>
-          <span>
             <SiCashapp />
           </span>
           R$
           {salary}
+        </p>
+        <p>
+          <span>
+            <FaBriefcase />
+          </span>
+          {modality} • {period}
         </p>
         <p>
           <span>
