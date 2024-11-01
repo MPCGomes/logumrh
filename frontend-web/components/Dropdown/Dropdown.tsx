@@ -5,10 +5,10 @@ import { styled } from '@mui/material/styles';
 
 const StyledDropdownSelect = styled(Select)({
   borderRadius: 50,
-  backgroundColor: '#3a264015',
+  outline: '1px solid #3a264040',
+  backgroundColor: 'transparent',
   padding: '1px 20px',
   color: '#3a264070',
-  border: 'none',
   
   '& .MuiOutlinedInput-notchedOutline': {
     border: 'none',
@@ -17,7 +17,8 @@ const StyledDropdownSelect = styled(Select)({
     border: 'none',
   },
   '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-    border: 'none',
+    border: '2px solid #3a2640',
+    outline: 'none',
   },
 });
 
