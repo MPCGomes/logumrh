@@ -1,0 +1,111 @@
+@use '../../styles/variables' as *;
+
+.hrLine{
+  border-top: 1px solid #A9A9A9;
+  border-bottom: none;
+}
+
+.nameContainer{
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.idGroup {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  p {
+    background-color: #fa8f0d80;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: $fs-300;
+  }
+
+  .share {
+    padding-top: 10px;
+    background-color: transparent;
+    font-size: 2rem;
+    border: 0;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+}
+
+.vacancy {
+  text-transform: uppercase;
+
+  .title {
+    font-weight: bold;
+    font-size: $fs-600;
+  }
+
+  .infoGroup {
+    display: flex;
+    gap: 10px;
+    font-size: $fs-300;
+  }
+}
+
+.info {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex-direction: column;
+  gap: 5px;
+  text-transform: uppercase;
+  font-size: $fs-300;
+
+  @media (min-width: 641px) {
+    flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+    
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  span {
+    color: var(--primary-color);
+  }
+}
+
+.requirements {
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-size: $fs-300;
+  color: var(--text-color);
+
+  .title {
+    font-weight: bold;
+    font-size: $fs-400;
+  }
+}
+
+.activities {
+  margin-top: 10px;
+  font-size: $fs-300;
+  color: var(--text-color);
+
+  .title {
+    font-size: $fs-400;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}

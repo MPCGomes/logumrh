@@ -58,8 +58,8 @@ const Home = () => {
               id={1}
               vacancy={'Nome da Vaga'}
               firm={'Empresa'}
-              sector={'Setor'}
               salary={1500}
+              sector={'Setor'}
               modality={'Modalidade'}
               period={'Período'}
               scale={'Escala'}
@@ -71,8 +71,8 @@ const Home = () => {
               id={2}
               vacancy={'Nome da Vaga'}
               firm={'Empresa'}
-              sector={'Setor'}
               salary={1500}
+              sector={'Setor'}
               modality={'Modalidade'}
               period={'Período'}
               scale={'Escala'}
@@ -84,8 +84,8 @@ const Home = () => {
               id={3}
               vacancy={'Nome da Vaga'}
               firm={'Empresa'}
-              sector={'Setor'}
               salary={1500}
+              sector={'Setor'}
               modality={'Modalidade'}
               period={'Período'}
               scale={'Escala'}
