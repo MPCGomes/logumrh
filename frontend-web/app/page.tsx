@@ -55,10 +55,11 @@ const Home = () => {
           <h3 className='subtitle'>Últimas Vagas</h3>
           <div className={styles.recentVacancies}>
             <VacancyCard
-              id={2431}
+              id={1}
               vacancy={'Nome da Vaga'}
               firm={'Empresa'}
               sector={'Setor'}
+              salary={1500}
               modality={'Modalidade'}
               period={'Período'}
               scale={'Escala'}
@@ -67,10 +68,11 @@ const Home = () => {
               activities={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?'}
             />
             <VacancyCard
-              id={5450}
+              id={2}
               vacancy={'Nome da Vaga'}
               firm={'Empresa'}
               sector={'Setor'}
+              salary={1500}
               modality={'Modalidade'}
               period={'Período'}
               scale={'Escala'}
@@ -79,10 +81,11 @@ const Home = () => {
               activities={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?'}
             />
             <VacancyCard
-              id={7860}
+              id={3}
               vacancy={'Nome da Vaga'}
               firm={'Empresa'}
               sector={'Setor'}
+              salary={1500}
               modality={'Modalidade'}
               period={'Período'}
               scale={'Escala'}

@@ -3,6 +3,7 @@ import styles from './VacancyCard.module.scss'
 import { HiOutlineShare } from "react-icons/hi";
 import { FaBriefcase, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { SiCashapp } from "react-icons/si";
 import ButtonSecondary from '../ButtonSecondary/ButtonSecondary';
 import ButtonPrimary from '../ButtonPrimary/ButtonPrimary';
 
@@ -14,12 +15,13 @@ interface VacancyCardProps {
   modality: string;
   period: string;
   scale: string;
+  salary: number;
   location: string;
   requirements: string;
   activities: string;
 }
 
-const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, modality, period, scale, location, requirements, activities }) => {
+const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, modality, period, salary, scale, location, requirements, activities }) => {
   return (
     <div className={styles.vacancyCard}>
       <div className={styles.idGroup}>
@@ -42,6 +44,13 @@ const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, mo
             <FaBriefcase />
           </span>
           {modality} • {period}
+        </p>
+        <p>
+          <span>
+            <SiCashapp />
+          </span>
+          R$
+          {salary}
         </p>
         <p>
           <span>

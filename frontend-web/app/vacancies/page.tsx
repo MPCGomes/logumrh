@@ -26,6 +26,7 @@ const Vacancies: React.FC = () => {
     modality: 'Modalidade',
     period: 'Período',
     scale: 'Escala',
+    salary: 1500,
     location: 'Rua, Número - Bairro, Cidade - UF',
     requirements: 'Requisitos.',
     activities: 'Atividades.'
@@ -53,7 +54,7 @@ const Vacancies: React.FC = () => {
 
   return (
     <div className="container paddingSection">
-      <h2 className='subtitle'>Confira nossas vagas!</h2>
+      <h2 className='subtitle'>Confira as nossas vagas!</h2>
       <div className={styles.centeredElements}>
         <SearchBar
           placeholder="Pesquisar vaga..."
