@@ -1,19 +1,13 @@
 package com.logumrh.model.user;
 
 import com.logumrh.model.auth.Role;
-import com.logumrh.model.common.Address;
-import com.logumrh.model.common.Disability;
-import com.logumrh.model.common.EducationLevel;
-import com.logumrh.model.common.Gender;
+import com.logumrh.model.common.*;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.*;
+import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
@@ -28,72 +22,104 @@ public class User {
     @NotNull
     @Email
     @Size(max = 255)
-    @Column(length = 255, nullable = false, unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
 
     @NotNull
     @Size(min = 8, max = 255)
-    @Column(length = 255, nullable = false)
+    @Column(nullable = false)
     private String password;
 
     @NotNull
     @Size(max = 255)
-    @Column(length = 255, nullable = false)
+    @Column(nullable = false)
     private String name;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "gender_id", nullable = false)
     private Gender gender;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "disability_id", nullable = false)
     private Disability disability;
 
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "marital_status_id", nullable = false)
+    private MaritalStatus maritalStatus;
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "ethnicity_id", nullable = false)
+    private Ethnicity ethnicity;
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "nationality_id", nullable = false)
+    private Nationality nationality;
+
+    @NotNull
+    @Column(nullable = false)
+    private LocalDate birthDate;
+
+    @NotNull
+    @Size(max = 20)
+    @Column(nullable = false)
+    private String phone;
+
+    @Size(max = 255)
+    private String socialName;
+
+    @NotNull
+    @Size(max = 11)
+    @Column(unique = true, nullable = false)
+    private String nationalId;
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role role;
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "education_level_id", nullable = false)
+    private EducationLevel educationLevel;
+
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "address_id", nullable = false)
     private Address address;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_drivers_licenses",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "drivers_license_id")
+    )
+    private List<DriversLicense> driversLicenses;
 
     @Lob
     private byte[] photo;
 
     @NotNull
     @Column(nullable = false)
-    private LocalDate birthDate;
-
-    @Size(max = 50)
-    @Column(length = 50)
-    private String maritalStatus;
-
-    @Size(max = 50)
-    @Column(length = 50)
-    private String ethnicity;
-
-    @Size(max = 20)
-    @Column(length = 20)
-    private String phone;
-
-    @Size(max = 255)
-    @Column(length = 255)
-    private String socialName;
+    private Boolean isActive = true;
 
     @NotNull
-    @Size(max = 50)
-    @Column(length = 50, nullable = false)
-    private String nationality;
+    @Column(nullable = false, updatable = false)
+    private LocalDate createdAt;
 
     @NotNull
-    @Size(min = 11, max = 11)
-    @Column(length = 11, nullable = false, unique = true)
-    private String nationalId;
+    @ManyToOne
+    @JoinColumn(name = "created_by", nullable = false)
+    private User createdBy;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "role_id", nullable = false)
-    private Role role;
+    @Column
+    private LocalDate updatedAt;
 
     @ManyToOne
-    @JoinColumn(name = "education_level_id", nullable = false)
-    private EducationLevel educationLevel;
-
-    @Column(nullable = false)
-    private boolean isActive;
+    @JoinColumn(name = "updated_by")
+    private User updatedBy;
 }
