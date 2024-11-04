@@ -1,22 +1,27 @@
 package com.logumrh.model.common;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.logumrh.model.user.User;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "disabilities")
 public class Disability {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    @NotNull
-    @Column(length = 50, nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 50)
     private String name;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "disability", fetch = FetchType.LAZY)
+    private List<User> users;
 }
