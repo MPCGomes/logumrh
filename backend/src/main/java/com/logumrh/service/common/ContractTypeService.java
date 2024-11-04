@@ -5,6 +5,7 @@ import com.logumrh.repository.common.ContractTypeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ContractTypeService {
@@ -15,11 +16,19 @@ public class ContractTypeService {
         this.contractTypeRepository = contractTypeRepository;
     }
 
-    public List<ContractType> getAllContractTypes() {
+    public List<ContractType> findAll() {
         return contractTypeRepository.findAll();
     }
 
-    public ContractType createContractType(ContractType contractType) {
+    public Optional<ContractType> findById(Long id) {
+        return contractTypeRepository.findById(id);
+    }
+
+    public ContractType save(ContractType contractType) {
         return contractTypeRepository.save(contractType);
+    }
+
+    public void deleteById(Long id) {
+        contractTypeRepository.deleteById(id);
     }
 }
