@@ -2,7 +2,6 @@ package com.logumrh.service.common;
 
 import com.logumrh.model.common.Address;
 import com.logumrh.repository.common.AddressRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,8 +10,11 @@ import java.util.Optional;
 @Service
 public class AddressService {
 
-    @Autowired
-    private AddressRepository addressRepository;
+    private final AddressRepository addressRepository;
+
+    public AddressService(AddressRepository addressRepository) {
+        this.addressRepository = addressRepository;
+    }
 
     public List<Address> findAll() {
         return addressRepository.findAll();
