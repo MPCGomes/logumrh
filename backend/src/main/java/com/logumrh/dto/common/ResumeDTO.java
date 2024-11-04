@@ -1,7 +1,6 @@
 package com.logumrh.dto.common;
 
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ResumeDTO {
 
-    @NotNull(message = "ID cannot be null")
     private Long id;
 
     @NotNull(message = "User ID is required")
