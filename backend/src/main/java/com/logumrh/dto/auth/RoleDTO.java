@@ -1,4 +1,4 @@
-package com.logumrh.dto.common;
+package com.logumrh.dto.auth;
 
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -10,7 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RoleDTO {
 
-    @NotNull(message = "Role name is required")
-    @Size(min = 2, max = 50, message = "Role name must be between 2 and 50 characters")
+    private Long id;
+
+    @NotNull(message = "Name is required")
+    @Size(max = 50, message = "Name must be at most 50 characters")
     private String name;
 }
