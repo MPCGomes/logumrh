@@ -10,7 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class EducationLevelDTO {
 
-    @NotNull(message = "Education level name is required")
-    @Size(min = 2, max = 255, message = "Education level name must be between 2 and 255 characters")
+    private Long id;
+
+    @NotNull(message = "Name is required")
+    @Size(max = 255, message = "Name must be at most 255 characters")
     private String name;
 }

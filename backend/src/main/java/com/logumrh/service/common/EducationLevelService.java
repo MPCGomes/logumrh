@@ -5,6 +5,7 @@ import com.logumrh.repository.common.EducationLevelRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EducationLevelService {
@@ -15,11 +16,11 @@ public class EducationLevelService {
         this.educationLevelRepository = educationLevelRepository;
     }
 
-    public List<EducationLevel> getAllEducationLevels() {
+    public List<EducationLevel> findAll() {
         return educationLevelRepository.findAll();
     }
 
-    public EducationLevel createEducationLevel(EducationLevel educationLevel) {
-        return educationLevelRepository.save(educationLevel);
+    public Optional<EducationLevel> findById(Long id) {
+        return educationLevelRepository.findById(id);
     }
 }
