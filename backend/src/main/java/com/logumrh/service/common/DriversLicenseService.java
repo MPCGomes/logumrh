@@ -5,6 +5,7 @@ import com.logumrh.repository.common.DriversLicenseRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DriversLicenseService {
@@ -15,11 +16,11 @@ public class DriversLicenseService {
         this.driversLicenseRepository = driversLicenseRepository;
     }
 
-    public List<DriversLicense> getAllDriversLicenses() {
+    public List<DriversLicense> findAll() {
         return driversLicenseRepository.findAll();
     }
 
-    public DriversLicense createDriversLicense(DriversLicense driversLicense) {
-        return driversLicenseRepository.save(driversLicense);
+    public Optional<DriversLicense> findById(Long id) {
+        return driversLicenseRepository.findById(id);
     }
 }
