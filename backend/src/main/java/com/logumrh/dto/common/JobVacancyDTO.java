@@ -1,7 +1,6 @@
 package com.logumrh.dto.common;
 
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +14,6 @@ import java.util.List;
 @AllArgsConstructor
 public class JobVacancyDTO {
 
-    @NotNull(message = "ID cannot be null")
     private Long id;
 
     @NotNull(message = "Title is required")
@@ -26,16 +24,21 @@ public class JobVacancyDTO {
     @Size(min = 1, max = 10, message = "Code must be between 1 and 10 characters")
     private String code;
 
-    @NotNull(message = "Modality is required")
-    @Size(max = 50, message = "Modality must be at most 50 characters")
-    private String modality;
+    @NotNull(message = "Modality ID is required")
+    private Long modalityId;
+
+    @NotNull(message = "Contract Type ID is required")
+    private Long contractTypeId;
 
     @NotNull(message = "Description is required")
     private String description;
 
-    @NotNull(message = "Location is required")
-    @Size(max = 255, message = "Location must be at most 255 characters")
-    private String location;
+    @NotNull(message = "Schedule is required")
+    @Size(max = 255, message = "Schedule must be at most 255 characters")
+    private String schedule;
+
+    private List<String> requirements;
+    private List<String> benefits;
 
     @NotNull(message = "Address ID is required")
     private Long addressId;
@@ -43,19 +46,13 @@ public class JobVacancyDTO {
     @NotNull(message = "Company ID is required")
     private Long companyId;
 
-    @NotNull(message = "Category ID is required")
-    private Long categoryId;
+    private String observations;
 
-    private String objectiveRequirements;
-    private String subjectiveRequirements;
-    private String benefits;
-    private String schedule;
-
-    @NotNull(message = "Salary is required")
     private BigDecimal salary;
 
     private List<String> tags;
-    private String contractType;
+
     private LocalDateTime closeDate;
+
     private boolean isActive;
 }
