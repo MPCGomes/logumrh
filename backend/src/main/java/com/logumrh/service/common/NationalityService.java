@@ -23,12 +23,4 @@ public class NationalityService {
     public Optional<Nationality> findById(Long id) {
         return nationalityRepository.findById(id);
     }
-
-    public Nationality save(Nationality nationality) {
-        return nationalityRepository.save(nationality);
-    }
-
-    public void deleteById(Long id) {
-        nationalityRepository.deleteById(id);
-    }
 }

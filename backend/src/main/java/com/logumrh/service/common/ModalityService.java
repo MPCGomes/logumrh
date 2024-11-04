@@ -23,12 +23,4 @@ public class ModalityService {
     public Optional<Modality> findById(Long id) {
         return modalityRepository.findById(id);
     }
-
-    public Modality save(Modality modality) {
-        return modalityRepository.save(modality);
-    }
-
-    public void deleteById(Long id) {
-        modalityRepository.deleteById(id);
-    }
 }

@@ -23,12 +23,4 @@ public class ContractTypeService {
     public Optional<ContractType> findById(Long id) {
         return contractTypeRepository.findById(id);
     }
-
-    public ContractType save(ContractType contractType) {
-        return contractTypeRepository.save(contractType);
-    }
-
-    public void deleteById(Long id) {
-        contractTypeRepository.deleteById(id);
-    }
 }

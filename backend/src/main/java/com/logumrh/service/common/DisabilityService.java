@@ -23,12 +23,4 @@ public class DisabilityService {
     public Optional<Disability> findById(Long id) {
         return disabilityRepository.findById(id);
     }
-
-    public Disability save(Disability disability) {
-        return disabilityRepository.save(disability);
-    }
-
-    public void deleteById(Long id) {
-        disabilityRepository.deleteById(id);
-    }
 }
