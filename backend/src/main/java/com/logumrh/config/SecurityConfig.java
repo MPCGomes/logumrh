@@ -11,14 +11,9 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.cors.*;
 
 import java.util.List;
 
@@ -67,15 +62,5 @@ public class SecurityConfig {
         source.registerCorsConfiguration("/**", config);
 
         return source;
-    }
-
-    @Bean
-    public UserDetailsService userDetailsService() {
-        var manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withUsername(dotenv.get("ADMIN_USERNAME"))
-                .password("{noop}" + dotenv.get("ADMIN_PASSWORD"))
-                .roles("ADMIN")
-                .build());
-        return manager;
     }
 }
