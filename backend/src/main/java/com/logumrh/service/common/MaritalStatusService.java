@@ -5,6 +5,7 @@ import com.logumrh.repository.common.MaritalStatusRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MaritalStatusService {
@@ -15,11 +16,11 @@ public class MaritalStatusService {
         this.maritalStatusRepository = maritalStatusRepository;
     }
 
-    public List<MaritalStatus> getAllMaritalStatuses() {
+    public List<MaritalStatus> findAll() {
         return maritalStatusRepository.findAll();
     }
 
-    public MaritalStatus createMaritalStatus(MaritalStatus maritalStatus) {
-        return maritalStatusRepository.save(maritalStatus);
+    public Optional<MaritalStatus> findById(Long id) {
+        return maritalStatusRepository.findById(id);
     }
 }
