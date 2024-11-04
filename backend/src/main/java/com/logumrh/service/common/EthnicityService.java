@@ -5,6 +5,7 @@ import com.logumrh.repository.common.EthnicityRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EthnicityService {
@@ -15,11 +16,11 @@ public class EthnicityService {
         this.ethnicityRepository = ethnicityRepository;
     }
 
-    public List<Ethnicity> getAllEthnicities() {
+    public List<Ethnicity> findAll() {
         return ethnicityRepository.findAll();
     }
 
-    public Ethnicity createEthnicity(Ethnicity ethnicity) {
-        return ethnicityRepository.save(ethnicity);
+    public Optional<Ethnicity> findById(Long id) {
+        return ethnicityRepository.findById(id);
     }
 }
