@@ -1,9 +1,6 @@
 package com.logumrh.dto.company;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CompanyDTO {
 
-    @NotNull(message = "ID cannot be null")
     private Long id;
 
     @NotNull(message = "Name is required")
@@ -42,7 +38,7 @@ public class CompanyDTO {
 
     @NotNull(message = "Phone is required")
     @Pattern(regexp = "^\\+?[0-9. ()-]{7,20}$", message = "Invalid phone number format")
-    @Size(min = 10, max = 20, message = "Phone must be between 10 and 20 characters")
+    @Size(min = 7, max = 20, message = "Phone must be between 7 and 20 characters")
     private String phone;
 
     @NotNull(message = "Contact person is required")

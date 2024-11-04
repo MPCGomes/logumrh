@@ -1,65 +1,74 @@
 package com.logumrh.model.company;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.logumrh.model.common.Address;
+import com.logumrh.model.user.User;
+import com.logumrh.model.common.JobVacancy;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "companies")
 public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(max = 255)
-    @Column(length = 255, nullable = false)
+    @Column(nullable = false, length = 255)
     private String name;
 
-    @NotNull
-    @Size(max = 255)
-    @Column(length = 255, nullable = false)
+    @Column(nullable = false, length = 255)
     private String legalName;
 
-    @NotNull
-    @Size(min = 11, max = 20)
-    @Column(length = 20, nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 20)
     private String nationalId;
 
-    @NotNull
-    @Size(max = 255)
-    @Column(length = 255, nullable = false)
+    @Column(nullable = false, length = 255)
     private String industry;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id", nullable = false)
     private Address address;
 
-    @NotNull
-    @Email
-    @Size(max = 255)
-    @Column(length = 255, nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 255)
     private String email;
 
-    @NotNull
-    @Pattern(regexp = "^\\+?[0-9. ()-]{7,20}$", message = "Invalid phone number format")
-    @Column(length = 20, nullable = false)
+    @Column(nullable = false, length = 20)
     private String phone;
 
-    @NotNull
-    @Size(max = 255)
-    @Column(length = 255, nullable = false)
+    @Column(nullable = false, length = 255)
     private String contactPerson;
 
     @Column(nullable = false)
-    private boolean isActive;
+    private Boolean isActive = true;
+
+    @CreationTimestamp
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "created_by", nullable = false)
+    private User createdBy;
+
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "updated_by")
+    private User updatedBy;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
+    private List<JobVacancy> jobVacancies;
 }
