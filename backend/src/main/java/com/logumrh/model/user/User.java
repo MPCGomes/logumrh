@@ -1,98 +1,101 @@
 package com.logumrh.model.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.logumrh.model.auth.Role;
 import com.logumrh.model.common.*;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Email
-    @Size(max = 255)
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false, unique = true, length = 255)
     private String email;
 
-    @NotNull
-    @Size(min = 8, max = 255)
-    @Column(nullable = false)
+    @Column(nullable = false, length = 255)
     private String password;
 
-    @NotNull
-    @Size(max = 255)
-    @Column(nullable = false)
+    @Column(nullable = false, length = 255)
     private String name;
 
-    @NotNull
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "gender_id", nullable = false)
     private Gender gender;
 
-    @NotNull
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "disability_id", nullable = false)
     private Disability disability;
 
-    @NotNull
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "marital_status_id", nullable = false)
     private MaritalStatus maritalStatus;
 
-    @NotNull
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ethnicity_id", nullable = false)
     private Ethnicity ethnicity;
 
-    @NotNull
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "nationality_id", nullable = false)
     private Nationality nationality;
 
-    @NotNull
+    @Lob
+    private byte[] photo;
+
     @Column(nullable = false)
     private LocalDate birthDate;
 
-    @NotNull
-    @Size(max = 20)
-    @Column(nullable = false)
+    @Column(nullable = false, length = 20)
     private String phone;
 
-    @Size(max = 255)
+    @Column(length = 255)
     private String socialName;
 
-    @NotNull
-    @Size(max = 11)
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false, unique = true, length = 11)
     private String nationalId;
 
-    @NotNull
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
-    @NotNull
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "education_level_id", nullable = false)
     private EducationLevel educationLevel;
 
-    @NotNull
-    @ManyToOne
-    @JoinColumn(name = "address_id", nullable = false)
-    private Address address;
+    @Column(nullable = false)
+    private Boolean isActive = true;
 
-    @ManyToMany
+    @CreationTimestamp
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "created_by", nullable = false)
+    private User createdBy;
+
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "updated_by")
+    private User updatedBy;
+
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "user_drivers_licenses",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -100,26 +103,15 @@ public class User {
     )
     private List<DriversLicense> driversLicenses;
 
-    @Lob
-    private byte[] photo;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_id", nullable = false)
+    private Address address;
 
-    @NotNull
-    @Column(nullable = false)
-    private Boolean isActive = true;
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Resume> resumes;
 
-    @NotNull
-    @Column(nullable = false, updatable = false)
-    private LocalDate createdAt;
-
-    @NotNull
-    @ManyToOne
-    @JoinColumn(name = "created_by", nullable = false)
-    private User createdBy;
-
-    @Column
-    private LocalDate updatedAt;
-
-    @ManyToOne
-    @JoinColumn(name = "updated_by")
-    private User updatedBy;
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Application> applications;
 }
