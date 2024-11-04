@@ -23,7 +23,7 @@ public class JwtUtil {
     public JwtUtil(@Value("${jwt.secret}") String secret) {
         this.key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
     }
-    
+
     public String generateToken(String email, String role) {
         long now = System.currentTimeMillis();
         return buildToken(email, role, now, jwtExpirationInMs);
