@@ -9,6 +9,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa6";
 import { GoArrowDown } from "react-icons/go";
 import Image from 'next/image'
+import ButtonSecondary from '@/components/ButtonSecondary/ButtonSecondary';
 
 const Home = () => {
   return (
@@ -18,15 +19,19 @@ const Home = () => {
           <div className={styles.headerContainer}>
             <div className={styles.heroContainer}>
               <h1>
-                Lorem ipsum dolor<br></br>
-                <span> sit amet</span>
+                Conectando Talentos ao Seu Sucesso
               </h1>
               <h2>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque ipsam, sit iure vero dolorum asperiores.
+                A melhor solução em recrutamento e seleção para sua empresa
               </h2>
-              <ButtonPrimary
-                text="OFERECER VAGAS"
-              />
+              <div className={styles.btnGroup}>
+                <ButtonPrimary
+                  text="Oferecer vagas"
+                />
+                <ButtonSecondary
+                  text="Ver vagas"
+                />
+              </div>
             </div>
             <Image
               src="./hero-img.svg"
@@ -34,16 +39,6 @@ const Home = () => {
               height={470}
               width={470}
             />
-          </div>
-          <div className={styles.textGroup}>
-            <a href="#recentVacancies">
-              <p>
-                Você é um <strong>candidato</strong>? Confira abaixo as nossas <strong>vagas</strong>!
-              </p>
-            </a>
-            <span>
-              <GoArrowDown className={styles.bounce} />
-            </span>
           </div>
         </div>
       </header>

@@ -4,7 +4,7 @@
   background-color: var(--background-color);
   text-align: center;
   color: var(--text-color);
-  padding: 100px 0;
+  padding: 100px 0 200px;
 
   background-image: url('../public/header-waves.svg');
   background-repeat: no-repeat;
@@ -18,8 +18,9 @@
 
 .headerContainer {
   @media (min-width: 1024px) {
-    display: flex;
-    align-items: center;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
     gap: 50px;
   }
 
@@ -40,74 +41,24 @@
 
   h1 {
     font-size: variables.$fs-900;
-
-    span {
-      color: var(--accent-color);
-    }
   }
 
   h2 {
-    font-size: variables.$fs-700;
+    font-size: variables.$fs-600;
     font-weight: normal;
   }
 
-  button {
-    width: 280px;
-    margin-left: auto;
-    margin-right: auto;
+  .btnGroup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 
-    @media (min-width:1024px) {
-      margin-left: 0;
-      margin-right: 0;
+    
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
     }
-  }
-}
-
-.textGroup {
-  margin-top: 50px;
-
-  @media (min-width: 1024px) {
-    text-align: center;
-
-  }
-
-  p {
-    font-size: variables.$fs-500;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-    color: var(--text-color);
-  }
-
-  span {
-    font-size: 2rem;
-  }
-}
-
-//Bounce animation
-.bounce {
-  animation: bounce 1.5s infinite;
-
-}
-
-@keyframes bounce {
-
-  20%,
-  50%,
-  80%,
-  to {
-    transform: translateY(0);
-  }
-
-  40% {
-    transform: translateY(-20px);
-  }
-
-  70% {
-    transform: translateY(-12px);
-  }
-
-  90% {
-    transform: translateY(-4px);
   }
 }
 
