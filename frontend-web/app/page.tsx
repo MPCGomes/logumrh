@@ -10,6 +10,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FaCheckCircle } from "react-icons/fa";
 import Image from 'next/image'
 import ButtonSecondary from '@/components/ButtonSecondary/ButtonSecondary';
+import CTACard from '@/components/CTACard/CTACard';
 
 const Home = () => {
   return (
@@ -43,6 +44,7 @@ const Home = () => {
         </div>
       </header>
 
+      {/* Vagas  */}
       <section
         id='recentVacancies'
         className={styles.vacancies}
@@ -106,6 +108,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Qualidades  */}
       <section className={styles.ourQualities}>
         <div className='container paddingSection'>
           <img
@@ -119,23 +122,23 @@ const Home = () => {
             </div>
             <ul className={styles.qualityList}>
               <li className={styles.listItem}>
-                <FaCheckCircle className={styles.listIcon}/>
+                <FaCheckCircle className={styles.listIcon} />
                 Humanização
               </li>
               <li className={styles.listItem}>
-                <FaCheckCircle className={styles.listIcon}/>
+                <FaCheckCircle className={styles.listIcon} />
                 Tecnologia
               </li>
               <li className={styles.listItem}>
-                <FaCheckCircle className={styles.listIcon}/>
+                <FaCheckCircle className={styles.listIcon} />
                 Especialização
               </li>
               <li className={styles.listItem}>
-                <FaCheckCircle className={styles.listIcon}/>
+                <FaCheckCircle className={styles.listIcon} />
                 Mercado Promissor
               </li>
               <li className={styles.listItem}>
-                <FaCheckCircle className={styles.listIcon}/>
+                <FaCheckCircle className={styles.listIcon} />
                 Serviço Personalizado
               </li>
             </ul>
@@ -143,7 +146,63 @@ const Home = () => {
         </div>
       </section>
 
+      {/* CTA Cards  */}
+      <section className={styles.ctaCards}>
+        <div className='container paddingSection'>
+          <div className='sectionTitle'>
+            <h4 className='subtitle darkColor'>
+              Descubra o serviço que atende às suas necessidades
+            </h4>
+            <h3 className='title darkColor'>
+              Nossas Áreas de Atuação
+            </h3>
+          </div>
+          <div className={styles.cardsContainer}>
+            <CTACard
+              title={'Quero me cadastrar'}
+              description={'Quero me cadastrar'}
+              link={''}
+              button={'Sou empresa'}
+              background={'#3a2640'}
+              color={'#3a2640'}
+            />
+            <CTACard
+              title={'Quero me cadastrar'}
+              description={'Quero me cadastrar'}
+              link={''}
+              button={'Sou candidato'}
+              background={'#7e053a'}
+              color={'#7e053a'}
+            />
+          </div>
+
+        </div>
+      </section>
+
       <CTA />
+
+      <section className={styles.about}>
+        <div className='container paddingSection'>
+          <div className={styles.aboutGroup}>
+            <div className={styles.aboutTitle}>
+              <h4 className='subtitle darkColor'>
+                Sobre nós
+              </h4>
+              <h3 className='title darkColor'>
+                Consultoria em RH: Tecnologia e Humanização
+              </h3>
+            </div>
+            <p>
+              A Logum é uma consultoria de Recursos Humanos que integra tecnologia e humanização em seus processos. Especializada em Recrutamento e Seleção, conecta talentos às necessidades dos clientes com soluções personalizadas para fortalecer equipes e impulsionar o desenvolvimento organizacional.
+            </p>
+          </div>
+          <img
+            src="./quality-image.jpg"
+            alt=""
+          />
+        </div>
+      </section>
+
       <section className={styles.contact}>
         <div className='container paddingSection'>
           <h3 className='subtitle'>

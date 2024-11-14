@@ -152,9 +152,74 @@
   color: var(--accent-color);
 }
 
+//Cta Cards
+.cardsContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+
+//Sobre Nós
+//Qualidades
+.about {
+  background: var(--background-color);
+
+  div:first-child {
+    display: grid;
+    place-items: center;
+    gap: 40px;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      place-items: inherit;
+      align-items: center;
+    }
+
+    img {
+      max-width: 700px;
+      width: 100%;
+      border-radius: 18px;
+      display: none;
+
+      @media (min-width: 1024px) {
+        display: block;
+      }
+    }
+  }
+}
+
+.aboutGroup{
+  display: flex !important;
+  gap: 20px !important;
+  flex-direction: column;
+
+  p{
+    font-size: variables.$fs-500;
+  }
+}
+
+.aboutTitle {
+  display: flex !important;
+  flex-direction: column;
+  gap: 0px !important;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+  align-items: start !important;
+
+  h4,
+  h3 {
+    text-align: left !important;
+  }
+}
+
 //Contato
 .contact {
-  background-color: var(--background-color);
+  background-color: var(--light-yellow);
 }
 
 .contactContainer {
