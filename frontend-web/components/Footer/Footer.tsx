@@ -45,22 +45,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className={styles.linkGroup}>
-            <p className={styles.title}>
-              Empresa
-            </p>
-            <ul className={styles.itemGroup}>
-              <li className={styles.item}>
-                Sobre a Logum RH
-              </li>
-              <li className={styles.item}>
-                Sobre a Logum RH
-              </li>
-              <li className={styles.item}>
-                Sobre a Logum RH
-              </li>
-            </ul>
-          </div>
         </div>
         <div className={styles.copyright}>
           <p>™ & © 2024 Niloware. Todos os direitos reservados.</p>

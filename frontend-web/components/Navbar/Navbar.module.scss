@@ -1,5 +1,9 @@
 @use '../../styles/variables' as *;
 
+.navbar{
+  background: var(--background-color);
+}
+
 .navbar div{
   display: flex;
   justify-content: space-between;
