@@ -51,13 +51,13 @@
     font-weight: normal;
   }
 
-  .btnGroup{
+  .btnGroup {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 
-    
+
 
     @media (min-width: 1024px) {
       flex-direction: row;
@@ -65,15 +65,16 @@
   }
 }
 
-.vacancies{
+//Vagas Recentes 
+.vacancies {
   background: var(--primary-color);
 }
 
-.vancacyButton p{
+.vancacyButton p {
   text-align: center;
   margin-top: 50px;
-  
-  button{
+
+  button {
     border: 2px solid var(--background-color);
   }
 }
@@ -83,19 +84,80 @@
   place-items: center;
   gap: 20px;
 
-  div{
+  div {
     background: var(--background-color);
   }
+
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.contact{
+//Qualidades
+.ourQualities {
+  background: var(--light-yellow);
+
+  div:first-child {
+    display: grid;
+    place-items: center;
+    gap: 40px;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      place-items: inherit;
+      align-items: center;
+    }
+
+    img {
+      max-width: 700px;
+      width: 100%;
+      border-radius: 18px;
+      display: none;
+
+      @media (min-width: 1024px) {
+        display: block;
+      }
+    }
+  }
+}
+
+.qualityTitle {
+  display: flex !important;
+  flex-direction: column;
+  gap: 0px !important;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+  align-items: start !important;
+
+  h4,
+  h3 {
+    text-align: left !important;
+  }
+}
+
+.qualityList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listItem {
+  font-size: variables.$fs-400;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.listIcon {
+  color: var(--accent-color);
+}
+
+//Contato
+.contact {
   background-color: var(--background-color);
 }
 
-.contactContainer{
+.contactContainer {
   display: grid;
   place-items: center;
   gap: 40px;

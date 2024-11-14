@@ -7,7 +7,7 @@ import CTA from '@/components/CTA/CTA';
 import { IoMail } from "react-icons/io5";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa6";
-import { GoArrowDown } from "react-icons/go";
+import { FaCheckCircle } from "react-icons/fa";
 import Image from 'next/image'
 import ButtonSecondary from '@/components/ButtonSecondary/ButtonSecondary';
 
@@ -42,6 +42,7 @@ const Home = () => {
           </div>
         </div>
       </header>
+
       <section
         id='recentVacancies'
         className={styles.vacancies}
@@ -104,6 +105,44 @@ const Home = () => {
           </Link>
         </div>
       </section>
+
+      <section className={styles.ourQualities}>
+        <div className='container paddingSection'>
+          <img
+            src="./quality-image.jpg"
+            alt=""
+          />
+          <div className={styles.qualityGroup}>
+            <div className={styles.qualityTitle}>
+              <h4 className='subtitle darkColor'>Por que a Logum?</h4>
+              <h3 className='title darkColor'>Nossos Diferenciais</h3>
+            </div>
+            <ul className={styles.qualityList}>
+              <li className={styles.listItem}>
+                <FaCheckCircle className={styles.listIcon}/>
+                Humanização
+              </li>
+              <li className={styles.listItem}>
+                <FaCheckCircle className={styles.listIcon}/>
+                Tecnologia
+              </li>
+              <li className={styles.listItem}>
+                <FaCheckCircle className={styles.listIcon}/>
+                Especialização
+              </li>
+              <li className={styles.listItem}>
+                <FaCheckCircle className={styles.listIcon}/>
+                Mercado Promissor
+              </li>
+              <li className={styles.listItem}>
+                <FaCheckCircle className={styles.listIcon}/>
+                Serviço Personalizado
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <CTA />
       <section className={styles.contact}>
         <div className='container paddingSection'>
