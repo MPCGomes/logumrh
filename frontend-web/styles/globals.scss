@@ -14,7 +14,8 @@ html{
 }
 
 :root {
-  --background-color: #fff6f0;
+  --background-color: #fafafa;
+  --light-yellow: #fff6f0;
   --text-color: #3a2640;
   --primary-color: #7e053a;
   --secondary-color: #b74230;
@@ -42,9 +43,28 @@ html{
   padding-bottom: 100px;
 }
 
-.subtitle{
-  color: var(--text-color);
-  font-size: variables.$fs-800;
+.sectionTitle{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   margin-bottom: 50px;
+}
+
+.title{
+  font-size: variables.$fs-800;
   text-align: center;
+  font-family: variables.$ff-primary;
+}
+
+.subtitle{
+  text-align: center;
+  font-size: variables.$fs-500;
+}
+
+.lightColor{
+  color: var(--background-color);
+}
+
+.darkColor{
+  color: var(--text-color);
 }
