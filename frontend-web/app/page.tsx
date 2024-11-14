@@ -34,8 +34,8 @@ const Home = () => {
                 />
               </div>
             </div>
-            <Image
-              src="./hero-img.svg"
+            <img
+              src="./hero-img.png"
               alt=""
               height={470}
               width={470}
@@ -197,7 +197,7 @@ const Home = () => {
             </p>
           </div>
           <img
-            src="./quality-image.jpg"
+            src="./about-image.jpg"
             alt=""
           />
         </div>
@@ -205,9 +205,10 @@ const Home = () => {
 
       <section className={styles.contact}>
         <div className='container paddingSection'>
-          <h3 className='subtitle'>
-            Entre em Contato
-          </h3>
+          <div className='sectionTitle'>
+            <h4 className='subtitle darkColor'> Deixe uma mensagem</h4>
+            <h3 className='title darkColor'>Contato</h3>
+          </div>
           <div className={styles.contactContainer}>
             <ContactCard
               icon={<IoMail />}

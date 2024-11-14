@@ -122,16 +122,25 @@
 }
 
 .qualityTitle {
-  display: flex !important;
+  display: flex;
   flex-direction: column;
   gap: 0px !important;
   margin-bottom: 20px;
-  justify-content: flex-start;
   align-items: start !important;
 
-  h4,
-  h3 {
-    text-align: left !important;
+  h4, h3{
+    text-align: center !important;
+  }
+  
+  @media (min-width: 1024px) {
+  display: flex !important;
+  justify-content: flex-start;
+    
+    h4,
+    h3 {
+      text-align: left !important;
+    }
+
   }
 }
 
@@ -153,19 +162,20 @@
 }
 
 //Cta Cards
-.cardsContainer{
+.cardsContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 20px;
+  align-items: center;
+
 
   @media (min-width: 1024px) {
+    justify-content: space-between;
     flex-direction: row;
   }
 }
 
 //Sobre Nós
-//Qualidades
 .about {
   background: var(--background-color);
 
@@ -193,27 +203,36 @@
   }
 }
 
-.aboutGroup{
+.aboutGroup {
   display: flex !important;
   gap: 20px !important;
   flex-direction: column;
 
-  p{
+  p {
     font-size: variables.$fs-500;
   }
 }
 
 .aboutTitle {
-  display: flex !important;
+  display: flex;
   flex-direction: column;
   gap: 0px !important;
   margin-bottom: 20px;
-  justify-content: flex-start;
   align-items: start !important;
 
-  h4,
-  h3 {
-    text-align: left !important;
+  h4, h3{
+    text-align: center !important;
+  }
+  
+  @media (min-width: 1024px) {
+  display: flex !important;
+  justify-content: flex-start;
+    
+    h4,
+    h3 {
+      text-align: left !important;
+    }
+
   }
 }
 
