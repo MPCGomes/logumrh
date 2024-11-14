@@ -47,7 +47,10 @@ const Home = () => {
         className={styles.vacancies}
       >
         <div className='container paddingSection'>
-          <h3 className='subtitle'>Últimas Vagas</h3>
+          <div className='sectionTitle'>
+            <h4 className='subtitle lightColor'> Nossas vagas</h4>
+            <h3 className='title lightColor'>Últimas Vagas</h3>
+          </div>
           <div className={styles.recentVacancies}>
             <VacancyCard
               id={1}

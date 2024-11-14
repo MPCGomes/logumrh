@@ -41,6 +41,9 @@
 
   h1 {
     font-size: variables.$fs-900;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 69px;
   }
 
   h2 {
@@ -62,9 +65,17 @@
   }
 }
 
+.vacancies{
+  background: var(--primary-color);
+}
+
 .vancacyButton p{
   text-align: center;
   margin-top: 50px;
+  
+  button{
+    border: 2px solid var(--background-color);
+  }
 }
 
 .recentVacancies {
@@ -72,6 +83,9 @@
   place-items: center;
   gap: 20px;
 
+  div{
+    background: var(--background-color);
+  }
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
   }
