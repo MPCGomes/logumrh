@@ -10,27 +10,27 @@
   align-items: center;
   padding: 8px 0;
 
-  img{
+  img {
     width: 200px;
   }
 }
 
-.linksContainer{
+.linksContainer {
   display: flex;
   gap: 15px;
 
-  .linkItem{
+  .linkItem {
     color: var(--text-color);
   }
 }
 
-.buttonContainer{
+.buttonContainer {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.menu{
+.menu {
   background-color: transparent;
   border: none;
   font-size: 2.5rem;
