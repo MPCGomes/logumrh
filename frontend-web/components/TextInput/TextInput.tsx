@@ -9,6 +9,7 @@ interface InputProps {
 }
 
 const CustomTextField = styled(TextField)({
+  backgroundColor: '#fff',
   width: '100%',
   '& .MuiOutlinedInput-root': { 
     borderRadius: '10px',

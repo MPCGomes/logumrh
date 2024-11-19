@@ -2,7 +2,8 @@
 
 .vacancyCard {
   max-width: 450px;
-  box-shadow: 0px 7px 20px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   color: var(--text-color);
@@ -14,8 +15,19 @@
 
 .buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 40px;
+  align-items: center;
   margin-top: 10px;
+  font-size: $fs-300;
+
+  button {
+    font-size: $fs-300;
+  }
+
+  .link{
+    color: var(--primary-color);
+  }
 }
 
 .idGroup {
@@ -42,8 +54,6 @@
 }
 
 .vacancy {
-  text-transform: uppercase;
-
   .title {
     font-weight: bold;
     font-size: $fs-500;
@@ -60,7 +70,6 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  text-transform: uppercase;
   font-size: $fs-300;
 
   p {
@@ -75,7 +84,6 @@
 }
 
 .requirements {
-  text-transform: uppercase;
   font-size: $fs-300;
 
   .title {
@@ -87,7 +95,6 @@
   font-size: $fs-300;
 
   .title {
-    text-transform: uppercase;
     font-weight: bold;
   }
 }

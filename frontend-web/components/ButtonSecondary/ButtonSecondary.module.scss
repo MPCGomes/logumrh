@@ -9,10 +9,4 @@
   font-weight: normal;
   padding: 12px 20px;
   cursor: pointer;
-
-  &:hover{
-    background-color: var(--primary-color);
-    color: var(--background-color);
-    transition: all .3s ease-in-out;
-  }
 }
