@@ -8,7 +8,7 @@ const StyledSearchInput = styled(InputBase)({
   width: '80%',
   borderRadius: 50,
   outline: '1px solid #3a264040',
-  backgroundColor: 'transparent',
+  backgroundColor: '#fff',
   padding: '12px 20px',
   color: 'white',
   '& .MuiInputBase-input': {

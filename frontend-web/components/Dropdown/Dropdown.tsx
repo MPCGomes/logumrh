@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles';
 const StyledDropdownSelect = styled(Select)({
   borderRadius: 50,
   outline: '1px solid #3a264040',
-  backgroundColor: 'transparent',
+  backgroundColor: '#fff',
   padding: '1px 20px',
   color: '#3a264070',
   

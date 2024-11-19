@@ -47,7 +47,7 @@ const Home = () => {
             <a href='#recentVacancies'>
               Você é um <strong>candidato</strong>? confira abaixo as nossas <strong>Últimas vagas</strong>!
             </a>
-            <p>
+            <p className={styles.bounce}>
               <GoArrowDown />
             </p>
           </div>
