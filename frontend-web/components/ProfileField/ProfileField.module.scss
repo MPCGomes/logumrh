@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 24px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f6f6f6;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.label {
+  width: 230px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.value {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+}
