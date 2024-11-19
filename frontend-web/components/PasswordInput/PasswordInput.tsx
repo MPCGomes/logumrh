@@ -12,6 +12,7 @@ interface PasswordInputProps {
 
 const CustomFormControl = styled(FormControl)({
   width: '100%',
+
 });
 
 const CustomInputLabel = styled(InputLabel)({

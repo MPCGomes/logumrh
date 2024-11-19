@@ -4,8 +4,8 @@ import { HiOutlineShare } from "react-icons/hi";
 import { FaBriefcase, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { SiCashapp } from "react-icons/si";
-import ButtonSecondary from '../ButtonSecondary/ButtonSecondary';
 import ButtonPrimary from '../ButtonPrimary/ButtonPrimary';
+import Link from 'next/link';
 
 interface VacancyCardProps {
   id: number;
@@ -21,7 +21,7 @@ interface VacancyCardProps {
   activities: string;
 }
 
-const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, modality, period, salary, scale, location, requirements, activities }) => {
+const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, modality, period, salary, scale, location, requirements, activities}) => {
   return (
     <div className={styles.vacancyCard}>
       <div className={styles.idGroup}>
@@ -80,8 +80,13 @@ const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, mo
         <p>{activities}</p>
       </div>
       <div className={styles.buttons}>
-        <ButtonSecondary text='VER MAIS' />
-        <ButtonPrimary text='APLICAR' />
+        <Link 
+        className={styles.link}
+        href={'vacancy'}
+        >
+          Ver mais
+        </Link>
+        <ButtonPrimary text='Candidatar-se' />
       </div>
 
 

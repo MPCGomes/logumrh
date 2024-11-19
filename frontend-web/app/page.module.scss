@@ -4,7 +4,7 @@
   background-color: var(--background-color);
   text-align: center;
   color: var(--text-color);
-  padding: 100px 0 200px;
+  padding: 100px 0 150px;
 
   background-image: url('../public/header-waves.svg');
   background-repeat: no-repeat;
@@ -29,6 +29,9 @@
 
     @media (min-width: 1024px) {
       display: block;
+      max-width: 500px;
+      height: auto;
+      width: 100%;
     }
   }
 
@@ -46,9 +49,9 @@
     line-height: 69px;
   }
 
-  h2 {
+  p {
     font-size: variables.$fs-600;
-    font-weight: normal;
+    font-weight: 600;
   }
 
   .btnGroup {
@@ -57,11 +60,26 @@
     align-items: center;
     gap: 20px;
 
-
-
     @media (min-width: 1024px) {
       flex-direction: row;
     }
+  }
+}
+
+.lastVacancies {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 100px 0 0;
+
+  a {
+    font-size: variables.$fs-500;
+    color: var(--text-color);
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 2.5rem;
+    color: var(--text-color);
   }
 }
 
@@ -76,6 +94,8 @@
 
   button {
     border: 2px solid var(--background-color);
+    color: var(--primary-color);
+    background-color: #fff;
   }
 }
 
@@ -93,9 +113,26 @@
   }
 }
 
+//Serviços
+.services{
+  background: var(--background-color);
+}
+
+.servicesCards{
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    gap: 30px;
+  }
+}
+
 //Qualidades
-.ourQualities {
-  background: var(--light-yellow);
+.qualities {
+  background: var(--background-color);
 
   div:first-child {
     display: grid;
@@ -128,14 +165,15 @@
   margin-bottom: 20px;
   align-items: start !important;
 
-  h4, h3{
+  h4,
+  h3 {
     text-align: center !important;
   }
-  
+
   @media (min-width: 1024px) {
-  display: flex !important;
-  justify-content: flex-start;
-    
+    display: flex !important;
+    justify-content: flex-start;
+
     h4,
     h3 {
       text-align: left !important;
@@ -148,6 +186,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  color: var(--text-color);
 }
 
 .listItem {
@@ -161,23 +200,9 @@
   color: var(--accent-color);
 }
 
-//Cta Cards
-.cardsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-
-
-  @media (min-width: 1024px) {
-    justify-content: space-between;
-    flex-direction: row;
-  }
-}
-
 //Sobre Nós
 .about {
-  background: var(--background-color);
+  background: var(--light-yellow);
 
   div:first-child {
     display: grid;
@@ -209,7 +234,7 @@
   flex-direction: column;
 
   p {
-    font-size: variables.$fs-500;
+    font-size: variables.$fs-400;
   }
 }
 
@@ -220,14 +245,15 @@
   margin-bottom: 20px;
   align-items: start !important;
 
-  h4, h3{
+  h4,
+  h3 {
     text-align: center !important;
   }
-  
+
   @media (min-width: 1024px) {
-  display: flex !important;
-  justify-content: flex-start;
-    
+    display: flex !important;
+    justify-content: flex-start;
+
     h4,
     h3 {
       text-align: left !important;
@@ -248,5 +274,28 @@
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+//bounce animation
+.bounce {
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  20%,
+  50%,
+  80%,
+  to {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  70% {
+    transform: translateY(-12px);
+  }
+  90% {
+    transform: translateY(-4px);
   }
 }

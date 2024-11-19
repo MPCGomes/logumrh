@@ -4,7 +4,7 @@ import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 
 export const metadata = {
-  title: "Your App Title",
+  title: "Logum RH",
   link: [
     {
       rel: "stylesheet",
