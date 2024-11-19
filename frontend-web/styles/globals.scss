@@ -9,8 +9,12 @@
   list-style: none;
 }
 
-html{
+html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
 }
 
 :root {
@@ -20,9 +24,10 @@ html{
   --primary-color: #7e053a;
   --secondary-color: #b74230;
   --accent-color: #fa8f0d;
+  --border-color: #e1e3e1;
 }
 
-.container{
+.container {
   max-width: 640px;
   width: 100%;
   margin-left: auto;
@@ -38,33 +43,33 @@ html{
   }
 }
 
-.paddingSection{
+.paddingSection {
   padding-top: 100px;
   padding-bottom: 100px;
 }
 
-.sectionTitle{
+.sectionTitle {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-bottom: 50px;
 }
 
-.title{
+.title {
   font-size: variables.$fs-800;
   text-align: center;
   font-family: variables.$ff-primary;
 }
 
-.subtitle{
+.subtitle {
   text-align: center;
   font-size: variables.$fs-500;
 }
 
-.lightColor{
+.lightColor {
   color: var(--background-color);
 }
 
-.darkColor{
+.darkColor {
   color: var(--text-color);
 }
