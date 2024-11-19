@@ -1,0 +1,54 @@
+@import '../../styles/variables';
+
+.card {
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 18px;
+  padding: 50px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    max-width: 600px;
+    width: 100%;
+  }
+}
+
+.icon {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d9d9d9;
+  color: var(--primary-color);
+  border-radius: 100%;
+  font-size: 2.5rem;
+  margin-top: -95px;
+  background: #fff;
+
+  @media (min-width: 1024px) {
+    width: 140px;
+    height: 140px;
+    font-size: 4rem;
+    margin-top: -120px;
+  }
+}
+
+.title {
+  font-size: $fs-700;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.description {
+  font-size: $fs-400;
+  text-align: center;
+  color: var(--text-color);
+  line-height: 25px;
+}

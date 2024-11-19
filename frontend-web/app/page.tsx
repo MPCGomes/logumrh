@@ -5,12 +5,12 @@ import VacancyCard from '@/components/VacancyCard/VacancyCard';
 import Link from 'next/link';
 import CTA from '@/components/CTA/CTA';
 import { IoMail } from "react-icons/io5";
-import { IoLogoWhatsapp } from "react-icons/io";
+import { IoLogoWhatsapp, IoIosPeople } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaCheckCircle } from "react-icons/fa";
-import Image from 'next/image'
+import { GoArrowDown } from "react-icons/go";
 import ButtonSecondary from '@/components/ButtonSecondary/ButtonSecondary';
-import CTACard from '@/components/CTACard/CTACard';
+import ServiceCard from '@/components/ServiceCard/ServiceCard';
 
 const Home = () => {
   return (
@@ -22,9 +22,11 @@ const Home = () => {
               <h1>
                 Conectando Talentos ao Seu Sucesso
               </h1>
-              <h2>
-                A melhor solução em recrutamento e seleção para sua empresa
-              </h2>
+              <p>
+                Somos a sua melhor solução para o recrutamento e seleção.
+                Quer poupar tempo e encontrar o candidato certo?
+                Deixe isso com a gente!
+              </p>
               <div className={styles.btnGroup}>
                 <ButtonPrimary
                   text="Oferecer vagas"
@@ -41,6 +43,14 @@ const Home = () => {
               width={470}
             />
           </div>
+          <div className={styles.lastVacancies}>
+            <a href='#recentVacancies'>
+              Você é um <strong>candidato</strong>? confira abaixo as nossas <strong>Últimas vagas</strong>!
+            </a>
+            <p>
+              <GoArrowDown />
+            </p>
+          </div>
         </div>
       </header>
 
@@ -51,8 +61,8 @@ const Home = () => {
       >
         <div className='container paddingSection'>
           <div className='sectionTitle'>
-            <h4 className='subtitle lightColor'> Nossas vagas</h4>
-            <h3 className='title lightColor'>Últimas Vagas</h3>
+            <h4 className='subtitle lightText'> Nossas vagas</h4>
+            <h3 className='title lightText'>Últimas Vagas</h3>
           </div>
           <div className={styles.recentVacancies}>
             <VacancyCard
@@ -108,8 +118,64 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Sobre Nós */}
+      <section className={styles.about}>
+        <div className='container paddingSection'>
+          <div className={styles.aboutGroup}>
+            <div className={styles.aboutTitle}>
+              <h4 className='subtitle darkText'>
+                Sobre nós
+              </h4>
+              <h3 className='title darkText'>
+                Consultoria em RH: Tecnologia e Humanização
+              </h3>
+            </div>
+            <p>
+              A Logum é uma consultoria de Recursos Humanos que integra tecnologia e humanização em seus processos. Especializada em Recrutamento e Seleção, conecta talentos às necessidades dos clientes com soluções personalizadas para fortalecer equipes e impulsionar o desenvolvimento organizacional.
+            </p>
+          </div>
+          <img
+            src="./about-image.jpg"
+            alt=""
+          />
+        </div>
+      </section>
+
+      {/* Serviços */}
+      <section className={styles.services}>
+        <div className='container paddingSection'>
+          <div className='sectionTitle'>
+            <h4 className='subtitle darkText'>
+              Descubra o serviço que atende às suas necessidades
+            </h4>
+            <h3 className='title darkText'>
+              Nossos Serviços
+            </h3>
+          </div>
+          <div className={styles.servicesCards}>
+            <ServiceCard
+              icon={<IoIosPeople />}
+              title={'Recrutamento e Seleção'}
+              description={'Alinhamento de perfil, captação e triagem de currículos, testes técnicos, testes comportamentais, entrevistas por competências, relatórios personalizados.'}
+            />
+            <ServiceCard
+              icon={<IoIosPeople />}
+              title={'Descrição de Cargos'}
+              description={'Elaboração da documentação formal de Cargos e Salários, levantamento das atribuições de um cargo, mapeamento de competências (Conhecimentos, Habilidades e Atitudes), sumarização das informações financeiras de cargos.'}
+            />
+            <ServiceCard
+              icon={<IoIosPeople />}
+              title={'Indicadores de RH'}
+              description={'Mapeamento de dados numéricos relacionados ao desempenho dos processos de gestão e resultados dos processos seletivos da empresa.'}
+            />
+          </div>
+        </div>
+      </section>
+
+      <CTA />
+
       {/* Qualidades  */}
-      <section className={styles.ourQualities}>
+      <section className={styles.qualities}>
         <div className='container paddingSection'>
           <img
             src="./quality-image.jpg"
@@ -117,8 +183,8 @@ const Home = () => {
           />
           <div className={styles.qualityGroup}>
             <div className={styles.qualityTitle}>
-              <h4 className='subtitle darkColor'>Por que a Logum?</h4>
-              <h3 className='title darkColor'>Nossos Diferenciais</h3>
+              <h4 className='subtitle darkText'>Por que a Logum?</h4>
+              <h3 className='title darkText'>Nossos Diferenciais</h3>
             </div>
             <ul className={styles.qualityList}>
               <li className={styles.listItem}>
@@ -146,68 +212,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Cards  */}
-      <section className={styles.ctaCards}>
-        <div className='container paddingSection'>
-          <div className='sectionTitle'>
-            <h4 className='subtitle darkColor'>
-              Descubra o serviço que atende às suas necessidades
-            </h4>
-            <h3 className='title darkColor'>
-              Nossas Áreas de Atuação
-            </h3>
-          </div>
-          <div className={styles.cardsContainer}>
-            <CTACard
-              title={'Quero me cadastrar'}
-              description={'Quero me cadastrar'}
-              link={''}
-              button={'Sou empresa'}
-              background={'#3a2640'}
-              color={'#3a2640'}
-            />
-            <CTACard
-              title={'Quero me cadastrar'}
-              description={'Quero me cadastrar'}
-              link={''}
-              button={'Sou candidato'}
-              background={'#7e053a'}
-              color={'#7e053a'}
-            />
-          </div>
-
-        </div>
-      </section>
-
-      <CTA />
-
-      <section className={styles.about}>
-        <div className='container paddingSection'>
-          <div className={styles.aboutGroup}>
-            <div className={styles.aboutTitle}>
-              <h4 className='subtitle darkColor'>
-                Sobre nós
-              </h4>
-              <h3 className='title darkColor'>
-                Consultoria em RH: Tecnologia e Humanização
-              </h3>
-            </div>
-            <p>
-              A Logum é uma consultoria de Recursos Humanos que integra tecnologia e humanização em seus processos. Especializada em Recrutamento e Seleção, conecta talentos às necessidades dos clientes com soluções personalizadas para fortalecer equipes e impulsionar o desenvolvimento organizacional.
-            </p>
-          </div>
-          <img
-            src="./about-image.jpg"
-            alt=""
-          />
-        </div>
-      </section>
-
+      {/* Contatos */}
       <section className={styles.contact}>
         <div className='container paddingSection'>
           <div className='sectionTitle'>
-            <h4 className='subtitle darkColor'> Deixe uma mensagem</h4>
-            <h3 className='title darkColor'>Contato</h3>
+            <h4 className='subtitle darkText'> Deixe uma mensagem</h4>
+            <h3 className='title darkText'>Entre em Contato</h3>
           </div>
           <div className={styles.contactContainer}>
             <ContactCard
