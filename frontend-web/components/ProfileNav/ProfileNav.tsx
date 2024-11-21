@@ -12,13 +12,19 @@ const ProfileNav: React.FC<ProfileNavProps> = ({ profileClass, cvClass }) => {
     <div className={styles.navbar}>
       <Link
         href={'profile'}
-        className={`${styles[profileClass]} ${styles.link}`} // Corrigido
+        className=
+        {`${styles[profileClass]} 
+        ${styles.dashLeft} 
+        ${styles.link}`}
       >
         Cadastro
       </Link>
       <Link
         href={'curriculum'}
-        className={`${styles[cvClass]} ${styles.link}`} // Corrigido
+        className=
+        {`${styles[cvClass]} 
+        ${styles.dashRight} 
+        ${styles.link}`}
       >
         Currículos
       </Link>

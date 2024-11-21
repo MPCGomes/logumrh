@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .container {
   display: flex;
   align-items: center;
@@ -28,12 +30,12 @@
 
 .label {
   width: 230px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .value {
   font-family: 'Montserrat', sans-serif;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 18px;
 }

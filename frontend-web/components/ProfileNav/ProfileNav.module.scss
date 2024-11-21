@@ -15,7 +15,7 @@
   }
 }
 
-.active:after {
+.dashLeft:after {
   content: '';
   position: absolute;
   left: 0;
@@ -29,16 +29,24 @@
   }
 }
 
-.inactive:after {
+.dashRight:after {
   content: '';
   position: absolute;
   left: 0;
   bottom: -10px;
-  border: 2px solid #D9D9D9;
+  border: 2px solid var(--primary-color);
   border-radius: 0 4px 4px 0;
   width: 100%;
 
   @media (min-width:641px) {
     width: 100%;
   }
+}
+
+.active:after {
+  border: 2px solid var(--primary-color);
+}
+
+.inactive:after {
+  border: 2px solid #D9D9D9;
 }
