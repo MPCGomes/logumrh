@@ -2,22 +2,3 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-.section {
-  display: flex;
-  flex-direction: column;
-  padding: 24px 0px 0px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  gap: 24px;
-  color: var(--text-color);
-  background-color: #fff;
-  
-  h2 {
-    font-weight: 600;
-    padding-left: 24px;
-    font-size: 22px;
-    color: var(--text-color);
-  }
-}
