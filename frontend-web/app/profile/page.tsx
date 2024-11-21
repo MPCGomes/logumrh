@@ -1,6 +1,7 @@
 import React from 'react';
 import ProfileSection from '@/components/ProfileSection/ProfileSection';
 import styles from './page.module.scss';
+import ProfilePicture from '@/components/ProfilePicture/ProfilePicture';
 
 interface Field {
   label: string;
@@ -22,7 +23,7 @@ const profileData: Section[] = [
       },
       {
         label: 'Nome Social',
-        value: ''
+        value: 'Nenhum'
       },
       {
         label: 'Data de Nascimento',
@@ -77,30 +78,54 @@ const profileData: Section[] = [
     ],
   },
   {
-    title: 'Informações Básicas',
+    title: 'Endereço',
     fields: [
       {
-        label: 'Texto',
-        value: 'Texto'
-      }
-    ],
-  },
-  {
-    title: 'Informações Básicas',
-    fields: [
+        label: 'País',
+        value: 'Brasil'
+      },
       {
-        label: 'Texto',
-        value: 'Texto'
+        label: 'CEP',
+        value: '123456-789'
+      },
+      {
+        label: 'Estado',
+        value: 'Estado'
+      },
+      {
+        label: 'Cidade',
+        value: 'Cidade'
+      },
+      {
+        label: 'Bairro',
+        value: 'Bairro'
+      },
+      {
+        label: 'Rua/Avenida',
+        value: 'Rua/Avenida'
+      },
+      {
+        label: 'Número',
+        value: '000'
+      },
+      {
+        label: 'Complemento',
+        value: 'Complemento'
       }
     ],
   }
 ]
 
 const Profile: React.FC = () => (
-  <div className="container paddingSection">
+  <div className="container">
+    <ProfilePicture name={"Maria Júlia"} />
     <div className={styles.sections}>
       {profileData.map((section, index) => (
-        <ProfileSection key={index} title={section.title} fields={section.fields} />
+        <ProfileSection
+          key={index}
+          title={section.title}
+          fields={section.fields}
+        />
       ))}
     </div>
   </div>
