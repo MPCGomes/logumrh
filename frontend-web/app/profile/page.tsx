@@ -1,12 +1,17 @@
 import React from 'react';
 import ProfileField from '@/components/ProfileField/ProfileField';
 import styles from './page.module.scss';
+import ProfileNav from '@/components/ProfileNav/ProfileNav';
 
 
 const Profile: React.FC = () => {
   return (
     <div className="container paddingSection">
       <div className={styles.sections}>
+        <ProfileNav
+          profileClass={'active'}
+          cvClass={'inactive'}
+        />
         <div className={styles.section}>
           <h2>
             Informações Básicas
