@@ -3,11 +3,13 @@ import { FaPlus } from "react-icons/fa6";
 import styles from './page.module.scss';
 import ProfileNav from '@/components/ProfileNav/ProfileNav';
 import CurriculumCard from '@/components/CurriculumCard/CurriculumCard';
+import ProfilePicture from '@/components/ProfilePicture/ProfilePicture';
 
 const Profile: React.FC = () => {
   return (
     <section className="container paddingSection">
       <div className={styles.sections}>
+        <ProfilePicture name={"Maria Júlia"} />
         <ProfileNav
           profileClass={'inactive'}
           cvClass={'active'}
@@ -23,24 +25,24 @@ const Profile: React.FC = () => {
             </button>
             <CurriculumCard
               title={'Título'}
-              date={'01/01/2024'} 
-              curriculumImage={'https://cdn-images.livecareer.com.br/pages/curriculum_ou_curriculo_lc_br_cta_2.jpg'}            
-              />
-              <CurriculumCard
+              date={'01/01/2024'}
+              curriculumImage={'https://cdn-images.livecareer.com.br/pages/curriculum_ou_curriculo_lc_br_cta_2.jpg'}
+            />
+            <CurriculumCard
               title={'Título'}
-              date={'01/01/2024'} 
-              curriculumImage={'https://cdn-images.livecareer.com.br/pages/curriculum_ou_curriculo_lc_br_cta_2.jpg'}            
-              />
-              <CurriculumCard
+              date={'01/01/2024'}
+              curriculumImage={'https://cdn-images.livecareer.com.br/pages/curriculum_ou_curriculo_lc_br_cta_2.jpg'}
+            />
+            <CurriculumCard
               title={'Título'}
-              date={'01/01/2024'} 
-              curriculumImage={'https://cdn-images.livecareer.com.br/pages/curriculum_ou_curriculo_lc_br_cta_2.jpg'}            
-              />
-              <CurriculumCard
+              date={'01/01/2024'}
+              curriculumImage={'https://cdn-images.livecareer.com.br/pages/curriculum_ou_curriculo_lc_br_cta_2.jpg'}
+            />
+            <CurriculumCard
               title={'Título'}
-              date={'01/01/2024'} 
-              curriculumImage={'https://cdn-images.livecareer.com.br/pages/curriculum_ou_curriculo_lc_br_cta_2.jpg'}            
-              />
+              date={'01/01/2024'}
+              curriculumImage={'https://cdn-images.livecareer.com.br/pages/curriculum_ou_curriculo_lc_br_cta_2.jpg'}
+            />
           </div>
         </div>
       </div>

@@ -113,7 +113,7 @@ const profileData: Section[] = [
 ]
 
 const Profile: React.FC = () => (
-  <div className="container">
+  <div className="container paddingSection">
     <ProfilePicture name={"Maria Júlia"} />
     <ProfileNav
       profileClass={'active'}
