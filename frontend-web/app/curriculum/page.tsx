@@ -6,7 +6,7 @@ import CurriculumCard from '@/components/CurriculumCard/CurriculumCard';
 
 const Profile: React.FC = () => {
   return (
-    <div className="container paddingSection">
+    <section className="container paddingSection">
       <div className={styles.sections}>
         <ProfileNav
           profileClass={'inactive'}
@@ -44,7 +44,7 @@ const Profile: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

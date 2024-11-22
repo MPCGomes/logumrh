@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './Footer.module.scss';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -15,35 +16,50 @@ const Footer = () => {
           />
           <div className={styles.linkGroup}>
             <p className={styles.title}>
-              Empresa
+              Links Rápidos
             </p>
-            <ul className={styles.itemGroup}>
-              <li className={styles.item}>
-                Sobre a Logum RH
-              </li>
-              <li className={styles.item}>
-                Sobre a Logum RH
-              </li>
-              <li className={styles.item}>
-                Sobre a Logum RH
-              </li>
-            </ul>
+            <div className={styles.itemGroup}>
+              <Link
+                className={styles.item}
+                href={'/'}>
+                Ínicio
+              </Link>
+              <Link
+                className={styles.item}
+                href={'/vacancies'}>
+                Vagas
+              </Link>
+              <Link
+                className={styles.item}
+                href={''}>
+                Sobre nós
+              </Link>
+            </div>
           </div>
           <div className={styles.linkGroup}>
             <p className={styles.title}>
               Empresa
             </p>
-            <ul className={styles.itemGroup}>
-              <li className={styles.item}>
-                Sobre a Logum RH
-              </li>
-              <li className={styles.item}>
-                Sobre a Logum RH
-              </li>
-              <li className={styles.item}>
-                Sobre a Logum RH
-              </li>
-            </ul>
+            <div className={styles.itemGroup}>
+              <Link
+                className={styles.item}
+                target="_blank"
+                href={'#'}>
+                (12) 3456-7890
+              </Link>
+              <Link
+                className={styles.item}
+                target="_blank"
+                href={'#'}>
+                contato@logumrh.com
+              </Link>
+              <Link
+                className={styles.item}
+                target="_blank"
+                href={'https://www.linkedin.com/company/logumrh/about/'}>
+                linkedin.com/LogumRH
+              </Link>
+            </div>
           </div>
         </div>
         <div className={styles.copyright}>

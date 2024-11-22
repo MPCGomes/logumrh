@@ -11,6 +11,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { GoArrowDown } from "react-icons/go";
 import ButtonSecondary from '@/components/ButtonSecondary/ButtonSecondary';
 import ServiceCard from '@/components/ServiceCard/ServiceCard';
+import classNames from 'classnames';
 
 const Home = () => {
   return (
@@ -20,11 +21,12 @@ const Home = () => {
           <div className={styles.headerContainer}>
             <div className={styles.heroContainer}>
               <h1>
-                Conectando Talentos ao Seu Sucesso
+                Humanizando Processos,
+                Alavancando Negócios
               </h1>
               <p>
-                Somos a sua melhor solução para o recrutamento e seleção.
-                Quer poupar tempo e encontrar o candidato certo?
+                Somos a sua melhor solução para recrutamento e seleção. 
+                Quer poupar tempo e encontrar o candidato certo? 
                 Deixe isso com a gente!
               </p>
               <div className={styles.btnGroup}>
@@ -134,41 +136,41 @@ const Home = () => {
               A Logum é uma consultoria de Recursos Humanos que integra tecnologia e humanização em seus processos. Especializada em Recrutamento e Seleção, conecta talentos às necessidades dos clientes com soluções personalizadas para fortalecer equipes e impulsionar o desenvolvimento organizacional.
             </p>
           </div>
-          <img
-            src="./about-image.jpg"
-            alt=""
-          />
+          <div className={styles.imgHoverZoom}>
+            <img
+              src="./about-image.jpg"
+              alt=""
+            />
+          </div>
         </div>
       </section>
 
       {/* Serviços */}
-      <section className={styles.services}>
-        <div className='container paddingSection'>
-          <div className='sectionTitle'>
-            <h4 className='subtitle darkText'>
-              Descubra o serviço que atende às suas necessidades
-            </h4>
-            <h3 className='title darkText'>
-              Nossos Serviços
-            </h3>
-          </div>
-          <div className={styles.servicesCards}>
-            <ServiceCard
-              icon={<IoIosPeople />}
-              title={'Recrutamento e Seleção'}
-              description={'Alinhamento de perfil, captação e triagem de currículos, testes técnicos, testes comportamentais, entrevistas por competências, relatórios personalizados.'}
-            />
-            <ServiceCard
-              icon={<IoIosPeople />}
-              title={'Descrição de Cargos'}
-              description={'Elaboração da documentação formal de Cargos e Salários, levantamento das atribuições de um cargo, mapeamento de competências (Conhecimentos, Habilidades e Atitudes), sumarização das informações financeiras de cargos.'}
-            />
-            <ServiceCard
-              icon={<IoIosPeople />}
-              title={'Indicadores de RH'}
-              description={'Mapeamento de dados numéricos relacionados ao desempenho dos processos de gestão e resultados dos processos seletivos da empresa.'}
-            />
-          </div>
+      <section className='container paddingSection'>
+        <div className='sectionTitle'>
+          <h4 className='subtitle darkText'>
+            Descubra o serviço que atende às suas necessidades
+          </h4>
+          <h3 className='title darkText'>
+            Nossos Serviços
+          </h3>
+        </div>
+        <div className={styles.servicesCards}>
+          <ServiceCard
+            icon={<IoIosPeople />}
+            title={'Recrutamento e Seleção'}
+            description={'Alinhamento de perfil, captação e triagem de currículos, testes técnicos, testes comportamentais, entrevistas por competências, relatórios personalizados.'}
+          />
+          <ServiceCard
+            icon={<IoIosPeople />}
+            title={'Descrição de Cargos'}
+            description={'Elaboração da documentação formal de Cargos e Salários, levantamento das atribuições de um cargo, mapeamento de competências (Conhecimentos, Habilidades e Atitudes), sumarização das informações financeiras de cargos.'}
+          />
+          <ServiceCard
+            icon={<IoIosPeople />}
+            title={'Indicadores de RH'}
+            description={'Mapeamento de dados numéricos relacionados ao desempenho dos processos de gestão e resultados dos processos seletivos da empresa.'}
+          />
         </div>
       </section>
 
@@ -177,10 +179,13 @@ const Home = () => {
       {/* Qualidades  */}
       <section className={styles.qualities}>
         <div className='container paddingSection'>
-          <img
-            src="./quality-image.jpg"
-            alt=""
-          />
+          <span className={styles.imgHoverZoom}>
+            <img
+              src="./quality-image.jpg"
+              alt=""
+            />
+
+          </span>
           <div className={styles.qualityGroup}>
             <div className={styles.qualityTitle}>
               <h4 className='subtitle darkText'>Por que a Logum?</h4>

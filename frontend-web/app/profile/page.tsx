@@ -6,7 +6,7 @@ import ProfileNav from '@/components/ProfileNav/ProfileNav';
 
 const Profile: React.FC = () => {
   return (
-    <div className="container paddingSection">
+    <section className="container paddingSection">
       <div className={styles.sections}>
         <ProfileNav
           profileClass={'active'}
@@ -60,7 +60,7 @@ const Profile: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
