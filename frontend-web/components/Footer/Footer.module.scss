@@ -24,11 +24,17 @@
   gap: 5px;
 }
 
+.item{
+  text-align: start;
+  color: #fff;
+}
+
 .title {
   text-transform: uppercase;
   font-weight: bold;
   font-size: $fs-600;
   margin-bottom: 15px;
+  text-align: start;
 }
 
 .copyright {

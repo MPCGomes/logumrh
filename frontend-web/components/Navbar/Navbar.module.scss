@@ -21,6 +21,11 @@
 
   .linkItem {
     color: var(--text-color);
+    font-weight: 500;
+
+    &:hover{
+      color: var(--primary-color);
+    }
   }
 }
 

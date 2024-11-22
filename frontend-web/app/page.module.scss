@@ -1,7 +1,6 @@
 @use '../styles/variables';
 
 .header {
-  background-color: var(--background-color);
   text-align: center;
   color: var(--text-color);
   padding: 100px 0 150px;
@@ -21,7 +20,7 @@
     display: grid;
     place-items: center;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: 20px;
   }
 
   img {
@@ -34,7 +33,6 @@
       width: 100%;
     }
   }
-
 }
 
 .heroContainer {
@@ -43,14 +41,14 @@
   gap: 40px;
 
   h1 {
-    font-size: variables.$fs-900;
+    font-size: variables.$fs-800;
     text-transform: uppercase;
     font-weight: 800;
-    line-height: 69px;
+    line-height: 53px;
   }
 
   p {
-    font-size: variables.$fs-600;
+    font-size: variables.$fs-500;
     font-weight: 600;
   }
 
@@ -63,6 +61,11 @@
     @media (min-width: 1024px) {
       flex-direction: row;
     }
+  }
+
+  .btnGroup button:hover{
+    transform: translateY(-8px);
+    transition: .3s all ease-in-out;
   }
 }
 
@@ -104,21 +107,13 @@
   place-items: center;
   gap: 20px;
 
-  div {
-    background: var(--background-color);
-  }
-
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 //Serviços
-.services{
-  background: var(--background-color);
-}
-
-.servicesCards{
+.servicesCards {
   margin-top: 110px;
   display: flex;
   flex-direction: column;
@@ -132,7 +127,6 @@
 
 //Qualidades
 .qualities {
-  background: var(--background-color);
 
   div:first-child {
     display: grid;
@@ -143,6 +137,10 @@
       grid-template-columns: repeat(2, 1fr);
       place-items: inherit;
       align-items: center;
+    }
+
+    .imgHoverZoom{
+      width: 100%;
     }
 
     img {
@@ -283,19 +281,39 @@
 }
 
 @keyframes bounce {
+
   20%,
   50%,
   80%,
   to {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-20px);
   }
+
   70% {
     transform: translateY(-12px);
   }
+
   90% {
     transform: translateY(-4px);
   }
+}
+
+//image hover zoom
+.imgHoverZoom {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+/* [2] Transition property for smooth transformation of images */
+.imgHoverZoom img {
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.imgHoverZoom:hover img {
+  transform: scale(1.1);
 }

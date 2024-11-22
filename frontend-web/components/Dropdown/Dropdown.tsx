@@ -7,7 +7,8 @@ const StyledDropdownSelect = styled(Select)({
   borderRadius: 50,
   outline: '1px solid #3a264040',
   backgroundColor: '#fff',
-  padding: '1px 20px',
+  padding: '0px 20px',
+  height: '45px',
   color: '#3a264070',
   
   '& .MuiOutlinedInput-notchedOutline': {

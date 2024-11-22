@@ -8,7 +8,9 @@ import ButtonPrimary from '../ButtonPrimary/ButtonPrimary';
 
 const Navbar = () => {
   return (
-    <nav className={styles.navbar}>
+    <nav 
+    id='navbar'
+    className={styles.navbar}>
       <div className='container'>
         <Link
           href={'/'}>

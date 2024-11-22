@@ -2,6 +2,8 @@ import { ReactNode } from "react";
 import "../styles/globals.scss";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
+import BackToTop from "@/components/BackToTop/BackToTop";
+import WppFloating from "@/components/WppFloating/WppFloating";
 
 export const metadata = {
   title: "Logum RH",
@@ -22,6 +24,8 @@ const Layout = ({ children }: LayoutProps) => {
     <html lang="en">
       <body>
         <Navbar />
+        <BackToTop />
+        <WppFloating />
         {children}
         <Footer />
       </body>

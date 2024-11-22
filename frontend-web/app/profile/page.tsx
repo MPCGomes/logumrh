@@ -4,11 +4,6 @@ import styles from './page.module.scss';
 import ProfilePicture from '@/components/ProfilePicture/ProfilePicture';
 import ProfileNav from '@/components/ProfileNav/ProfileNav';
 
-interface Field {
-  label: string;
-  value: string;
-}
-
 interface Section {
   title: string;
   fields: Field[];
