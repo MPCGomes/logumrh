@@ -5,10 +5,7 @@ import { fileURLToPath } from 'url';
 const nextConfig = {
     sassOptions: {
         includePaths: [path.join(path.dirname(fileURLToPath(import.meta.url)), 'styles')],
-    },
-    webpack: (config) => {
-        process.env.SASS_SUPPRESS_LEGACY_JS_API_DEPRECATION = 'true';
-        return config;
+        silenceDeprecations: ['legacy-js-api']
     },
 };
 
