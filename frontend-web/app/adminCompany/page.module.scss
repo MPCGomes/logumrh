@@ -1,0 +1,30 @@
+@import '../../styles/variables';
+
+.sections {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-color);
+  background-color: #fff;
+  overflow: auto;
+}
+
+.goBack{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 0 0 24px;
+  margin-bottom: 30px;
+  color: var(--text-color);
+
+  p{
+    font-size: $fs-400;
+    font-weight: bold;
+  }
+}
