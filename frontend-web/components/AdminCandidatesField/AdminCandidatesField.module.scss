@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(6, minmax(220px, 1fr));
+  padding: 0 24px;
+  align-items: center;
+  height: 60px;
+  color: var(--text-color);
+
+  p{
+    font-size: $fs-300;
+    font-weight: bold;
+  }
+
+  button{
+    text-align: end;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    
+    .button{
+      color: var(--text-color);
+    }
+  }
+}

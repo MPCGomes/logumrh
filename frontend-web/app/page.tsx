@@ -194,23 +194,19 @@ const Home = () => {
             <ul className={styles.qualityList}>
               <li className={styles.listItem}>
                 <FaCheckCircle className={styles.listIcon} />
-                Humanização
+                Processo Humanizado
               </li>
               <li className={styles.listItem}>
                 <FaCheckCircle className={styles.listIcon} />
-                Tecnologia
+                Serviço Especializado e Personalizado
               </li>
               <li className={styles.listItem}>
                 <FaCheckCircle className={styles.listIcon} />
-                Especialização
+                Cadastro Simplificado
               </li>
               <li className={styles.listItem}>
                 <FaCheckCircle className={styles.listIcon} />
-                Mercado Promissor
-              </li>
-              <li className={styles.listItem}>
-                <FaCheckCircle className={styles.listIcon} />
-                Serviço Personalizado
+                Cadastro de Múltiplos Currículos em PDF
               </li>
             </ul>
           </div>

@@ -28,21 +28,6 @@ const Profile: React.FC = () => {
               date={'01/01/2024'}
               curriculumImage={'https://cdn-images.livecareer.com.br/pages/curriculum_ou_curriculo_lc_br_cta_2.jpg'}
             />
-            <CurriculumCard
-              title={'Título'}
-              date={'01/01/2024'}
-              curriculumImage={'https://cdn-images.livecareer.com.br/pages/curriculum_ou_curriculo_lc_br_cta_2.jpg'}
-            />
-            <CurriculumCard
-              title={'Título'}
-              date={'01/01/2024'}
-              curriculumImage={'https://cdn-images.livecareer.com.br/pages/curriculum_ou_curriculo_lc_br_cta_2.jpg'}
-            />
-            <CurriculumCard
-              title={'Título'}
-              date={'01/01/2024'}
-              curriculumImage={'https://cdn-images.livecareer.com.br/pages/curriculum_ou_curriculo_lc_br_cta_2.jpg'}
-            />
           </div>
         </div>
       </div>

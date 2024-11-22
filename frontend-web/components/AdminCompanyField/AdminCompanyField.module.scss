@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(6, minmax(220px, 1fr));
+  padding: 0 24px;
+  align-items: center;
+  height: 60px;
+  color: var(--text-color);
+
+  &:last-child{
+    border-bottom: none;
+  }
+
+  &:hover{
+    background-color: #f6f6f6;
+  }
+
+  p{
+    font-size: $fs-300;
+  }
+
+  button{
+    text-align: end;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+}

@@ -51,13 +51,13 @@ const Footer = () => {
                 className={styles.item}
                 target="_blank"
                 href={'#'}>
-                contato@logumrh.com
+                logumrh@gmail.com
               </Link>
               <Link
                 className={styles.item}
                 target="_blank"
                 href={'https://www.linkedin.com/company/logumrh/about/'}>
-                linkedin.com/LogumRH
+                linkedin.com/company/logumrh
               </Link>
             </div>
           </div>
