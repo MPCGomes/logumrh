@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+.sections {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-color);
+  background-color: #fff;
+  overflow: auto;
+}
