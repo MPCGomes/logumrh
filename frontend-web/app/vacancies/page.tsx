@@ -18,7 +18,7 @@ const Vacancies: React.FC = () => {
     setCurrentPage(pageFromQuery);
   }, [searchParams]);
 
-  const vacancies = Array.from({ length: 100 }, (_, index) => ({
+  const vacancies = Array.from({ length: 15 }, (_, index) => ({
     id: index + 1,
     vacancy: 'Título',
     firm: 'Empresa',
@@ -29,7 +29,7 @@ const Vacancies: React.FC = () => {
     scale: 'Escala',
     location: 'Rua, Número - Bairro, Cidade - UF',
     requirements: 'Requisitos.',
-    activities: 'Atividades.'
+    activities: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?'
   }));
 
   const itemsPerPage = 9;
