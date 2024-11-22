@@ -224,7 +224,7 @@ const Home = () => {
             <ContactCard
               icon={<IoMail />}
               title={'E-mail'}
-              contact={'logumrh@contato.com.br'}
+              contact={'logumrh@gmail.com.br'}
               link={'#'}
             />
             <ContactCard
