@@ -29,7 +29,8 @@ const Vacancies: React.FC = () => {
     scale: 'Escala',
     location: 'Rua, Número - Bairro, Cidade - UF',
     requirements: 'Requisitos.',
-    activities: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?'
+    activities:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?',
   }));
 
   const itemsPerPage = 9;
@@ -45,33 +46,38 @@ const Vacancies: React.FC = () => {
   };
 
   const dropdownOptions = [
-    ['Option 1A', 'Option 1B', 'Option 1C'],
-    ['Option 2A', 'Option 2B', 'Option 2C'],
-    ['Option 3A', 'Option 3B', 'Option 3C'],
-    ['Option 4A', 'Option 4B', 'Option 4C'],
-    ['Option 5A', 'Option 5B', 'Option 5C']
+    ['Última semana', 'Último mês'],
+    ['Empresa A', 'Empresa B', 'Empresa C'],
+    ['Presencial', 'Híbrido', 'Remoto'],
+    ['Pindamonhangaba', 'Caraguatatuba', 'São Sebastião', 'Ubatuba'],
+    ['Estágio', 'Contrato', 'Trainee', 'Integral', 'Jovem Aprendiz'],
+  ];
+
+  const dropdownPlaceholders = [
+    'Data do Anúncio',
+    'Empresa',
+    'Modalidade',
+    'Localidade',
+    'Tipo'
   ];
 
   return (
     <section className="container paddingSection">
       <div className={styles.centeredElements}>
-        <SearchBar
-          placeholder="Pesquisar vaga..."
-        />
+        <SearchBar placeholder="Pesquisar vaga..." />
         <div className={styles.dropdownContainer}>
           {dropdownOptions.map((options, index) => (
             <Dropdown
               key={index}
-              placeholder={`Filter ${index + 1}`}
-              options={options} />
+              placeholder={dropdownPlaceholders[index]}
+              options={options}
+            />
           ))}
         </div>
       </div>
       <div className={styles.grid}>
         {displayedVacancies.map((vacancy) => (
-          <VacancyCard
-            key={vacancy.id} {...vacancy}
-          />
+          <VacancyCard key={vacancy.id} {...vacancy} />
         ))}
       </div>
       <CustomPagination

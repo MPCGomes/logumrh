@@ -3,45 +3,49 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { styled } from '@mui/material/styles';
 
+interface DropdownProps {
+  placeholder?: string;
+  options: string[];
+}
+
 const StyledDropdownSelect = styled(Select)({
   borderRadius: 50,
-  outline: '1px solid #3a264040',
   backgroundColor: '#fff',
-  padding: '0px 20px',
-  height: '45px',
-  color: '#3a264070',
-  
+  padding: '0px 12px',
+  height: '44px',
+  outline: 'none',
+  border: '1px solid #3a264040',
   '& .MuiOutlinedInput-notchedOutline': {
     border: 'none',
   },
-  '&:hover .MuiOutlinedInput-notchedOutline': {
-    border: 'none',
+  '&:hover': {
+    outline: '1px solid #3a264040',
   },
-  '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-    border: '2px solid #3a2640',
-    outline: 'none',
+  '&.Mui-focused': {
+    outline: '1px solid #3a264040',
   },
+  '& .MuiSelect-select': {
+    color: 'var(--text-color)',
+  }
 });
 
-
 const DropdownMenuItem = styled(MenuItem)({
-  backgroundColor: '#fff',
-  color: '#3a2640',
+  backgroundColor: 'var(--background-color)',
+  color: '#3a264040',
+  outline: 'none',
   '&:hover': {
-    backgroundColor: '#efedef',
-    color: 'black',
+    backgroundColor: '#e6e4e6',
+    color: 'var(--text-color)',
   },
   '&.Mui-selected': {
-    backgroundColor: '#E6E4E6',
-    color: '#3a2640',
+    backgroundColor: '#efedef',
+    color: 'var(--text-color)',
     '&:hover': {
-      backgroundColor: '#E6E4E6',
-      color: '#3a2640',
+      backgroundColor: '#efedef',
     },
   },
-  '&.Mui-focusVisible': {
-    backgroundColor: 'orange',
-    color: 'black',
+  '&:focus': {
+    backgroundColor: '#efedef',
   },
 });
 
@@ -60,7 +64,7 @@ const MenuProps = {
   },
 };
 
-const Dropdown = ({ placeholder = 'Select an option', options = [] }) => (
+const Dropdown: React.FC<DropdownProps> = ({ placeholder, options }) => (
   <StyledDropdownSelect
     displayEmpty
     renderValue={(selected) => (selected ? (selected as string) : placeholder)}
