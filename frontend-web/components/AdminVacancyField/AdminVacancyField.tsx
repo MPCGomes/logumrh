@@ -3,7 +3,11 @@ import styles from './AdminVacancyField.module.scss'
 import { LuPlus } from "react-icons/lu";
 import Link from 'next/link';
 
-const AdminVacancyField = () => {
+interface AdminVacancyFieldProps {
+  link: string;
+}
+
+const AdminVacancyField: React.FC<AdminVacancyFieldProps> = ({ link }) => {
   return (
     <div className={styles.grid}>
       <p>Nome</p>
@@ -14,7 +18,7 @@ const AdminVacancyField = () => {
       <button>
         <Link
           className={styles.button}
-          href={'adminCompany'}
+          href={`${link}`}
         >
           <LuPlus />
         </Link>

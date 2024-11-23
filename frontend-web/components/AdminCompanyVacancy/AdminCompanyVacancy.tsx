@@ -1,12 +1,14 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import styles from './AdminCompanyField.module.scss'
+import styles from './AdminCompanyVacancy.module.scss'
 import { TbDotsVertical } from "react-icons/tb";
-import { FaEdit } from 'react-icons/fa';
-import { FaRegTrashCan } from 'react-icons/fa6';
+import { FaEdit } from "react-icons/fa";
+import { FaRegTrashCan } from "react-icons/fa6";
+import { IoPeopleSharp } from "react-icons/io5";
+import Link from 'next/link';
 
-interface AdminCompanyFieldProps {
+interface AdminCompanyVacancyProps {
   name: string;
   cnpj: string;
   responsible: string;
@@ -14,7 +16,7 @@ interface AdminCompanyFieldProps {
   phone: string;
 }
 
-const AdminCompanyField: React.FC<AdminCompanyFieldProps> = ({ name, cnpj, responsible, email, phone }) => {
+const AdminCompanyVacancy: React.FC<AdminCompanyVacancyProps> = ({ name, cnpj, responsible, email, phone }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -37,7 +39,7 @@ const AdminCompanyField: React.FC<AdminCompanyFieldProps> = ({ name, cnpj, respo
   }, []);
 
   return (
-    <div className={styles.grid}>
+    <div className={styles.grid} ref={menuRef}>
       <p>{name}</p>
       <p>{cnpj}</p>
       <p>{responsible}</p>
@@ -52,6 +54,14 @@ const AdminCompanyField: React.FC<AdminCompanyFieldProps> = ({ name, cnpj, respo
       {isMenuOpen && (
         <div className={styles.optionsMenu}>
           <button>
+            <Link
+              href={'/adminCandidates'}
+              className={styles.button}>
+              <IoPeopleSharp />
+              Ver candidatos
+            </Link>
+          </button>
+          <button>
             <FaEdit />
             Editar
           </button>
@@ -65,4 +75,4 @@ const AdminCompanyField: React.FC<AdminCompanyFieldProps> = ({ name, cnpj, respo
   )
 }
 
-export default AdminCompanyField
+export default AdminCompanyVacancy;
