@@ -22,9 +22,9 @@ const AdminCompanyField: React.FC<AdminCompanyFieldProps> = ({ name, cnpj, respo
     setIsMenuOpen((prev) => !prev);
   };
 
-  // Fecha o menu quando clicar p/ fora
+  // Fecha o menu quando clicar fora
   const closeMenu = (event: MouseEvent) => {
-    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+    if (isMenuOpen && menuRef.current && !menuRef.current.contains(event.target as Node)) {
       setIsMenuOpen(false);
     }
   };
@@ -34,10 +34,10 @@ const AdminCompanyField: React.FC<AdminCompanyFieldProps> = ({ name, cnpj, respo
     return () => {
       document.removeEventListener("mousedown", closeMenu);
     };
-  }, []);
+  }, [isMenuOpen]); // Adiciona a dependência `isMenuOpen`
 
   return (
-    <div className={styles.grid}>
+    <div className={styles.grid} ref={menuRef}>
       <p>{name}</p>
       <p>{cnpj}</p>
       <p>{responsible}</p>
@@ -51,11 +51,11 @@ const AdminCompanyField: React.FC<AdminCompanyFieldProps> = ({ name, cnpj, respo
       </button>
       {isMenuOpen && (
         <div className={styles.optionsMenu}>
-          <button>
+          <button className={styles.optionButton}>
             <FaEdit />
             Editar
           </button>
-          <button>
+          <button className={styles.optionButton}>
             <FaRegTrashCan />
             Apagar
           </button>
@@ -65,4 +65,4 @@ const AdminCompanyField: React.FC<AdminCompanyFieldProps> = ({ name, cnpj, respo
   )
 }
 
-export default AdminCompanyField
+export default AdminCompanyField;
