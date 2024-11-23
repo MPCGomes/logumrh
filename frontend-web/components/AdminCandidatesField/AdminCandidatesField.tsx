@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './AdminCandidatesField.module.scss'
-import { LuPlus } from "react-icons/lu";
+import { TbDotsVertical } from "react-icons/tb";
 import Link from 'next/link';
 
 const AdminCandidatesField = () => {
@@ -11,13 +11,6 @@ const AdminCandidatesField = () => {
       <p>E-mail</p>
       <p>Telefone</p>
       <p>Aplicado em</p>
-      <button>
-        <Link 
-        className={styles.button}
-        href='adminVacancy'>
-          <LuPlus />
-        </Link>
-      </button>
     </div>
   )
 }
