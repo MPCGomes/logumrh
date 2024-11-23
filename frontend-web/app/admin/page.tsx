@@ -13,7 +13,14 @@ const page = () => {
           cvClass={'inactive'}
         />
         <div className={styles.section}>
-          <AdminVacancyField />
+          <AdminVacancyField link={'adminCompany'} />
+          <AdminCompanyField
+            name={'Empresa'}
+            cnpj={'00.000.000/000-00'}
+            responsible={'Nome'}
+            email={'exemplo@email.com'}
+            phone={'(00) 0000-0000'}
+          />
           <AdminCompanyField
             name={'Empresa'}
             cnpj={'00.000.000/000-00'}

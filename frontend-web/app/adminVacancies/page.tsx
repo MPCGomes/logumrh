@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './page.module.scss'
 import AdminNav from '@/components/AdminNav/AdminNav'
-import AdminCandidatesField from '@/components/AdminCandidatesField/AdminCandidatesField'
-import AdminCandidate from '@/components/AdminCandidates/AdminCandidate'
+import AdminVacancyField from '@/components/AdminVacancyField/AdminVacancyField'
+import AdminCompanyVacancy from '@/components/AdminCompanyVacancy/AdminCompanyVacancy'
 
 const page = () => {
   return (
@@ -13,30 +13,41 @@ const page = () => {
           cvClass={'active'}
         />
         <div className={styles.section}>
-          <AdminCandidatesField />
-          <AdminCandidate
-            name={'Nome'}
+          <AdminVacancyField link={'adminVacancy'} />
+          <AdminCompanyVacancy
+            name={'Nome da Vaga'}
+            cnpj={'00.000.000/000-00'}
+            responsible={'Nome'}
             email={'exemplo@email.com'}
             phone={'(00) 0000-0000'}
-            date={'DD/MM/YYYY às 00:00 GMT'}
           />
-          <AdminCandidate
-            name={'Nome'}
+          <AdminCompanyVacancy
+            name={'Nome da Vaga'}
+            cnpj={'00.000.000/000-00'}
+            responsible={'Nome'}
             email={'exemplo@email.com'}
             phone={'(00) 0000-0000'}
-            date={'DD/MM/YYYY às 00:00 GMT'}
           />
-          <AdminCandidate
-            name={'Nome'}
+          <AdminCompanyVacancy
+            name={'Nome da Vaga'}
+            cnpj={'00.000.000/000-00'}
+            responsible={'Nome'}
             email={'exemplo@email.com'}
             phone={'(00) 0000-0000'}
-            date={'DD/MM/YYYY às 00:00 GMT'}
           />
-          <AdminCandidate
-            name={'Nome'}
+          <AdminCompanyVacancy
+            name={'Nome da Vaga'}
+            cnpj={'00.000.000/000-00'}
+            responsible={'Nome'}
             email={'exemplo@email.com'}
             phone={'(00) 0000-0000'}
-            date={'DD/MM/YYYY às 00:00 GMT'}
+          />
+          <AdminCompanyVacancy
+            name={'Nome da Vaga'}
+            cnpj={'00.000.000/000-00'}
+            responsible={'Nome'}
+            email={'exemplo@email.com'}
+            phone={'(00) 0000-0000'}
           />
         </div>
       </div>
