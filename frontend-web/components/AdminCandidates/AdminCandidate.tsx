@@ -37,7 +37,7 @@ const AdminCandidate: React.FC<AdminCandidateProps> = ({ name, email, phone, dat
     };
   }, []);
 
-
+  // Modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);

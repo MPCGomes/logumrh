@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import styles from './VacancyCard.module.scss'
 import { HiOutlineShare } from "react-icons/hi";
 import { FaBriefcase, FaClock } from "react-icons/fa";
@@ -6,6 +8,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { SiCashapp } from "react-icons/si";
 import ButtonPrimary from '../ButtonPrimary/ButtonPrimary';
 import Link from 'next/link';
+import Modal from '../ModalApply/ModalApply'
 
 interface VacancyCardProps {
   id: number;
@@ -21,7 +24,13 @@ interface VacancyCardProps {
   activities: string;
 }
 
-const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, modality, period, salary, scale, location, requirements, activities}) => {
+const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, modality, period, salary, scale, location, requirements, activities }) => {
+  // Modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className={styles.vacancyCard}>
       <div className={styles.idGroup}>
@@ -65,7 +74,6 @@ const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, mo
           {location}
         </p>
       </div>
-
       <div className={styles.requirements}>
         <p className={styles.title}>
           Requisitos
@@ -80,16 +88,24 @@ const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, mo
         <p>{activities}</p>
       </div>
       <div className={styles.buttons}>
-        <Link 
-        className={styles.link}
-        href={'vacancy'}
+        <Link
+          className={styles.link}
+          href={'vacancy'}
         >
           Ver mais
         </Link>
-        <ButtonPrimary text='Candidatar-se' />
+        <p onClick={openModal}>
+          <ButtonPrimary
+            text='Candidatar-se'
+          />
+        </p>
+
       </div>
-
-
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      >
+      </Modal>
     </div>
   )
 }
