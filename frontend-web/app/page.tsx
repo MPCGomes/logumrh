@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './page.module.scss'
 import ButtonPrimary from "@/components/ButtonPrimary/ButtonPrimary";
 import ContactCard from '@/components/ContactCard/ContactCard';
@@ -9,9 +11,8 @@ import { IoLogoWhatsapp, IoIosPeople } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaCheckCircle } from "react-icons/fa";
 import { GoArrowDown } from "react-icons/go";
-import ButtonSecondary from '@/components/ButtonSecondary/ButtonSecondary';
 import ServiceCard from '@/components/ServiceCard/ServiceCard';
-import classNames from 'classnames';
+import CustomButton from '@/components/CustomButton/CustomButton';
 
 const Home = () => {
   return (
@@ -25,17 +26,29 @@ const Home = () => {
                 Alavancando Negócios
               </h1>
               <p>
-                Somos a sua melhor solução para recrutamento e seleção. 
-                Quer poupar tempo e encontrar o candidato certo? 
+                Somos a sua melhor solução para recrutamento e seleção.
+                Quer poupar tempo e encontrar o candidato certo?
                 Deixe isso com a gente!
               </p>
               <div className={styles.btnGroup}>
-                <ButtonPrimary
-                  text="Oferecer vagas"
-                />
-                <ButtonSecondary
-                  text="Ver vagas"
-                />
+                <CustomButton
+                  variant="contained"
+                  color="primary"
+                  onClick={() => {
+                    document.querySelector("#contacts")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  Oferecer vagas
+                </CustomButton>
+                <CustomButton
+                  variant="outlined"
+                  color="secondary"
+                  onClick={() => {
+                    window.location.href = "/vacancies";
+                  }}
+                >
+                  Ver vagas
+                </CustomButton>
               </div>
             </div>
             <img
