@@ -1,6 +1,6 @@
-@use '../../styles/variables' as *;
+@use '../../styles/variables'as *;
 
-.vacancyCard {
+.JobCard {
   max-width: 430px;
   border: 1px solid #d9d9d9;
   background-color: #fff;
@@ -16,18 +16,9 @@
 .buttons {
   display: flex;
   justify-content: flex-end;
-  gap: 40px;
+  gap: 8px;
   align-items: center;
   margin-top: 10px;
-  font-size: $fs-300;
-
-  button {
-    font-size: $fs-300;
-  }
-
-  .link{
-    color: var(--primary-color);
-  }
 }
 
 .idGroup {
@@ -69,17 +60,19 @@
 .info {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
   font-size: $fs-300;
 
   p {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
   }
 
   span {
     color: var(--primary-color);
+    display: flex;
+    align-items: center;
   }
 }
 

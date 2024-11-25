@@ -1,17 +1,16 @@
+'use client';
+
 import styles from './page.module.scss'
-import ButtonPrimary from "@/components/ButtonPrimary/ButtonPrimary";
 import ContactCard from '@/components/ContactCard/ContactCard';
-import VacancyCard from '@/components/VacancyCard/VacancyCard';
-import Link from 'next/link';
+import JobCard from '@/components/JobCard/JobCard';
 import CTA from '@/components/CTA/CTA';
 import { IoMail } from "react-icons/io5";
 import { IoLogoWhatsapp, IoIosPeople } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaCheckCircle } from "react-icons/fa";
 import { GoArrowDown } from "react-icons/go";
-import ButtonSecondary from '@/components/ButtonSecondary/ButtonSecondary';
 import ServiceCard from '@/components/ServiceCard/ServiceCard';
-import classNames from 'classnames';
+import CustomButton from '@/components/CustomButton/CustomButton';
 
 const Home = () => {
   return (
@@ -25,17 +24,29 @@ const Home = () => {
                 Alavancando Negócios
               </h1>
               <p>
-                Somos a sua melhor solução para recrutamento e seleção. 
-                Quer poupar tempo e encontrar o candidato certo? 
+                Somos a sua melhor solução para recrutamento e seleção.
+                Quer poupar tempo e encontrar o candidato certo?
                 Deixe isso com a gente!
               </p>
               <div className={styles.btnGroup}>
-                <ButtonPrimary
-                  text="Oferecer vagas"
-                />
-                <ButtonSecondary
-                  text="Ver vagas"
-                />
+                <CustomButton
+                  variant="contained"
+                  color="primary"
+                  onClick={() => {
+                    document.querySelector("#contacts")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  Oferecer vagas
+                </CustomButton>
+                <CustomButton
+                  variant="outlined"
+                  color="secondary"
+                  onClick={() => {
+                    window.location.href = "/vacancies";
+                  }}
+                >
+                  Ver vagas
+                </CustomButton>
               </div>
             </div>
             <img
@@ -67,56 +78,56 @@ const Home = () => {
             <h3 className='title lightText'>Últimas Vagas</h3>
           </div>
           <div className={styles.recentVacancies}>
-            <VacancyCard
+            <JobCard
               id={1}
-              vacancy={'Nome da Vaga'}
-              firm={'Empresa'}
-              salary={1500}
+              job={'Vaga'}
+              company={'Empresa'}
+              payment={'R$ 0.000,00/mês'}
               sector={'Setor'}
               modality={'Modalidade'}
-              period={'Período'}
-              scale={'Escala'}
+              workHours={'Período'}
+              workSchedule={'Escala'}
               location={'Bairro, Cidade - UF'}
-              requirements={'Requisitos'}
-              activities={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?'}
+              requirements={'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}
+              activities={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut dui eu mauris pellentesque consequat. Donec placerat velit at quam.'}
             />
-            <VacancyCard
-              id={2}
-              vacancy={'Nome da Vaga'}
-              firm={'Empresa'}
-              salary={1500}
+            <JobCard
+              id={1}
+              job={'Vaga'}
+              company={'Empresa'}
+              payment={'R$ 0.000,00/mês'}
               sector={'Setor'}
               modality={'Modalidade'}
-              period={'Período'}
-              scale={'Escala'}
+              workHours={'Período'}
+              workSchedule={'Escala'}
               location={'Bairro, Cidade - UF'}
-              requirements={'Requisitos'}
-              activities={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?'}
+              requirements={'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}
+              activities={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut dui eu mauris pellentesque consequat. Donec placerat velit at quam.'}
             />
-            <VacancyCard
-              id={3}
-              vacancy={'Nome da Vaga'}
-              firm={'Empresa'}
-              salary={1500}
+            <JobCard
+              id={1}
+              job={'Vaga'}
+              company={'Empresa'}
+              payment={'R$ 0.000,00/mês'}
               sector={'Setor'}
               modality={'Modalidade'}
-              period={'Período'}
-              scale={'Escala'}
+              workHours={'Período'}
+              workSchedule={'Escala'}
               location={'Bairro, Cidade - UF'}
-              requirements={'Requisitos'}
-              activities={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?'}
+              requirements={'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}
+              activities={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut dui eu mauris pellentesque consequat. Donec placerat velit at quam.'}
             />
           </div>
-          <Link
-            href={'vacancies'}
-            className={styles.vancacyButton}>
-            <p>
-              <ButtonPrimary
-                text='Ver mais vagas'
-              />
-
-            </p>
-          </Link>
+          <div className={styles.viewMoreButton}>
+            <CustomButton
+              variant="negativeOutlined"
+              onClick={() => {
+                window.location.href = "/vacancies";
+              }}
+            >
+              Ver mais vagas
+            </CustomButton>
+          </div>
         </div>
       </section>
 

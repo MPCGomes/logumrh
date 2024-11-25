@@ -5,15 +5,21 @@
   margin-bottom: 50px;
 }
 
-.dropdownContainer {
+.filtersContainer {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+  justify-self: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .grid {
+  justify-self: center;
   display: grid;
   gap: 20px;
   margin-bottom: 50px;
@@ -25,4 +31,7 @@
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
 }

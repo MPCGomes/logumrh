@@ -1,50 +1,59 @@
-'use client'
+'use client';
 
-import React, { useState } from 'react'
-import styles from './VacancyCard.module.scss'
+import React, { useState } from 'react';
+import styles from './JobCard.module.scss';
 import { HiOutlineShare } from "react-icons/hi";
 import { FaBriefcase, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { SiCashapp } from "react-icons/si";
-import ButtonPrimary from '../ButtonPrimary/ButtonPrimary';
-import Link from 'next/link';
-import Modal from '../ModalApply/ModalApply'
+import Button from '@mui/material/Button';
+import ModalApply from '../ModalApply/ModalApply';
 
-interface VacancyCardProps {
+interface JobCardProps {
   id: number;
-  vacancy: string;
-  firm: string;
-  salary: number;
+  job: string;
+  company: string;
+  payment: string;
   sector: string;
   modality: string;
-  period: string;
-  scale: string;
+  workHours: string;
+  workSchedule: string;
   location: string;
   requirements: string;
   activities: string;
 }
 
-const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, modality, period, salary, scale, location, requirements, activities }) => {
-  // Modal
+const JobCard: React.FC<JobCardProps> = ({
+  id,
+  job,
+  company,
+  sector,
+  modality,
+  workHours,
+  payment,
+  workSchedule,
+  location,
+  requirements,
+  activities,
+}) => {
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className={styles.vacancyCard}>
+    <div className={styles.JobCard}>
       <div className={styles.idGroup}>
-        <p>
-          ID {id}
-        </p>
+        <p>ID {id}</p>
         <button className={styles.share}>
           <HiOutlineShare />
         </button>
       </div>
 
       <div className={styles.vacancy}>
-        <p className={styles.title}>{vacancy}</p>
-        <p>{firm} • {sector}</p>
+        <p className={styles.title}>{job}</p>
+        <p>{company} • {sector}</p>
       </div>
 
       <div className={styles.info}>
@@ -52,20 +61,19 @@ const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, mo
           <span>
             <SiCashapp />
           </span>
-          R$
-          {salary}
+          R$ {payment}
         </p>
         <p>
           <span>
             <FaBriefcase />
           </span>
-          {modality} • {period}
+          {modality} • {workHours}
         </p>
         <p>
           <span>
             <FaClock />
           </span>
-          {scale}
+          {workSchedule}
         </p>
         <p>
           <span>
@@ -74,40 +82,37 @@ const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, mo
           {location}
         </p>
       </div>
+
       <div className={styles.requirements}>
-        <p className={styles.title}>
-          Requisitos
-        </p>
+        <p className={styles.title}>Requisitos</p>
         <p>{requirements}</p>
       </div>
 
       <div className={styles.activities}>
-        <p className={styles.title}>
-          Atividades
-        </p>
+        <p className={styles.title}>Atividades</p>
         <p>{activities}</p>
       </div>
+
       <div className={styles.buttons}>
-        <Link
+        <Button
+          variant="text"
+          href="/vacancy"
           className={styles.link}
-          href={'vacancy'}
         >
           Ver mais
-        </Link>
-        <p onClick={openModal}>
-          <ButtonPrimary
-            text='Candidatar-se'
-          />
-        </p>
-
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={openModal}
+        >
+          Candidatar-se
+        </Button>
       </div>
-      <Modal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-      >
-      </Modal>
-    </div>
-  )
-}
 
-export default VacancyCard
+      <ModalApply isOpen={isModalOpen} onClose={closeModal} />
+    </div>
+  );
+};
+
+export default JobCard;
