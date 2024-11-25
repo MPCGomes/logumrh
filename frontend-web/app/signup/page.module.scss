@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  gap: 24px;
+  color: var(--text-color);
+  background-color: #fff;
+  max-width: 600px;
+  justify-self: center;
+}
