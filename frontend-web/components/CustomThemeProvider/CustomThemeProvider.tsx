@@ -1,3 +1,5 @@
+'use client';
+
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { ReactNode } from "react";
@@ -20,6 +22,9 @@ const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
+        root: {
+          borderRadius: "50px",
+        },
         contained: {
           backgroundColor: "#7e053a",
           "&:hover": {
