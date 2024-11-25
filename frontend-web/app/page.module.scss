@@ -11,7 +11,7 @@
   background-position: bottom;
 
   @media (min-width: 1024px) {
-    text-align: start;
+    text-align: flex-start;
   }
 }
 
@@ -235,7 +235,7 @@
   flex-direction: column;
   gap: 0px !important;
   margin-bottom: 20px;
-  align-items: start !important;
+  align-items: flex-start !important;
 
   h4,
   h3 {

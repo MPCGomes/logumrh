@@ -110,4 +110,4 @@ const JobCard: React.FC<JobCardProps> = ({ id, vacancy, firm, sector, modality, 
   )
 }
 
-export default JobCard
+export default JobCard;
