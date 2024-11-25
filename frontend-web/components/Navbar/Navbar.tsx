@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ButtonSecondary from '../ButtonSecondary/ButtonSecondary';
 import ButtonPrimary from '../ButtonPrimary/ButtonPrimary';
+import { Button } from '@mui/material';
 
 const Navbar: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,10 +60,12 @@ const Navbar: React.FC = () => {
             <Link href={'/'}>Sobre Nós</Link>
           </div>
           <div className={styles.modalButtons}>
-            <Link href={'/login'}>
-              <ButtonSecondary text="Entrar" />
-            </Link>
-            <ButtonPrimary text="Cadastrar" />
+            <Button variant="outlined" href="/login" fullWidth>
+              Entrar
+            </Button>
+            <Button variant="contained" href="/register" fullWidth>
+              Cadastrar
+            </Button>
           </div>
         </div>
       )}
