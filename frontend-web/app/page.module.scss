@@ -97,6 +97,7 @@
   display: grid;
   place-items: center;
   gap: 20px;
+  height: 100%;
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);

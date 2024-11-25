@@ -80,42 +80,42 @@ const Home = () => {
           <div className={styles.recentVacancies}>
             <JobCard
               id={1}
-              job={'Vaga'}
-              company={'Empresa'}
-              payment={'0.000,00/mês'}
-              sector={'Setor'}
-              modality={'Modalidade'}
-              workHours={'Período'}
-              workSchedule={'Escala'}
-              location={'Bairro, Cidade - UF'}
-              requirements={'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}
-              activities={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut dui eu mauris pellentesque consequat. Donec placerat velit at quam.'}
+              job={'Estagiário de Contabilidade'}
+              company={'Menconi Contabilidade'}
+              payment={'1.000,00/mês + R$ 230/mês VR'}
+              sector={'Contabilidade'}
+              modality={'Presencial'}
+              workHours={'Meio Período'}
+              workSchedule={'Seg. a Sex. - 10h00 às 17h00'}
+              location={'Centro, Pindamonhangaba - SP'}
+              requirements={'Estar cursando a partir do 3º semestre: Administração, Ciências Contábeis ou áreas correlatas • Pacote Office básico • Organização • Proatividade'}
+              activities={'Atuar nas rotinas gerais e prestar suporte aos departamentos contábil, pessoal e fiscal.'}
             />
             <JobCard
-              id={1}
-              job={'Vaga'}
-              company={'Empresa'}
-              payment={'0.000,00/mês'}
-              sector={'Setor'}
-              modality={'Modalidade'}
-              workHours={'Período'}
-              workSchedule={'Escala'}
-              location={'Bairro, Cidade - UF'}
-              requirements={'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}
-              activities={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut dui eu mauris pellentesque consequat. Donec placerat velit at quam.'}
+              id={2}
+              job={'Analista de Marketing Digital'}
+              company={'Agência Criativa'}
+              payment={'3.500,00/mês + Benefícios'}
+              sector={'Marketing'}
+              modality={'Híbrido'}
+              workHours={'Integral'}
+              workSchedule={'Seg. a Sex. - 09h00 às 18h00'}
+              location={'Jardins, São Paulo - SP'}
+              requirements={'Formação em Marketing, Publicidade ou áreas correlatas • Criatividade • Boa comunicação'}
+              activities={'Planejar e executar campanhas de marketing digital, gerenciar redes sociais, otimizar conteúdo para SEO e analisar métricas para melhorar resultados.'}
             />
             <JobCard
-              id={1}
-              job={'Vaga'}
-              company={'Empresa'}
-              payment={'0.000,00/mês'}
-              sector={'Setor'}
-              modality={'Modalidade'}
-              workHours={'Período'}
-              workSchedule={'Escala'}
-              location={'Bairro, Cidade - UF'}
-              requirements={'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}
-              activities={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut dui eu mauris pellentesque consequat. Donec placerat velit at quam.'}
+              id={3}
+              job={'Assistente de RH'}
+              company={'Grupo Excelência'}
+              payment={'2.800,00/mês + VT + VA'}
+              sector={'Recursos Humanos'}
+              modality={'Presencial'}
+              workHours={'Integral'}
+              workSchedule={'Seg. a Sex. - 08h00 às 17h00'}
+              location={'Centro, Belo Horizonte - MG'}
+              requirements={'Formação completa em Gestão de RH, Psicologia ou áreas correlatas • Conhecimento em processos de R&S'}
+              activities={'Apoiar nos processos de recrutamento e seleção, treinamento e desenvolvimento, e administração de benefícios.'}
             />
           </div>
           <div className={styles.viewMoreButton}>

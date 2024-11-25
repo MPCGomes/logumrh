@@ -15,39 +15,43 @@ const page = () => {
         <div className={styles.section}>
           <AdminVacancyField link={'adminCompany'} />
           <AdminCompanyField
-            name={'Empresa'}
-            cnpj={'00.000.000/000-00'}
-            responsible={'Nome'}
-            email={'exemplo@email.com'}
-            phone={'(00) 0000-0000'}
+            name={'Tech Solutions'}
+            cnpj={'51.178.438/0001-11'}
+            responsible={'João Gabriel'}
+            email={'joel@gmail.com'}
+            phone={'(11) 99622-0511'}
           />
+
           <AdminCompanyField
-            name={'Empresa'}
-            cnpj={'00.000.000/000-00'}
-            responsible={'Nome'}
-            email={'exemplo@email.com'}
-            phone={'(00) 0000-0000'}
+            name={'Construtora Alpha'}
+            cnpj={'34.795.735/0001-22'}
+            responsible={'Marianna Gonçalves'}
+            email={'mary@hotmail.com'}
+            phone={'(21) 99123-4567'}
           />
+
           <AdminCompanyField
-            name={'Empresa'}
-            cnpj={'00.000.000/000-00'}
-            responsible={'Nome'}
-            email={'exemplo@email.com'}
-            phone={'(00) 0000-0000'}
+            name={'Agência Criativa'}
+            cnpj={'89.765.453/0001-33'}
+            responsible={'Carlos Santos'}
+            email={'carlos.santos@gmail.com'}
+            phone={'(11) 94002-8922'}
           />
+
           <AdminCompanyField
-            name={'Empresa'}
-            cnpj={'00.000.000/000-00'}
-            responsible={'Nome'}
-            email={'exemplo@email.com'}
-            phone={'(00) 0000-0000'}
+            name={'Logística Express'}
+            cnpj={'12.657.334/0001-44'}
+            responsible={'Ana Lima'}
+            email={'ana.lima@hotmail.com'}
+            phone={'(41) 99876-1234'}
           />
+
           <AdminCompanyField
-            name={'Empresa'}
-            cnpj={'00.000.000/000-00'}
-            responsible={'Nome'}
-            email={'exemplo@email.com'}
-            phone={'(00) 0000-0000'}
+            name={'Consultoria Prime'}
+            cnpj={'78.234.739/0001-55'}
+            responsible={'Paulo Souza'}
+            email={'paulo.souza@gmail.com'}
+            phone={'(51) 99823-9876'}
           />
         </div>
       </div>

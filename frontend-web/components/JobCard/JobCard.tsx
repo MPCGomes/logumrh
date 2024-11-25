@@ -45,7 +45,7 @@ const JobCard: React.FC<JobCardProps> = ({
   return (
     <div className={styles.JobCard}>
       <div className={styles.idGroup}>
-        <p>ID {id}</p>
+        <p>ID 00{id}</p>
         <button className={styles.share}>
           <HiOutlineShare />
         </button>
@@ -89,7 +89,7 @@ const JobCard: React.FC<JobCardProps> = ({
       </div>
 
       <div className={styles.activities}>
-        <p className={styles.title}>Atividades</p>
+        <p className={styles.title}>Síntese do Cargo</p>
         <p>{activities}</p>
       </div>
 

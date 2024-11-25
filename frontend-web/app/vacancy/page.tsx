@@ -19,8 +19,8 @@ const Page = () => {
     <section className="container paddingSection">
       <div className={styles.nameContainer}>
         <div className={styles.vacancy}>
-          <p className={styles.title}>Vaga</p>
-          <p>Empresa • Setor</p>
+          <p className={styles.title}>Estagiário de Contabilidade</p>
+          <p>Menconi Contabilidade • Contabilidade</p>
         </div>
 
         <div className={styles.idGroup}>
@@ -38,25 +38,25 @@ const Page = () => {
           <span>
             <SiCashapp />
           </span>
-          R$ 0.000,00/mês
+          R$ 1.000,00/mês + R$ 230/mês VR
         </p>
         <p>
           <span>
             <FaBriefcase />
           </span>
-          Modalidade • Período
+          Presencial • Meio Período
         </p>
         <p>
           <span>
             <FaClock />
           </span>
-          Escala
+          Seg. a Sex. - 10h00 às 17h00
         </p>
         <p>
           <span>
             <FaLocationDot />
           </span>
-          Bairro, Cidade - UF
+          Centro, Pindamonhangaba - SP
         </p>
       </div>
 
@@ -65,16 +65,29 @@ const Page = () => {
       <div className={styles.requirements}>
         <p className={styles.title}>Requisitos</p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Estar cursando a partir do 3º semestre: Administração, Ciências Contábeis ou áreas correlatas • Pacote Office básico • Organização • Proatividade
+        </p>
+      </div>
+
+      <div className={styles.activities}>
+        <p className={styles.title}>Síntese do Cargo</p>
+        <p>
+          Atuar nas rotinas gerais e prestar suporte aos departamentos contábil, pessoal e fiscal.
         </p>
       </div>
 
       <div className={styles.activities}>
         <p className={styles.title}>Atividades</p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut
-          dui eu mauris pellentesque consequat. Donec placerat velit at quam.
-        </p>
+        <ul className={styles.list}>
+          <li>
+            Realização de lançamentos contábeis
+          </li>
+          <li>Processamento de lançamentos de folha de pagamento</li>
+          <li>Execução de lançamentos fiscais</li>
+          <li>Análise e levantamento da situação fiscal dos clientes</li>
+          <li>Emissão de certidões fiscais e outras documentações</li>
+          <li>Organização e manutenção de arquivos digitais</li>
+        </ul>
       </div>
 
       <div className={styles.buttons}>
