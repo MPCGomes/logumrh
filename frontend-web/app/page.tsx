@@ -2,7 +2,7 @@
 
 import styles from './page.module.scss'
 import ContactCard from '@/components/ContactCard/ContactCard';
-import VacancyCard from '@/components/VacancyCard/VacancyCard';
+import JobCard from '@/components/JobCard/JobCard';
 import Link from 'next/link';
 import CTA from '@/components/CTA/CTA';
 import { IoMail } from "react-icons/io5";
@@ -79,7 +79,7 @@ const Home = () => {
             <h3 className='title lightText'>Últimas Vagas</h3>
           </div>
           <div className={styles.recentVacancies}>
-            <VacancyCard
+            <JobCard
               id={1}
               vacancy={'Nome da Vaga'}
               firm={'Empresa'}
@@ -92,7 +92,7 @@ const Home = () => {
               requirements={'Requisitos'}
               activities={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?'}
             />
-            <VacancyCard
+            <JobCard
               id={2}
               vacancy={'Nome da Vaga'}
               firm={'Empresa'}
@@ -105,7 +105,7 @@ const Home = () => {
               requirements={'Requisitos'}
               activities={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?'}
             />
-            <VacancyCard
+            <JobCard
               id={3}
               vacancy={'Nome da Vaga'}
               firm={'Empresa'}

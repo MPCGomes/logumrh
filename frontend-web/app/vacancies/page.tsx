@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import VacancyCard from '@/components/VacancyCard/VacancyCard';
+import JobCard from '@/components/JobCard/JobCard';
 import CustomPagination from '@/components/Pagination/Pagination';
 import SearchBar from '@/components/SearchBar/SearchBar';
 import Dropdown from '@/components/Dropdown/Dropdown';
@@ -77,7 +77,7 @@ const Vacancies: React.FC = () => {
       </div>
       <div className={styles.grid}>
         {displayedVacancies.map((vacancy) => (
-          <VacancyCard key={vacancy.id} {...vacancy} />
+          <JobCard key={vacancy.id} {...vacancy} />
         ))}
       </div>
       <CustomPagination

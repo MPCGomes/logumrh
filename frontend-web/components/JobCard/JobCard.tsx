@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import styles from './VacancyCard.module.scss'
+import styles from './JobCard.module.scss'
 import { HiOutlineShare } from "react-icons/hi";
 import { FaBriefcase, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -10,7 +10,7 @@ import ButtonPrimary from '../ButtonPrimary/ButtonPrimary';
 import Link from 'next/link';
 import Modal from '../ModalApply/ModalApply'
 
-interface VacancyCardProps {
+interface JobCardProps {
   id: number;
   vacancy: string;
   firm: string;
@@ -24,7 +24,7 @@ interface VacancyCardProps {
   activities: string;
 }
 
-const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, modality, period, salary, scale, location, requirements, activities }) => {
+const JobCard: React.FC<JobCardProps> = ({ id, vacancy, firm, sector, modality, period, salary, scale, location, requirements, activities }) => {
   // Modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -32,7 +32,7 @@ const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, mo
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className={styles.vacancyCard}>
+    <div className={styles.JobCard}>
       <div className={styles.idGroup}>
         <p>
           ID {id}
@@ -110,4 +110,4 @@ const VacancyCard: React.FC<VacancyCardProps> = ({ id, vacancy, firm, sector, mo
   )
 }
 
-export default VacancyCard
+export default JobCard
