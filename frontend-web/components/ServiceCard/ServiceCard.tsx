@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './ServiceCard.module.scss'
 
 interface ServiceCardProps {
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   description: string;
 }
