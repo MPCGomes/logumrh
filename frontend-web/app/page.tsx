@@ -3,7 +3,6 @@
 import styles from './page.module.scss'
 import ContactCard from '@/components/ContactCard/ContactCard';
 import JobCard from '@/components/JobCard/JobCard';
-import Link from 'next/link';
 import CTA from '@/components/CTA/CTA';
 import { IoMail } from "react-icons/io5";
 import { IoLogoWhatsapp, IoIosPeople } from "react-icons/io";
@@ -81,42 +80,42 @@ const Home = () => {
           <div className={styles.recentVacancies}>
             <JobCard
               id={1}
-              vacancy={'Nome da Vaga'}
-              firm={'Empresa'}
-              salary={1500}
+              job={'Vaga'}
+              company={'Empresa'}
+              payment={'R$ 0.000,00/mês'}
               sector={'Setor'}
               modality={'Modalidade'}
-              period={'Período'}
-              scale={'Escala'}
+              workHours={'Período'}
+              workSchedule={'Escala'}
               location={'Bairro, Cidade - UF'}
-              requirements={'Requisitos'}
-              activities={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?'}
+              requirements={'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}
+              activities={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut dui eu mauris pellentesque consequat. Donec placerat velit at quam.'}
             />
             <JobCard
-              id={2}
-              vacancy={'Nome da Vaga'}
-              firm={'Empresa'}
-              salary={1500}
+              id={1}
+              job={'Vaga'}
+              company={'Empresa'}
+              payment={'R$ 0.000,00/mês'}
               sector={'Setor'}
               modality={'Modalidade'}
-              period={'Período'}
-              scale={'Escala'}
+              workHours={'Período'}
+              workSchedule={'Escala'}
               location={'Bairro, Cidade - UF'}
-              requirements={'Requisitos'}
-              activities={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?'}
+              requirements={'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}
+              activities={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut dui eu mauris pellentesque consequat. Donec placerat velit at quam.'}
             />
             <JobCard
-              id={3}
-              vacancy={'Nome da Vaga'}
-              firm={'Empresa'}
-              salary={1500}
+              id={1}
+              job={'Vaga'}
+              company={'Empresa'}
+              payment={'R$ 0.000,00/mês'}
               sector={'Setor'}
               modality={'Modalidade'}
-              period={'Período'}
-              scale={'Escala'}
+              workHours={'Período'}
+              workSchedule={'Escala'}
               location={'Bairro, Cidade - UF'}
-              requirements={'Requisitos'}
-              activities={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?'}
+              requirements={'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}
+              activities={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut dui eu mauris pellentesque consequat. Donec placerat velit at quam.'}
             />
           </div>
           <div className={styles.viewMoreButton}>
