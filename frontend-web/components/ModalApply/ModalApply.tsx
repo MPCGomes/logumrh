@@ -1,6 +1,5 @@
 import React from "react";
 import styles from './ModalApply.module.scss'
-import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 
 interface ModalApplyProps {
   isOpen: boolean;
@@ -56,7 +55,7 @@ const ModalApply: React.FC<ModalApplyProps> = ({ isOpen, onClose }) => {
             name="imagem"
             id="i1"
           />
-          <label for="i1">
+          <label htmlFor="i1">
             Sim
           </label>
           <input
@@ -64,7 +63,7 @@ const ModalApply: React.FC<ModalApplyProps> = ({ isOpen, onClose }) => {
             name="imagem"
             id="i2"
           />
-          <label for="i2">
+          <label htmlFor="i2">
             Não
           </label>
         </form>
@@ -75,7 +74,7 @@ const ModalApply: React.FC<ModalApplyProps> = ({ isOpen, onClose }) => {
             name="imagem"
             id="i1"
           />
-          <label for="i1">
+          <label htmlFor="i1">
             Sim
           </label>
           <input
@@ -83,7 +82,7 @@ const ModalApply: React.FC<ModalApplyProps> = ({ isOpen, onClose }) => {
             name="imagem"
             id="i2"
           />
-          <label for="i2">
+          <label htmlFor="i2">
             Não
           </label>
         </form>
