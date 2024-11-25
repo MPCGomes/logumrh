@@ -37,10 +37,20 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className={styles.buttonContainer}>
-            <Link href={'/login'}>
-              <ButtonSecondary text="Entrar" />
-            </Link>
-            <ButtonPrimary text="Cadastrar" />
+            <Button
+              variant="outlined"
+              href="/login"
+            >
+              Entrar
+            </Button>
+
+            <Button
+              variant="contained"
+              href="/signup"
+
+            >
+              Cadastrar
+            </Button>
           </div>
 
           <button className={styles.menu} onClick={toggleModal}>
