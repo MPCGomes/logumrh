@@ -1,7 +1,6 @@
 'use client';
 
 import styles from './page.module.scss'
-import ButtonPrimary from "@/components/ButtonPrimary/ButtonPrimary";
 import ContactCard from '@/components/ContactCard/ContactCard';
 import VacancyCard from '@/components/VacancyCard/VacancyCard';
 import Link from 'next/link';
@@ -120,16 +119,16 @@ const Home = () => {
               activities={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, corporis?'}
             />
           </div>
-          <Link
-            href={'vacancies'}
-            className={styles.vancacyButton}>
-            <p>
-              <ButtonPrimary
-                text='Ver mais vagas'
-              />
-
-            </p>
-          </Link>
+          <div className={styles.viewMoreButton}>
+            <CustomButton
+              variant="negativeOutlined"
+              onClick={() => {
+                window.location.href = "/vacancies";
+              }}
+            >
+              Ver mais vagas
+            </CustomButton>
+          </div>
         </div>
       </section>
 
