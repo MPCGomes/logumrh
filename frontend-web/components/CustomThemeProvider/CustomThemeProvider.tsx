@@ -91,6 +91,51 @@ const theme = createTheme({
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#ffffff",
+          borderRadius: "50px",
+          "& .MuiOutlinedInput-root": {
+            borderRadius: "50px",
+            "& fieldset": {
+              borderColor: "#7e053a",
+            },
+            "&:hover fieldset": {
+              borderColor: "#5a0328",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#7e053a",
+            },
+          },
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          "&.Mui-selected": {
+            backgroundColor: "#7e053a20",
+          },
+        },
+      },
+    },
+    MuiPagination: {
+      styleOverrides: {
+        root: {
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "20px",
+        },
+        ul: {
+          "& .Mui-selected": {
+            backgroundColor: "#7e053a",
+            color: "#ffffff",
+            borderRadius: "50px",
+          },
+        },
+      },
+    },
   },
 });
 
