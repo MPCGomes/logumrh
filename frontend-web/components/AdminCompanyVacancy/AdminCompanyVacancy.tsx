@@ -62,8 +62,12 @@ const AdminCompanyVacancy: React.FC<AdminCompanyVacancyProps> = ({ name, cnpj, r
             </Link>
           </button>
           <button>
-            <FaEdit />
-            Editar
+            <Link
+              href={'/adminVacancy'}
+              className={styles.button}>
+              <FaEdit />
+              Editar
+            </Link>
           </button>
           <button>
             <FaRegTrashCan />

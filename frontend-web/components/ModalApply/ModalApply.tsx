@@ -1,8 +1,6 @@
-'use client';
-
 import React from "react";
-import { Modal, Box, Typography, RadioGroup, FormControlLabel, Radio, Button } from "@mui/material";
-import styles from './ModalApply.module.scss';
+import styles from './ModalApply.module.scss'
+import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 
 interface ModalApplyProps {
   isOpen: boolean;
@@ -10,93 +8,98 @@ interface ModalApplyProps {
 }
 
 const ModalApply: React.FC<ModalApplyProps> = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
   return (
-    <Modal
-      open={isOpen}
-      onClose={onClose}
-      aria-labelledby="modal-title"
-      aria-describedby="modal-description"
-    >
-      <Box
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "90%",
-          maxWidth: "600px",
-          bgcolor: "background.paper",
-          borderRadius: 2,
-          boxShadow: 24,
-          p: 3,
-          overflow: "auto",
-          maxHeight: "90vh",
-        }}
-      >
-        <Typography id="modal-title" variant="h6" sx={{ mb: 2 }}>
-          Nome da Vaga
-        </Typography>
-
-        {/* CV Options */}
-        <Typography variant="subtitle1" sx={{ mb: 2 }}>
-          Escolha seu currículo:
-        </Typography>
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, justifyContent: "center" }}>
-          {["Opção 1", "Opção 2", "Opção 3"].map((option, index) => (
-            <FormControlLabel
-              key={index}
-              control={<Radio />}
-              label={
-                <Box sx={{ textAlign: "center", maxWidth: 120 }}>
-                  <Typography variant="body2">{option}</Typography>
-                  <img
-                    src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/resume-curriculum-vitae-design-template-cd5136dd58591765d75125a12226d1cd_screen.jpg?ts=1674136405"
-                    alt={option}
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      borderRadius: "4px",
-                      marginTop: "8px",
-                    }}
-                  />
-                </Box>
-              }
-              value={option}
+    <div className={styles.overlay}>
+      <div className={styles.modal}>
+        <p className={styles.title}>Nome da Vaga</p>
+        <form className={styles.cvContainer}>
+          <label className={styles.radioCard}>
+            <input
+              type="radio"
+              name="option"
+              value="option1"
             />
-          ))}
-        </Box>
-
-        {/* Residency */}
-        <Box sx={{ mt: 3 }}>
-          <Typography variant="subtitle1">Você reside em Pindamonhangaba?</Typography>
-          <RadioGroup row>
-            <FormControlLabel value="yes" control={<Radio />} label="Sim" />
-            <FormControlLabel value="no" control={<Radio />} label="Não" />
-          </RadioGroup>
-        </Box>
-
-        {/* Enrollment */}
-        <Box sx={{ mt: 3 }}>
-          <Typography variant="subtitle1">
-            Você está matriculado em curso superior em administração, contabilidade ou áreas correlatadas?
-          </Typography>
-          <RadioGroup row>
-            <FormControlLabel value="yes" control={<Radio />} label="Sim" />
-            <FormControlLabel value="no" control={<Radio />} label="Não" />
-          </RadioGroup>
-        </Box>
-
-        {/* Actions */}
-        <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 3, gap: 2 }}>
-          <Button variant="text" color="secondary" onClick={onClose}>
+            <div className={styles.cardContent}>
+              <h3>Nome do Currículo</h3>
+              <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/resume-curriculum-vitae-design-template-cd5136dd58591765d75125a12226d1cd_screen.jpg?ts=1674136405" alt="" />
+            </div>
+          </label>
+          <label className={styles.radioCard}>
+            <input
+              type="radio"
+              name="option"
+              value="option2"
+            />
+            <div className={styles.cardContent}>
+              <h3>Nome do Currículo</h3>
+              <img src="https://cdn-images.livecareer.com.br/pages/word_lc_br_1.jpg" alt="" />
+            </div>
+          </label>
+          <label className={styles.radioCard}>
+            <input
+              type="radio"
+              name="option"
+              value="option3"
+            />
+            <div className={styles.cardContent}>
+              <h3>Nome do Currículo</h3>
+              <img src="https://www.meucurriculoperfeito.com.br/wp-content/uploads/sites/6/2024/04/Curriculum-vitae-para-primeiro-emprego.svg" alt="" />
+            </div>
+          </label>
+        </form>
+        <form className={styles.locationContainer}>
+          <h3>Você reside em Pindamonhangaba?</h3>
+          <input
+            type="radio"
+            name="imagem"
+            id="i1"
+          />
+          <label for="i1">
+            Sim
+          </label>
+          <input
+            type="radio"
+            name="imagem"
+            id="i2"
+          />
+          <label for="i2">
+            Não
+          </label>
+        </form>
+        <form className={styles.locationContainer}>
+          <h3>Você está matriculado em curso superior em administração, contabilidade ou áreas correlatadas?</h3>
+          <input
+            type="radio"
+            name="imagem"
+            id="j1"
+          />
+          <label for="j1">
+            Sim
+          </label>
+          <input
+            type="radio"
+            name="imagem"
+            id="j2"
+          />
+          <label for="j2">
+            Não
+          </label>
+        </form>
+        <div className={styles.buttonContainer}>
+          <p
+            onClick={onClose}
+            className={styles.closeButton}
+          >
             Fechar
-          </Button>
-          <Button variant="contained" color="primary" onClick={onClose}>
-            Enviar
-          </Button>
-        </Box>
-      </Box>
-    </Modal>
+          </p>
+          <ButtonPrimary
+            text={"Enviar"}
+          />
+        </div>
+      </div>
+    </div >
   );
 };
 
