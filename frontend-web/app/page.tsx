@@ -82,7 +82,7 @@ const Home = () => {
               id={1}
               job={'Vaga'}
               company={'Empresa'}
-              payment={'R$ 0.000,00/mês'}
+              payment={'0.000,00/mês'}
               sector={'Setor'}
               modality={'Modalidade'}
               workHours={'Período'}
@@ -95,7 +95,7 @@ const Home = () => {
               id={1}
               job={'Vaga'}
               company={'Empresa'}
-              payment={'R$ 0.000,00/mês'}
+              payment={'0.000,00/mês'}
               sector={'Setor'}
               modality={'Modalidade'}
               workHours={'Período'}
@@ -108,7 +108,7 @@ const Home = () => {
               id={1}
               job={'Vaga'}
               company={'Empresa'}
-              payment={'R$ 0.000,00/mês'}
+              payment={'0.000,00/mês'}
               sector={'Setor'}
               modality={'Modalidade'}
               workHours={'Período'}
@@ -241,7 +241,7 @@ const Home = () => {
             <ContactCard
               icon={<IoLogoWhatsapp />}
               title={'WhatsApp'}
-              contact={'(12) 3456-7890'}
+              contact={'(12) 97409-6393'}
               link={'#'}
             />
             <ContactCard

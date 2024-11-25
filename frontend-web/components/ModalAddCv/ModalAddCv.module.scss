@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@use '../../styles/variables' as *;
 
 .overlay {
   position: fixed;
@@ -94,8 +94,7 @@
 
 .buttonContainer {
   display: flex;
-  justify-content: end;
-  gap: 20px;
+  justify-content: space-between;
   align-items: center;
 
   button {
@@ -105,7 +104,7 @@
 
 .closeButton {
   text-align: end;
-  color: var(--primary-color);
+  color: var(--text-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;

@@ -5,6 +5,7 @@ import styles from './AdminCompanyField.module.scss'
 import { TbDotsVertical } from "react-icons/tb";
 import { FaEdit } from 'react-icons/fa';
 import { FaRegTrashCan } from 'react-icons/fa6';
+import Link from 'next/link';
 
 interface AdminCompanyFieldProps {
   name: string;
@@ -51,10 +52,13 @@ const AdminCompanyField: React.FC<AdminCompanyFieldProps> = ({ name, cnpj, respo
       </button>
       {isMenuOpen && (
         <div className={styles.optionsMenu}>
-          <button className={styles.optionButton}>
+          <Link
+            href='adminCompany'
+            className={styles.optionButton}
+          >
             <FaEdit />
             Editar
-          </button>
+          </Link>
           <button className={styles.optionButton}>
             <FaRegTrashCan />
             Apagar
