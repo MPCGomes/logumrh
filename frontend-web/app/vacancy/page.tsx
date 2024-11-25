@@ -81,13 +81,19 @@ const Page = () => {
         <Button
           variant="contained"
           color="primary"
+          sx={{
+            fontSize: '1.25rem',
+            padding: 'auto',
+          }}
           onClick={openModal}
         >
           Aplicar
         </Button>
       </div>
 
-      <ModalApply isOpen={isModalOpen} onClose={closeModal} />
+      <ModalApply isOpen={isModalOpen} onClose={closeModal} onApply={function (): void {
+        throw new Error("Function not implemented.");
+      }} />
     </section>
   );
 };
