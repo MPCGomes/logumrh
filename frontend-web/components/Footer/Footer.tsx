@@ -45,7 +45,7 @@ const Footer = () => {
                 className={styles.item}
                 target="_blank"
                 href={'#'}>
-                (12) 3456-7890
+                (12) 97409-6393
               </Link>
               <Link
                 className={styles.item}

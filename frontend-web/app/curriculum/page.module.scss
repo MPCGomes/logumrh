@@ -1,3 +1,5 @@
+@use '../../styles/variables' as *;
+
 .sections {
   display: flex;
   flex-direction: column;
@@ -39,8 +41,6 @@
   }
 }
 
-@import '../../styles/variables';
-@use
 .createCard {
   max-width: 440px;
   width: 100%;

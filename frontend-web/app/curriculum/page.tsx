@@ -1,11 +1,20 @@
-import React from 'react';
+'use client'
+
+import React, { useState } from 'react';
 import { FaPlus } from "react-icons/fa6";
 import styles from './page.module.scss';
 import ProfileNav from '@/components/ProfileNav/ProfileNav';
 import CurriculumCard from '@/components/CurriculumCard/CurriculumCard';
 import ProfilePicture from '@/components/ProfilePicture/ProfilePicture';
+import ModalAddCv from '@/components/ModalAddCv/ModalAddCv';
 
 const Profile: React.FC = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <section className="container paddingSection">
       <div className={styles.sections}>
@@ -19,7 +28,10 @@ const Profile: React.FC = () => {
             Informações Básicas
           </h2>
           <div className={styles.grid}>
-            <button className={styles.createCard}>
+            <button
+              className={styles.createCard}
+              onClick={openModal}
+            >
               <p className={styles.icon}><FaPlus /></p>
               <p className={styles.create}>Adicionar novo  currículo</p>
             </button>
@@ -31,6 +43,7 @@ const Profile: React.FC = () => {
           </div>
         </div>
       </div>
+      <ModalAddCv isOpen={isModalOpen} onClose={closeModal} />
     </section>
   );
 };

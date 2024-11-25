@@ -31,8 +31,11 @@ const Navbar: React.FC = () => {
             <Link className={styles.linkItem} href={'/vacancies'}>
               Vagas
             </Link>
-            <Link className={styles.linkItem} href={'/'}>
-              Sobre Nós
+            <Link className={styles.linkItem} href={'/profile'}>
+              Perfil
+            </Link>
+            <Link className={styles.linkItem} href={'/admin'}>
+              Admin
             </Link>
           </div>
 

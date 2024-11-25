@@ -5,7 +5,10 @@ import { FaWhatsapp } from "react-icons/fa";
 const WppFloating = () => {
   return (
     <button className={styles.wppFloating}>
-      <a href="#">
+      <a
+      target='_blank'
+       href="https://w.app/sqSG8Z"
+       >
         <FaWhatsapp />
       </a>
     </button>
