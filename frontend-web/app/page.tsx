@@ -11,6 +11,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { GoArrowDown } from "react-icons/go";
 import ServiceCard from '@/components/ServiceCard/ServiceCard';
 import CustomButton from '@/components/CustomButton/CustomButton';
+import { Button } from '@mui/material';
 
 const Home = () => {
   return (
@@ -29,24 +30,31 @@ const Home = () => {
                 Deixe isso com a gente!
               </p>
               <div className={styles.btnGroup}>
-                <CustomButton
+                <Button
                   variant="contained"
                   color="primary"
+                  sx={{
+                    fontSize: '1.25rem',
+                    padding: 'auto',
+                  }}
                   onClick={() => {
                     document.querySelector("#contacts")?.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
                   Oferecer vagas
-                </CustomButton>
-                <CustomButton
+                </Button>
+                <Button
                   variant="outlined"
                   color="secondary"
+                  sx={{
+                    fontSize: '1.25rem',
+                  }}
                   onClick={() => {
                     window.location.href = "/vacancies";
                   }}
                 >
                   Ver vagas
-                </CustomButton>
+                </Button>
               </div>
             </div>
             <img
@@ -225,7 +233,7 @@ const Home = () => {
       </section>
 
       {/* Contatos */}
-      <section className={styles.contact}>
+      <section id="contacts" className={styles.contact}>
         <div className='container paddingSection'>
           <div className='sectionTitle'>
             <h4 className='subtitle darkText'> Deixe uma mensagem</h4>
