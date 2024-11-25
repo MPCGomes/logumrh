@@ -56,7 +56,7 @@ const ModalApply: React.FC<ModalApplyProps> = ({ isOpen, onClose }) => {
             name="imagem"
             id="i1"
           />
-          <label for="i1">
+          <label htmlFor="i1">
             Sim
           </label>
           <input
@@ -64,7 +64,7 @@ const ModalApply: React.FC<ModalApplyProps> = ({ isOpen, onClose }) => {
             name="imagem"
             id="i2"
           />
-          <label for="i2">
+          <label htmlFor="i2">
             Não
           </label>
         </form>
@@ -75,7 +75,7 @@ const ModalApply: React.FC<ModalApplyProps> = ({ isOpen, onClose }) => {
             name="imagem"
             id="j1"
           />
-          <label for="j1">
+          <label htmlFor="j1">
             Sim
           </label>
           <input
@@ -83,7 +83,7 @@ const ModalApply: React.FC<ModalApplyProps> = ({ isOpen, onClose }) => {
             name="imagem"
             id="j2"
           />
-          <label for="j2">
+          <label htmlFor="j2">
             Não
           </label>
         </form>
