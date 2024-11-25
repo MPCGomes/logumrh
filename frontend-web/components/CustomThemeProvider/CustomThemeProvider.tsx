@@ -8,6 +8,21 @@ interface ThemeProps {
   children: ReactNode;
 }
 
+declare module "@mui/material/styles" {
+  interface Palette {
+    customLight?: Palette["primary"];
+  }
+  interface PaletteOptions {
+    customLight?: PaletteOptions["primary"];
+  }
+}
+
+declare module "@mui/material/Button" {
+  interface ButtonPropsVariantOverrides {
+    negativeOutlined: true;
+  }
+}
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -18,9 +33,38 @@ const theme = createTheme({
       main: "#7e053a",
       contrastText: "#ffffff",
     },
+    customLight: {
+      main: "#ffffff",
+      contrastText: "#7e053a",
+    },
   },
   components: {
     MuiButton: {
+      variants: [
+        {
+          props: { variant: "negativeOutlined" },
+          style: {
+            backgroundColor: "#ffffff",
+            color: "#7e053a",
+            border: "1px solid #7e053a",
+            borderRadius: "50px",
+            transition: "all 0.3s ease",
+            "&:hover": {
+              backgroundColor: "#fce4ec",
+              borderColor: "#5a0328",
+              color: "#5a0328",
+            },
+            "&:active": {
+              backgroundColor: "#f8d0da",
+              borderColor: "#5a0328",
+            },
+            "&:focus-visible": {
+              outline: "2px solid #7e053a",
+              outlineOffset: "2px",
+            },
+          },
+        },
+      ],
       styleOverrides: {
         root: {
           borderRadius: "50px",
