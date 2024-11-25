@@ -17,17 +17,6 @@
       flex-direction: row;
     }
   }
-
-  button {
-    border-radius: 50px;
-    background-color: #fff;
-    border: 2px solid var(--background-color);
-    color: var(--primary-color);
-    font-size: $fs-400;
-    font-weight: normal;
-    padding: 12px 20px;
-    cursor: pointer;
-  }
 }
 
 .text {
