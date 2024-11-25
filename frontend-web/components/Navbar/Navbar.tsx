@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
       <nav id="navbar" className={styles.navbar}>
         <div className="container">
           <Link href={'/'}>
-            <Image src="/logo.svg" alt="Logo" width={130} height={65} />
+            <Image src="/logo.svg" alt="Logo" width={100} height={50} />
           </Link>
 
           <div className={styles.linksContainer}>

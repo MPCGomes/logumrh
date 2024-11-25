@@ -14,9 +14,9 @@ const page = () => {
           <div className={styles.leftSide}>
             <p>Bem-vindo de volta!</p>
             <Image
-              src="./login.svg"
+              src="/login.png"
               alt=""
-              height={300}
+              height={210}
               width={300}
             />
           </div>
