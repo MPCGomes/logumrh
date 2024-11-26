@@ -66,7 +66,7 @@ const AdminCandidate: React.FC<AdminCandidateProps> = ({ name, email, phone, dat
       </button>
       {isMenuOpen && (
         <div className={styles.optionsMenu}>
-          <button>
+          <button onClick={() => (window.location.href = '/profile')}>
             <MdPerson />
             Ver perfil
           </button>
