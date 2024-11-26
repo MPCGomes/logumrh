@@ -87,13 +87,13 @@
 
 .buttonContainer {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 20px;
   align-items: center;
 }
 
 .closeButton {
-  text-align: end;
+  text-align: flex-end;
   color: var(--primary-color);
   border: none;
   border-radius: 5px;

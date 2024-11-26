@@ -250,7 +250,7 @@ const Home = () => {
               icon={<IoLogoWhatsapp />}
               title={'WhatsApp'}
               contact={'(12) 97409-6393'}
-              link={'#'}
+              link={'mailto:https://w.app/sqSG8Z'}
             />
             <ContactCard
               icon={<FaLinkedin />}
