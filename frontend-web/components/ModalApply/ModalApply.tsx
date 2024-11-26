@@ -14,7 +14,7 @@ const ModalApply: React.FC<ModalApplyProps> = ({ isOpen, onClose, onApply }) => 
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
-        <p className={styles.title}>Nome da Vaga</p>
+        <p className={styles.title}>Selecione seu currículo</p>
         <form className={styles.cvContainer}>
           <FormLabel component="legend"></FormLabel>
           <RadioGroup

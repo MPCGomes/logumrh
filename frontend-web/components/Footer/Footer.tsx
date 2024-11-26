@@ -44,7 +44,7 @@ const Footer = () => {
               <Link
                 className={styles.item}
                 target="_blank"
-                href={'#'}>
+                href={'https://w.app/sqSG8Z'}>
                 (12) 97409-6393
               </Link>
               <Link
