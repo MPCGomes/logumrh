@@ -1,0 +1,37 @@
+// Palette
+$primary: #7D053A;
+$secondary: #FA8F0D;
+
+$text-primary: #3A2640;
+$text-secondary: #666666;
+
+$background: #ffffff;
+$background-light: #FAFAFA;
+
+$border: #DFE2E4;
+
+// Typography
+$font-family: 'Montserrat';
+
+$font-scale: 1.5; // Multiplier
+
+// Font Sizes
+$font-size-xxl: 3.5rem; // 56px
+$font-size-xl: 3rem; // 48px
+$font-size-lg: 2.25rem; // 36px
+$font-size-md: 1.375rem; // 22px
+$font-size-base: 1rem; // 16px
+$font-size-sm: 0.75rem; // 12px
+
+// Line Heights
+$line-height-xxl: $font-size-xxl * $font-scale;
+$line-height-xl: $font-size-xl * $font-scale;
+$line-height-lg: $font-size-lg * $font-scale;
+$line-height-md: $font-size-md * $font-scale;
+$line-height-base: $font-size-base * $font-scale;
+$line-height-sm: $font-size-sm * $font-scale;
+
+// Breakpoints
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
