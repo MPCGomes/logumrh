@@ -4,12 +4,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $font-family;
 }
 
 body {
   color: $text-primary;
   background-color: $background;
-  font-family: $font-family;
 }
 
 .container {
