@@ -1,0 +1,47 @@
+@import "../../../styles/variables";
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+
+  hr {
+    border: 1px solid #acacac;
+    border-top: 0;
+  }
+}
+
+.testimonialText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .text {
+    font-style: italic;
+  }
+}
+
+.user {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.image {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: $font-size-base;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.role {
+  font-size: $font-size-base;
+  text-transform: uppercase;
+  color: $text-secondary;
+}
