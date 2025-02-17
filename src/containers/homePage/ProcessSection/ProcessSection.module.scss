@@ -1,0 +1,12 @@
+@import '../../../styles/variables';
+
+.cardsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (min-width: $breakpoint-desktop) {
+        flex-direction: row;
+        gap: 50px;
+    }
+}
