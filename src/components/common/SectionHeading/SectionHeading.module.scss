@@ -1,0 +1,28 @@
+@import "../../../styles/variables";
+
+.sectionHeading {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+
+  text-transform: uppercase;
+
+  p {
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: $primary;
+  }
+
+  h2 {
+    font-weight: 800;
+    font-size: $font-size-lg;
+  }
+}
+
+.start {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
