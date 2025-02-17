@@ -1,0 +1,31 @@
+@import "../../../styles/variables";
+
+.ctaSection {
+  background: $primary;
+  padding: 30px;
+
+  div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    color: $background;
+    font-size: $font-size-base;
+
+    @media (min-width: $breakpoint-tablet) {
+      flex-direction: row;
+    }
+  }
+
+  button {
+    font-size: $font-size-md;
+    border: 1px solid $background;
+    color: $background;
+    font-size: $font-size-base;
+  }
+
+  :nth-child(1){
+    text-align: center;
+  }
+}
