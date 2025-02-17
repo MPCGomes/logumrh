@@ -1,0 +1,76 @@
+@import '../../../styles/variables';
+
+.card{
+    padding: 30px 25px;
+    border-radius: 18px;
+
+    hr{
+        border: 1px solid #DEE1E3;
+        border-top: 0px;
+    }
+}
+
+.cardHeader{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.iconSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    :nth-child(1){
+        color: #DEE1E3;
+        font-size: 3rem;
+    }
+
+    :nth-child(2){
+        background-color: hsl(33, 96%, 52%, .40);
+        font-size: $font-size-base;
+        padding: 10px 16px;
+        border-radius: 30px;
+        font-weight: 600;
+    }
+}
+
+.jobInfo{
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+
+    :nth-child(1){
+        font-size: $font-size-md;
+        font-weight: 800;
+    }
+
+    :nth-child(2), :nth-child(3){
+        font-size: $font-size-base;
+        color: $text-secondary;
+    }
+}
+
+.jobDetails{
+    list-style: none;
+
+    li{
+        font-size: $font-size-base;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+}
+
+.cardButtons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    :nth-child(1){
+        text-decoration: none;
+        color: $primary;
+        font-weight: 600;
+    }
+}
