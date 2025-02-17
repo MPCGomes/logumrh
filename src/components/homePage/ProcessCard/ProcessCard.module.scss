@@ -6,6 +6,7 @@
     align-items: center;
     gap: 32px;
     padding: 32px;
+    width: 100%;
 }
 
 .processCard img{
@@ -21,7 +22,7 @@
 
     .title{
         font-size: $font-size-md;
-        font-weight: 800;
+        font-weight: bold;
         text-transform: uppercase;
     }
 
