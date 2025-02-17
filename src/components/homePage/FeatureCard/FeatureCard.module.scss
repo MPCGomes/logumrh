@@ -1,0 +1,29 @@
+@import "../../../styles/variables";
+
+.featureCard {
+  padding: 30px 25px;
+  height: 100%;
+  border: 1px solid $border;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  :nth-child(1) {
+    font-size: 3rem;
+    color: $primary;
+    margin-bottom: -5px;
+  }
+
+  :nth-child(2) {
+    font-size: $font-size-md;
+    font-weight: bold;
+  }
+
+  :nth-child(3) {
+    font-size: $font-size-base;
+    color: $text-secondary;
+  }
+}
