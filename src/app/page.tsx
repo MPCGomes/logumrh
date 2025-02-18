@@ -5,7 +5,7 @@ import FeaturesSection from "@/containers/homePage/FeaturesSection/FeaturesSecti
 import HeroSection from "@/containers/homePage/HeroSection/HeroSection";
 import ProcessSection from "@/containers/homePage/ProcessSection/ProcessSection";
 import TestimonialsSection from "@/containers/homePage/TestimonialsSection/TestimonialsSection";
-import ServiceCard from "@/components/homePage/ServiceCard/ServiceCard";
+import ServicesSection from "@/containers/homePage/ServicesSection/ServicesSection";
 
 export default function Home() {
   return (
@@ -13,6 +13,7 @@ export default function Home() {
       <HeroSection />
       <ProcessSection />
       <FeaturesSection />
+      <ServicesSection />
       <TestimonialsSection />
       <FaqSection />
       <CtaSection />
