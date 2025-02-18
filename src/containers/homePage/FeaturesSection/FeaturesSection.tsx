@@ -14,7 +14,7 @@ const FeaturesSection = () => {
             subheading="conheça a"
             heading="logum recursos humanos"
           />
-          <p>
+          <p className={styles.description}>
             Somos pioneiros em Recursos Humanos em Caraguatatuba. Atendemos
             empresas do Litoral Norte e Vale do Paraíba com soluções
             estratégicas em Gestão de Pessoas, garantindo contratações
