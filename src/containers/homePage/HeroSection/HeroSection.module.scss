@@ -43,9 +43,14 @@
 .buttonContainer{
     display: flex;
     gap: 20px;
+    flex-direction: column;
 
     button{
         text-transform: uppercase;
         font-size: $font-size-md;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        flex-direction: row;
     }
 }
