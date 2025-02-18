@@ -1,0 +1,43 @@
+@import "../../../styles/variables";
+
+.featureContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  p {
+    text-align: center;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    align-items: start;
+
+    p {
+      text-align: start;
+    }
+  }
+}
+
+.featuresGrid {
+  display: grid;
+  gap: 20px;
+
+  @media (min-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
