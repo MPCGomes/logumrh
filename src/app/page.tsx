@@ -4,25 +4,16 @@ import CtaSection from "@/containers/homePage/CtaSection/CtaSection";
 import FeaturesSection from "@/containers/homePage/FeaturesSection/FeaturesSection";
 import HeroSection from "@/containers/homePage/HeroSection/HeroSection";
 import ProcessSection from "@/containers/homePage/ProcessSection/ProcessSection";
-import TestimonialsSection from "@/containers/homePage/TestimonialsSection/TestimonialsSection";
+import JobSection from "@/containers/homePage/JobsSection/JobsSection";
 import ServicesSection from "@/containers/homePage/ServicesSection/ServicesSection";
-import JobCard from "@/components/common/JobCard/JobCard";
+import TestimonialsSection from "@/containers/homePage/TestimonialsSection/TestimonialsSection";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <JobCard
-        id={"undefined"}
-        jobTitle={"undefined"}
-        company={"undefined"}
-        location={"undefined"}
-        salary={"undefined"}
-        benefits={"undefined"}
-        schedule={"undefined"}
-        workDays={"undefined"}
-      />
       <HeroSection />
       <ProcessSection />
+      <JobSection />
       <FeaturesSection />
       <ServicesSection />
       <TestimonialsSection />
