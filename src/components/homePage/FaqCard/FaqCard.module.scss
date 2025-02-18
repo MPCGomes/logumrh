@@ -1,0 +1,53 @@
+@use "@/styles/variables"as *;
+
+.faqCard {
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid $border;
+  transition: all 0.3s ease;
+}
+
+.question {
+  width: 100%;
+  background: transparent;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight: 600;
+  padding: 20px;
+  text-align: left;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: $text-primary;
+
+  .icon {
+    color: $primary;
+    transition: transform 0.3s ease;
+  }
+}
+
+.answer {
+  display: none;
+  padding: 20px;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-primary;
+}
+
+.open {
+  border-color: $border;
+}
+
+.open .answer {
+  display: block;
+}
+
+.open .icon {
+  color: $primary;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
