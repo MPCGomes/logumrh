@@ -1,6 +1,6 @@
 @use '_variables'as *;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,7 +16,6 @@ body {
   width: 100%;
   max-width: $breakpoint-mobile;
   margin: 0 auto;
-  padding: 0 20px;
 
   @media (min-width: $breakpoint-mobile) {
     max-width: $breakpoint-tablet;
@@ -29,8 +28,16 @@ body {
 
 .section {
   width: 100%;
-  padding: 72px 0px;
+  padding: 72px 16px;
   display: flex;
   flex-direction: column;
   gap: 56px;
+
+  @media (min-width: $breakpoint-mobile) {
+    padding: 72px 16px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 72px 120px;
+  }
 }
