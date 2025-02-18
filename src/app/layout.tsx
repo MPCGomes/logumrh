@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@fontsource/montserrat";
 import "../styles/globals.scss";
+import Header from "@/components/common/Header/Header";
 
 export const metadata: Metadata = {
   title: "Logum Recursos Humanos",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
