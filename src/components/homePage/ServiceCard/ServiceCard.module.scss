@@ -1,0 +1,70 @@
+@import "../../../styles/variables";
+
+.serviceCard {
+  max-width: 450px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid $border;
+
+  img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+.cardInfo {
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 15px 30px;
+
+  :nth-child(2) {
+    font-size: $font-size-sm;
+    color: $primary;
+    margin-top: -5px;
+    margin-bottom: 5px;
+  }
+
+  :nth-child(3) {
+    font-size: $font-size-md;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+}
+
+.icon {
+  position: relative;
+  left: 0px;
+  margin-top: -55px;
+  padding: 8px;
+  color: $primary;
+  background-color: #fafafa;
+  border-radius: 7px;
+  border-bottom: 3px solid $primary;
+  align-self: flex-end;
+
+  width: 66px;
+  height: 66px;
+}
+
+.features {
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    font-size: $font-size-base;
+    color: $text-secondary;
+    margin-bottom: 5px;
+    gap: 5px;
+
+    span {
+      color: $primary;
+    }
+  }
+}
