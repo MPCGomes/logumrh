@@ -1,0 +1,37 @@
+@use "@/styles/variables"as *;
+
+.section {
+  gap: 24px;
+}
+
+.markdown {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-primary;
+
+  h1 {
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: $font-size-md;
+    line-height: $line-height-md;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+  }
+
+  ul,
+  ol {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+}
