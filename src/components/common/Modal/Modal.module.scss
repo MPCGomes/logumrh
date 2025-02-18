@@ -1,0 +1,105 @@
+@use "@/styles/variables" as *;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 10px;
+}
+
+.modal {
+  background: white;
+  padding: 30px 25px;
+  max-width: 625px;
+  width: 100%;
+  border: 1px solid $border;
+  border-radius: 18px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.textContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+
+  h2 {
+    color: $text-primary;
+    font-size: $font-size-md;
+  }
+
+  :nth-child(1) {
+    color: #dee1e3;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.label {
+  font-size: $font-size-base;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin-top: 5px;
+  font-size: $font-size-base;
+  padding: 12px 10px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  color: $text-primary;
+}
+
+.contactInfo{
+    display: grid;
+    gap: 20px;
+
+    @media (min-width: $breakpoint-desktop) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+.inputUpload{
+    border: 2px dashed $border;
+    border-radius: 8px;
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+
+  :nth-child(1) {
+    padding: 12px 24px;
+    font-size: $font-size-base;
+    color: $primary;
+    background-color: transparent;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+}
+
+.button {
+  padding: 12px 24px;
+  font-size: $font-size-base;
+  color: white;
+  background-color: $primary;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}

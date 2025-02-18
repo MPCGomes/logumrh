@@ -1,4 +1,6 @@
-import React from "react";
+'use client';
+
+import React, { useState } from "react";
 import styles from "./JobCard.module.scss";
 import Button from "../Button/Button";
 import Link from "next/link";
@@ -9,6 +11,7 @@ import {
   WorkOutlineOutlined as WorkIcon,
   CalendarMonthOutlined as CalendarIcon,
 } from "@mui/icons-material";
+import Modal from "../Modal/Modal";
 
 interface JobCardProps {
   id: React.ReactNode;
@@ -31,6 +34,8 @@ const JobCard: React.FC<JobCardProps> = ({
   schedule,
   workDays,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
@@ -74,8 +79,9 @@ const JobCard: React.FC<JobCardProps> = ({
         <hr />
       </div>
       <div className={styles.cardButtons}>
-        <Link href={"#"}> Ver mais</Link>
-        <Button>Candidatar-se</Button>
+        <Link className={styles.link} href={"#"}>Ver mais</Link>
+        <Button onClick={() => setIsModalOpen(true)}>Candidatar-se</Button>
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
     </div>
   );
