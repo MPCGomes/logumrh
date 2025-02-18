@@ -13,17 +13,6 @@ Descrição detalhada da vaga. Aqui você pode usar **negrito**, _itálico_, lis
 
 - Trabalho remoto
 - Horário flexível
-- Ambiente dinâmicoas
-d
-as
-d
-sad
-sa
-d
-asd
-as
-d
-asd
-
+- Ambiaente dinâmicoas
 
 [Saiba mais](https://example.com)
