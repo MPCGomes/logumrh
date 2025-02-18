@@ -11,17 +11,19 @@ import {
 } from "@mui/icons-material";
 
 interface JobCardProps {
-  id: React.ReactNode;
-  jobTitle: React.ReactNode;
-  company: React.ReactNode;
-  location: React.ReactNode;
-  salary: React.ReactNode;
-  benefits: React.ReactNode;
-  schedule: React.ReactNode;
-  workDays: React.ReactNode;
+  slug: string;
+  id: string;
+  jobTitle: string;
+  company: string;
+  location: string;
+  salary: string;
+  benefits: string;
+  schedule: string;
+  workDays: string;
 }
 
 const JobCard: React.FC<JobCardProps> = ({
+  slug,
   id,
   jobTitle,
   company,
@@ -48,25 +50,25 @@ const JobCard: React.FC<JobCardProps> = ({
         <ul className={styles.jobDetails}>
           <li>
             <span>
-              <MoneyIcon color="disabled" />
+              <MoneyIcon color="primary" />
             </span>{" "}
             {salary}
           </li>
           <li>
             <span>
-              <FavoriteIcon color="disabled" />
+              <FavoriteIcon color="primary" />
             </span>{" "}
             {benefits}
           </li>
           <li>
             <span>
-              <WorkIcon color="disabled" />
+              <WorkIcon color="primary" />
             </span>{" "}
             {schedule}
           </li>
           <li>
             <span>
-              <CalendarIcon color="disabled" />
+              <CalendarIcon color="primary" />
             </span>{" "}
             {workDays}
           </li>
@@ -74,7 +76,7 @@ const JobCard: React.FC<JobCardProps> = ({
         <hr />
       </div>
       <div className={styles.cardButtons}>
-        <Link href={"#"}> Ver mais</Link>
+        <Link href={`/jobs/${slug}`}>Ver Mais</Link>
         <Button>Candidatar-se</Button>
       </div>
     </div>

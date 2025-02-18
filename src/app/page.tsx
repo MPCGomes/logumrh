@@ -4,14 +4,16 @@ import CtaSection from "@/containers/homePage/CtaSection/CtaSection";
 import FeaturesSection from "@/containers/homePage/FeaturesSection/FeaturesSection";
 import HeroSection from "@/containers/homePage/HeroSection/HeroSection";
 import ProcessSection from "@/containers/homePage/ProcessSection/ProcessSection";
-import TestimonialsSection from "@/containers/homePage/TestimonialsSection/TestimonialsSection";
+import JobSection from "@/containers/homePage/JobsSection/JobsSection";
 import ServicesSection from "@/containers/homePage/ServicesSection/ServicesSection";
+import TestimonialsSection from "@/containers/homePage/TestimonialsSection/TestimonialsSection";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <HeroSection />
       <ProcessSection />
+      <JobSection />
       <FeaturesSection />
       <ServicesSection />
       <TestimonialsSection />
