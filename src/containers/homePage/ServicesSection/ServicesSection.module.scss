@@ -1,0 +1,56 @@
+@import "../../../styles/variables";
+
+.servicesContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 40px;
+  justify-content: space-between;
+
+  @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .description{
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    align-items: start;
+    width: 700px;
+
+    h2 {
+      text-align: start;
+    }
+
+    p {
+      text-align: start;
+    }
+  }
+}
+
+.servicesGrid {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+
+  @media (min-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
