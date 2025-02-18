@@ -1,6 +1,6 @@
-@import '../../../styles/variables';
+@use "@/styles/variables"as *;
 
-.cardsContainer{
+.cardsContainer {
     display: flex;
     flex-direction: column;
     gap: 40px;
