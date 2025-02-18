@@ -7,7 +7,7 @@ interface ServiceCardProps {
   src: string;
   title: string;
   description: string;
-  features: string;
+  features: string[]; // Agora é um array de strings
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -22,18 +22,20 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <div className={styles.cardInfo}>
         <div className={styles.icon}>
           <p>
-            <PeopleOutlineIcon sx={{ fontSize: 50 }} />
+            <PeopleOutlineIcon sx={{ fontSize: 45 }} />
           </p>
         </div>
         <p>{title}</p>
         <p>{description}</p>
         <ul className={styles.features}>
-          <li>
-            <span>
-              <CheckIcon sx={{ fontSize: 20 }} />
-            </span>
-            {features}
-          </li>
+          {features.map((feature, index) => (
+            <li key={index}>
+              <span>
+                <CheckIcon sx={{ fontSize: 20 }} />
+              </span>
+              {feature}
+            </li>
+          ))}
         </ul>
       </div>
     </div>

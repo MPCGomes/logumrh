@@ -9,8 +9,8 @@ const TestimonialsSection = () => {
     <section className={clsx(styles.heroContainer, "container section")}>
       <SectionHeading
         variant="center"
-        subheading="Confira os nossos"
-        heading="Depoimentos"
+        subheading="O que dizem sobre nós"
+        heading="Depoimentos de nossos clientes"
       />
       <div className={styles.gridContainer}>
         <Testimonial
