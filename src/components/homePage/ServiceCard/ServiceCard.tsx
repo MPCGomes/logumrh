@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "./ServiceCard.module.scss";
 import CheckIcon from "@mui/icons-material/Check";
-import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
+import { ReactNode } from "react";
 
 interface ServiceCardProps {
   src: string;
   title: string;
   description: string;
-  features: string[]; // Agora é um array de strings
+  features: string[];
+  icon: ReactNode;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -15,18 +16,19 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   description,
   features,
+  icon,
 }) => {
   return (
     <div className={styles.serviceCard}>
-      <img src={src} alt="error" />
+      <div className={styles.image}>
+        <img src={src} alt="process-image" />
+      </div>
       <div className={styles.cardInfo}>
         <div className={styles.icon}>
-          <p>
-            <PeopleOutlineIcon sx={{ fontSize: 45 }} />
-          </p>
+          <p>{icon}</p>
         </div>
-        <p>{title}</p>
-        <p>{description}</p>
+        <p className={styles.title}>{title}</p>
+        <p className={styles.description}>{description}</p>
         <ul className={styles.features}>
           {features.map((feature, index) => (
             <li key={index}>
