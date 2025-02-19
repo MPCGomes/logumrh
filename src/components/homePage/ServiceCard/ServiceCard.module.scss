@@ -39,13 +39,14 @@
   padding: 15px 30px;
   gap: 5px;
 
-  :nth-child(2) {
+  .title {
     font-size: $font-size-sm;
     line-height: $line-height-sm;
     color: $primary;
+    margin-top: -15px;
   }
 
-  :nth-child(3) {
+  .description {
     font-size: $font-size-md;
     line-height: $line-height-md;
     font-weight: 600;
@@ -56,12 +57,21 @@
   position: relative;
   left: 0px;
   margin-top: -46px;
-  padding: 8px 10px 5px;
+  padding: 8px 10px;
   color: $primary;
   background-color: #fafafa;
   border-radius: 7px;
-  border-bottom: 3px solid $primary;
   align-self: flex-end;
+
+  -webkit-box-shadow: inset 0px -26px 0px 0px $primary;
+  -moz-box-shadow: inset 0px -26px 0px 0px $primary;
+  box-shadow: inset 0px -3px 0px 0px $primary;
+}
+
+.serviceCard:hover .icon {
+  color: $background-light;
+  background-color: $primary;
+  transition: 0.4s all ease-in-out;
 }
 
 .features {
