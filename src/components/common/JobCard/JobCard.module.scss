@@ -15,12 +15,6 @@
   border: 1px solid $primary;
   transform: scale(1.02);
   transition: 0.3s all ease-in-out;
-
-  .jobInfo {
-    :nth-child(1) {
-      color: $primary;
-    }
-  }
 }
 
 .cardHeader {
@@ -55,12 +49,14 @@
 
   :nth-child(1) {
     font-size: $font-size-md;
+    line-height: $line-height-md;
     font-weight: 800;
   }
 
   :nth-child(2),
   :nth-child(3) {
     font-size: $font-size-base;
+    line-height: $line-height-base;
     color: $text-secondary;
   }
 }
@@ -70,6 +66,7 @@
 
   li {
     font-size: $font-size-base;
+    line-height: $line-height-base;
     display: flex;
     align-items: center;
     gap: 8px;

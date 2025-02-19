@@ -34,6 +34,7 @@
   h2 {
     color: $text-primary;
     font-size: $font-size-md;
+    line-height: $line-height-md;
   }
 
   :nth-child(1) {
@@ -49,6 +50,7 @@
 
 .label {
   font-size: $font-size-base;
+  line-height: $line-height-base;
   display: flex;
   flex-direction: column;
 }
@@ -56,6 +58,7 @@
 .input {
   margin-top: 5px;
   font-size: $font-size-base;
+  line-height: $line-height-base;
   padding: 12px 10px;
   border: 1px solid $border;
   border-radius: 8px;
@@ -86,7 +89,8 @@
   :nth-child(1) {
     padding: 12px 24px;
     font-size: $font-size-base;
-    color: $primary;
+  line-height: $line-height-base;
+  color: $primary;
     background-color: transparent;
     border: none;
     border-radius: 30px;
@@ -97,6 +101,7 @@
 .button {
   padding: 12px 24px;
   font-size: $font-size-base;
+  line-height: $line-height-base;
   color: white;
   background-color: $primary;
   border: none;

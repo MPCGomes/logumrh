@@ -8,7 +8,7 @@
   border: 1px solid $border;
 }
 
-.serviceCard:hover{
+.serviceCard:hover {
   border: 1px solid $primary;
 }
 
@@ -41,11 +41,13 @@
 
   :nth-child(2) {
     font-size: $font-size-sm;
+    line-height: $line-height-sm;
     color: $primary;
   }
 
   :nth-child(3) {
     font-size: $font-size-md;
+    line-height: $line-height-md;
     font-weight: 600;
   }
 }
@@ -73,6 +75,7 @@
     display: flex;
     align-items: center;
     font-size: $font-size-base !important;
+    line-height: $line-height-base;
     color: $text-secondary !important;
     font-weight: 400 !important;
     gap: 5px;

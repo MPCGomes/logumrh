@@ -1,4 +1,4 @@
-@use "@/styles/variables"as *;
+@use "@/styles/variables" as *;
 
 .ctaSection {
   background: $primary;
@@ -12,6 +12,7 @@
     align-items: center;
     color: $background;
     font-size: $font-size-base;
+    line-height: $line-height-base;
 
     @media (min-width: $breakpoint-tablet) {
       flex-direction: row;
@@ -19,13 +20,13 @@
   }
 
   button {
-    font-size: $font-size-md;
+    line-height: $line-height-base;
     border: 1px solid $background;
     color: $background;
     font-size: $font-size-base;
   }
 
-  :nth-child(1){
+  :nth-child(1) {
     text-align: center;
   }
 }
