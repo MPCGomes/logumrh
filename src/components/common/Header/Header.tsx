@@ -14,13 +14,14 @@ const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.section}>
-          <Image
-            src="/assets/logo_horizontal.png"
-            alt="Logo"
-            width={150}
-            height={50}
-          />
-
+          <Link href="/" passHref>
+            <Image
+              src="/assets/logo_horizontal.png"
+              alt="Logo"
+              width={150}
+              height={50}
+            />
+          </Link>
           <nav className={styles.navbar}>
             <Link href="/" className={styles.navItem}>
               Início
