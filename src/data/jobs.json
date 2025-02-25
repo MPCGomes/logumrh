@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "frontend-developer",
+    "id": "1",
+    "jobTitle": "Desenvolvedor Frontend",
+    "company": "Tech Corp",
+    "location": "Remoto",
+    "salary": "R$ 8.000,00",
+    "benefits": "Vale Refeição, Plano de Saúde",
+    "schedule": "Tempo integral",
+    "workDays": "Seg-Sex",
+    "content": "\r\nDescrição detalhada da vaga. Aqui você pode usar **negrito**, _itálico_, listas:\r\n\r\n- Trabalho remoto\r\n- Horário flexível\r\n- Ambiente dinâmicoas\r\nd\r\nas\r\nd\r\nsad\r\nsa\r\nd\r\nasd\r\nas\r\nd\r\nasd\r\n\r\n\r\n[Saiba mais](https://example.com)\r\n"
+  },
+  {
+    "slug": "frontend-developer2",
+    "id": "1",
+    "jobTitle": "Desenvolvedor Frontend",
+    "company": "Tech Corp",
+    "location": "Remoto",
+    "salary": "R$ 8.000,00",
+    "benefits": "Vale Refeição, Plano de Saúde",
+    "schedule": "Tempo integral",
+    "workDays": "Seg-Sex",
+    "content": "\r\nDescrição detalhada da vaga. Aqui você pode usar **negrito**, _itálico_, listas:\r\n\r\n- Trabalho remoto\r\n- Horário flexível\r\n- Ambiente dinâmico\r\n\r\n[Saiba mais](https://example.com)\r\n"
+  },
+  {
+    "slug": "frontend-developer3",
+    "id": "1",
+    "jobTitle": "Desenvolvedor Frontend",
+    "company": "Tech Corp",
+    "location": "Remoto",
+    "salary": "R$ 8.000,00",
+    "benefits": "Vale Refeição, Plano de Saúde",
+    "schedule": "Tempo integral",
+    "workDays": "Seg-Sex",
+    "content": "\r\nDescrição detalhada da vaga. Aqui você pode usar **negrito**, _itálico_, listas:\r\n\r\n- Trabalho remoto\r\n- Horário flexível\r\n- Ambiente dinâmico\r\n\r\n[Saiba mais](https://example.com)\r\n"
+  }
+]
