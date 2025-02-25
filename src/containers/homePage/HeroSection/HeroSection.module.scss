@@ -24,16 +24,26 @@
   text-align: center;
 
   h1 {
-    font-size: $font-size-xl;
-    line-height: $line-height-xl;
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
     text-transform: uppercase;
     font-weight: 800;
+
+    @media (min-width: $breakpoint-mobile) {
+      font-size: $font-size-xl;
+      line-height: $line-height-xl;
+    }
   }
 
   h3 {
-    font-size: $font-size-md;
-    line-height: $line-height-md;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
     font-weight: 400;
+
+    @media (min-width: $breakpoint-mobile) {
+      font-size: $font-size-md;
+      line-height: $line-height-md;
+    }
   }
 
   @media (min-width: $breakpoint-desktop) {
@@ -49,8 +59,12 @@
 
   button {
     text-transform: uppercase;
-    font-size: $font-size-md;
+    font-size: $font-size-base;
     line-height: $line-height-md;
+
+    @media (min-width: $breakpoint-mobile) {
+      font-size: $font-size-md;
+    }
   }
 
   @media (min-width: $breakpoint-desktop) {
