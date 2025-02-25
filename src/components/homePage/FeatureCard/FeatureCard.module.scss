@@ -1,4 +1,4 @@
-@use "@/styles/variables"as *;
+@use "@/styles/variables" as *;
 
 .featureCard {
   padding: 25px 16px;
@@ -20,11 +20,19 @@
 
   :nth-child(2) {
     font-size: $font-size-md;
+    line-height: $line-height-md;
     font-weight: bold;
   }
 
   :nth-child(3) {
     font-size: $font-size-base;
+    line-height: $line-height-base;
     color: $text-secondary;
   }
+}
+
+.featureCard:hover {
+  border: 1px solid $primary;
+  transform: scale(1.02);
+  transition: 0.3s all ease-in-out;
 }

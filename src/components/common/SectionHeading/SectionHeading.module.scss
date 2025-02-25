@@ -1,4 +1,4 @@
-@use "@/styles/variables"as *;
+@use "@/styles/variables" as *;
 
 .sectionHeading {
   display: flex;
@@ -9,6 +9,7 @@
 
   .subheading {
     font-size: $font-size-base;
+    line-height: $line-height-base;
     font-weight: 600;
     color: $primary;
   }
@@ -16,6 +17,7 @@
   .heading {
     font-weight: 800;
     font-size: $font-size-lg;
+    line-height: $line-height-lg;
   }
 }
 

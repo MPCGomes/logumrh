@@ -18,7 +18,7 @@ const HeroSection = () => {
           <Button>Ver Vagas</Button>
         </div>
       </div>
-      <img src="/assets/hero-img.svg" alt="error" />
+      <img src="/assets/hero-img.svg" alt="hero-img" />
     </section>
   );
 };

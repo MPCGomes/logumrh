@@ -1,76 +1,87 @@
-@use "@/styles/variables"as *;
+@use "@/styles/variables" as *;
 
-.card{
-    padding: 30px 25px;
-    border-radius: 18px;
+.card {
+  padding: 30px 25px;
+  border-radius: 18px;
+  border: 1px solid $border;
 
-    hr{
-        border: 1px solid #DEE1E3;
-        border-top: 0px;
-    }
+  hr {
+    border: 1px solid #dee1e3;
+    border-top: 0px;
+  }
 }
 
-.cardHeader{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.card:hover {
+  border: 1px solid $primary;
+  transform: scale(1.02);
+  transition: 0.3s all ease-in-out;
 }
 
-.iconSection{
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.iconSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  :nth-child(1) {
+    color: #dee1e3;
+    font-size: 3rem;
+  }
+
+  :nth-child(2) {
+    background-color: hsl(33, 96%, 52%, 0.4);
+    font-size: $font-size-base;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-weight: 600;
+  }
+}
+
+.jobInfo {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+
+  :nth-child(1) {
+    font-size: $font-size-md;
+    line-height: $line-height-md;
+    font-weight: 800;
+  }
+
+  :nth-child(2),
+  :nth-child(3) {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $text-secondary;
+  }
+}
+
+.jobDetails {
+  list-style: none;
+
+  li {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
-    :nth-child(1){
-        color: #DEE1E3;
-        font-size: 3rem;
-    }
-
-    :nth-child(2){
-        background-color: hsl(33, 96%, 52%, .40);
-        font-size: $font-size-base;
-        padding: 10px 16px;
-        border-radius: 30px;
-        font-weight: 600;
-    }
+    gap: 8px;
+  }
 }
 
-.jobInfo{
-    display: flex;
-    gap: 4px;
-    flex-direction: column;
+.cardButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
 
-    :nth-child(1){
-        font-size: $font-size-md;
-        font-weight: 800;
-    }
-
-    :nth-child(2), :nth-child(3){
-        font-size: $font-size-base;
-        color: $text-secondary;
-    }
-}
-
-.jobDetails{
-    list-style: none;
-
-    li{
-        font-size: $font-size-base;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-}
-
-.cardButtons{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-
-    .link{
-        text-decoration: none;
-        color: $primary;
-        font-weight: 600;
-    }
+  .link {
+    text-decoration: none;
+    color: $primary;
+    font-weight: 600;
+  }
 }

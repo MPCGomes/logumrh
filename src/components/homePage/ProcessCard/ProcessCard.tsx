@@ -14,7 +14,7 @@ const ProcessCard: React.FC<ProcessCardProps> = ({
 }) => {
   return (
     <div className={styles.processCard}>
-      <img src={icon} alt="error" />
+      <img src={icon} alt="process-icon" />
       <div className={styles.text}>
         <p className={styles.title}>{title}</p>
         <p className={styles.description}>{description}</p>

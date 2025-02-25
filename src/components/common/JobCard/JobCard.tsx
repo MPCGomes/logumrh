@@ -55,25 +55,25 @@ const JobCard: React.FC<JobCardProps> = ({
         <ul className={styles.jobDetails}>
           <li>
             <span>
-              <MoneyIcon color="primary" />
+              <MoneyIcon color="disabled" />
             </span>{" "}
             {salary}
           </li>
           <li>
             <span>
-              <FavoriteIcon color="primary" />
+              <FavoriteIcon color="disabled" />
             </span>{" "}
             {benefits}
           </li>
           <li>
             <span>
-              <WorkIcon color="primary" />
+              <WorkIcon color="disabled" />
             </span>{" "}
             {schedule}
           </li>
           <li>
             <span>
-              <CalendarIcon color="primary" />
+              <CalendarIcon color="disabled" />
             </span>{" "}
             {workDays}
           </li>

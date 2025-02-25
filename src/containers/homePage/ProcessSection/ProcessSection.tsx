@@ -14,17 +14,17 @@ const ProcessSection = () => {
         />
         <div className={styles.cardsContainer}>
           <ProcessCard
-            icon={"https://cdn-icons-png.flaticon.com/512/69/69544.png"}
+            icon={"/assets/balloon-icon.svg"}
             title={"Contato"}
             description={"Avaliamos suas necessidades e encontramos o perfil que sua empresa precisa!"}
           />
           <ProcessCard
-            icon={"https://cdn-icons-png.flaticon.com/512/69/69544.png"}
+            icon={"/assets/clock-icon.svg"}
             title={"Poupe Tempo"}
             description={"Deixe a triagem de currículos, testes e entrevistas com a gente."}
           />
           <ProcessCard
-            icon={"https://cdn-icons-png.flaticon.com/512/69/69544.png"}
+            icon={"/assets/person-icon.svg"}
             title={"Recomendação"}
             description={"Receba relatórios sobre os melhores candidatos: a decisão é sua!"}
           />
