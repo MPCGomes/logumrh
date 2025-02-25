@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import styles from "./JobCard.module.scss";
@@ -81,7 +81,9 @@ const JobCard: React.FC<JobCardProps> = ({
         <hr />
       </div>
       <div className={styles.cardButtons}>
-        <Link className={styles.link} href={"#"}>Ver mais</Link>
+        <Link className={styles.link} href={`/jobs/${slug}`}>
+          Ver mais
+        </Link>
         <Button onClick={() => setIsModalOpen(true)}>Candidatar-se</Button>
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
