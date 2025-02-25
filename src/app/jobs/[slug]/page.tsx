@@ -1,44 +1,39 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-import { getJobBySlug, JobData } from "@/utils/jobFetcher";
+import React from "react";
 import styles from "./page.module.scss";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Button from "@/components/common/Button/Button";
-import clsx from "clsx";
+import jobsData from "@/data/jobs.json";
 
-const JobDetailPage = ({ params }: { params: Promise<{ slug: string }> }) => {
-  const [job, setJob] = useState<JobData | null>(null);
-  const [slug, setSlug] = useState<string | null>(null);
+interface JobData {
+  slug: string;
+  id: string;
+  jobTitle: string;
+  company: string;
+  location: string;
+  salary: string;
+  benefits: string;
+  schedule: string;
+  workDays: string;
+  content: string;
+}
 
-  useEffect(() => {
-    params.then((resolvedParams) => {
-      setSlug(resolvedParams.slug);
-    });
-  }, [params]);
+export function generateStaticParams() {
+  return jobsData.map((job) => ({
+    slug: job.slug,
+  }));
+}
 
-  useEffect(() => {
-    if (slug) {
-      getJobBySlug(slug).then(setJob);
-    }
-  }, [slug]);
-
-  if (!slug) {
-    return <p>Carregando...</p>;
-  }
-
-  if (job === null) {
-    return <p>Carregando vaga...</p>;
-  }
+const JobDetailPage = ({ params }: { params: { slug: string } }) => {
+  const job = jobsData.find((j) => j.slug === params.slug);
 
   if (!job) {
     return <p>Vaga não encontrada.</p>;
   }
 
   return (
-    <section className={clsx("container section", styles.section)}>
+    <section className={"container section " + styles.section}>
       <h1>{job.jobTitle}</h1>
       <p>
         {job.company} - {job.location}
