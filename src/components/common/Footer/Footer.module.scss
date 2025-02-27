@@ -1,0 +1,92 @@
+@use "@/styles/variables" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 50px 16px;
+
+  width: 100%;
+  max-width: $breakpoint-mobile;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint-tablet) {
+    max-width: 1024px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    max-width: 1440px;
+    align-items: normal;
+    padding: 50px 120px;
+  }
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (min-width: $breakpoint-desktop) {
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-between;
+    }
+}
+
+.logo {
+  max-width: 200px;
+  width: 100%;
+}
+
+.groupContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: $breakpoint-desktop) {
+    text-align: start;
+  }
+}
+
+.title {
+  font-size: $font-size-base;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: $font-size-base;
+}
+
+.item {
+  font-size: $font-size-base;
+}
+
+.link {
+  text-decoration: none;
+  color: $text-primary;
+}
+
+.hr {
+  width: 100%;
+  border: 1px solid #dee1e3;
+  border-top: 0px;
+}
+
+.copyrightContainer {
+  text-align: center;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

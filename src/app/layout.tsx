@@ -3,6 +3,7 @@ import "@fontsource/montserrat";
 import "../styles/globals.scss";
 import Header from "@/components/common/Header/Header";
 import BackToTop from "@/components/common/BackToTop/BackToTop";
+import Footer from "@/components/common/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Logum Recursos Humanos",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <Header />
         <BackToTop />
         {children}
+        <Footer />
       </body>
     </html>
   );
