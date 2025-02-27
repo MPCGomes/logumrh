@@ -1,4 +1,4 @@
-import fs from "fs";
+import { promises as fs } from "fs";
 import path from "path";
 import styles from "./page.module.scss";
 import Link from "next/link";
@@ -7,31 +7,37 @@ import remarkGfm from "remark-gfm";
 import Button from "@/components/common/Button/Button";
 import jobsData from "@/data/jobs.json";
 
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export const dynamic = "force-static";
+
 export function generateStaticParams() {
   return jobsData.map((job) => ({
     slug: job.slug,
   }));
 }
 
-const getJobContent = (slug: string): string | null => {
+const getJobContent = async (slug: string): Promise<string | null> => {
   const filePath = path.join(process.cwd(), "public", "jobs", `${slug}.md`);
 
   try {
-    return fs.readFileSync(filePath, "utf-8");
+    return await fs.readFile(filePath, "utf-8");
   } catch (error) {
     console.error(`Erro ao carregar o arquivo Markdown: ${slug}.md`, error);
     return null;
   }
 };
 
-const JobDetailPage = ({ params }: { params: { slug: string } }) => {
-  const job = jobsData.find((j) => j.slug === params.slug);
+const JobDetailPage = async ({ params }: PageProps) => {
+  const job = jobsData.find(async (j) => j.slug === (await params).slug);
 
   if (!job) {
     return <p>Vaga não encontrada.</p>;
   }
 
-  const jobContent = getJobContent(params.slug);
+  const jobContent = await getJobContent((await params).slug);
 
   if (!jobContent) {
     return <p>Erro ao carregar a descrição da vaga.</p>;
