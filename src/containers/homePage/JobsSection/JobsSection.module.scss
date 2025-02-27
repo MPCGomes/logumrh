@@ -10,12 +10,8 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 30px;
   }
-}
 
-.viewAll {
-  display: inline-block;
-  margin-top: 20px;
-  color: $primary;
-  font-weight: 600;
-  text-decoration: none;
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

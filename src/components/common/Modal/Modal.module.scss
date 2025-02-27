@@ -1,4 +1,4 @@
-@use "@/styles/variables" as *;
+@use "@/styles/variables"as *;
 
 .overlay {
   position: fixed;
@@ -21,8 +21,9 @@
   width: 100%;
   border: 1px solid $border;
   border-radius: 18px;
-  position: relative;
+  position: fixed;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10001;
 }
 
 .textContainer {
@@ -65,21 +66,21 @@
   color: $text-primary;
 }
 
-.contactInfo{
-    display: grid;
-    gap: 20px;
+.contactInfo {
+  display: grid;
+  gap: 20px;
 
-    @media (min-width: $breakpoint-desktop) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
 
-.inputUpload{
-    border: 2px dashed $border;
-    border-radius: 8px;
-    padding: 50px 30px;
-    text-align: center;
+.inputUpload {
+  border: 2px dashed $border;
+  border-radius: 8px;
+  padding: 50px 30px;
+  text-align: center;
 }
 
 .buttonContainer {
@@ -89,8 +90,8 @@
   :nth-child(1) {
     padding: 12px 24px;
     font-size: $font-size-base;
-  line-height: $line-height-base;
-  color: $primary;
+    line-height: $line-height-base;
+    color: $primary;
     background-color: transparent;
     border: none;
     border-radius: 30px;

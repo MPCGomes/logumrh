@@ -1,22 +1,28 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./JobsSection.module.scss";
 import SectionHeading from "@/components/common/SectionHeading/SectionHeading";
 import Link from "next/link";
 import JobCard from "@/components/common/JobCard/JobCard";
-import { getJobs, JobData } from "@/utils/jobFetcher";
+import jobsData from "@/data/jobs.json";
+
+interface JobData {
+  slug: string;
+  id: string;
+  jobTitle: string;
+  company: string;
+  location: string;
+  salary: string;
+  benefits: string;
+  schedule: string;
+  workDays: string;
+}
 
 interface JobSectionProps {
   limit?: number;
 }
 
 const JobSection: React.FC<JobSectionProps> = ({ limit = 3 }) => {
-  const [jobs, setJobs] = useState<JobData[] | null>(null);
-
-  useEffect(() => {
-    getJobs(limit).then(setJobs);
-  }, [limit]);
+  const jobs = limit ? jobsData.slice(0, limit) : jobsData;
 
   return (
     <section className="container section">
@@ -25,18 +31,16 @@ const JobSection: React.FC<JobSectionProps> = ({ limit = 3 }) => {
         heading="Confira Nossas Vagas"
         variant="center"
       />
-      {jobs === null ? (
-        <p>Carregando vagas...</p>
-      ) : jobs.length === 0 ? (
+      {jobs.length === 0 ? (
         <p>Nenhuma vaga encontrada.</p>
       ) : (
         <div className={styles.jobGrid}>
-          {jobs.map((job) => (
+          {jobs.map((job: JobData) => (
             <JobCard key={job.slug} {...job} />
           ))}
         </div>
       )}
-      {limit && jobs?.length ? (
+      {limit && jobs.length > limit ? (
         <Link href="/jobs" className={styles.viewAll}>
           Ver todas as vagas
         </Link>

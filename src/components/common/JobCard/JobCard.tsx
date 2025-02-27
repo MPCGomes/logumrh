@@ -37,6 +37,14 @@ const JobCard: React.FC<JobCardProps> = ({
   workDays,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState<string | null>(null);
+  const [selectedJobId, setSelectedJobId] = useState<string | null>(null);
+
+  const handleOpenModal = () => {
+    setSelectedJob(jobTitle);
+    setSelectedJobId(id);
+    setIsModalOpen(true);
+  };
 
   return (
     <div className={styles.card}>
@@ -84,8 +92,14 @@ const JobCard: React.FC<JobCardProps> = ({
         <Link className={styles.link} href={`/jobs/${slug}`}>
           Ver mais
         </Link>
-        <Button onClick={() => setIsModalOpen(true)}>Candidatar-se</Button>
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+        <Button onClick={handleOpenModal}>Candidatar-se</Button>
+
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          jobTitle={selectedJob}
+          jobId={selectedJobId}
+        />
       </div>
     </div>
   );
