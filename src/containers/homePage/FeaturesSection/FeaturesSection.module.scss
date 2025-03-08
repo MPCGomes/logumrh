@@ -16,31 +16,17 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  text-align: center;
 
-  h2 {
-    text-align: center;
-  }
-
-  p {
-    text-align: center;
-  }
-
-  .description{
+  .description {
     font-size: $font-size-base;
     line-height: $line-height-base;
   }
 
   @media (min-width: $breakpoint-desktop) {
     align-items: start;
+    text-align: start;
     width: 700px;
-
-    h2 {
-      text-align: start;
-    }
-
-    p {
-      text-align: start;
-    }
   }
 }
 
@@ -49,10 +35,10 @@
   gap: 20px;
 
   @media (min-width: $breakpoint-mobile) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (min-width: $breakpoint-desktop) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
