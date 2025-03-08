@@ -5,61 +5,104 @@
 }
 
 .container {
-  width: 100%;
-  max-width: $breakpoint-mobile;
+  max-width: 1440px;
   margin: 0 auto;
-
-  @media (min-width: $breakpoint-mobile) {
-    max-width: 1024px;
-  }
-
-  @media (min-width: $breakpoint-tablet) {
-    max-width: 1440px;
-  }
+  padding: 0 16px;
 }
 
-.section {
-  width: 100%;
+.headerSection {
   height: 80px;
-  padding: 0 16px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  @media (min-width: $breakpoint-mobile) {
-    padding: 0 16px;
-  }
-
-  @media (min-width: $breakpoint-tablet) {
-    padding: 0 120px;
-  }
 }
 
-.navbar {
+.nav {
   display: flex;
+  align-items: center;
   gap: 24px;
 
-  @media (max-width: $breakpoint-mobile) {
-    gap: 16px;
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
   }
 }
 
-.navItem {
-  color: white;
+.navLink {
+  font-size: $font-size-md;
+  color: $text-primary;
   text-decoration: none;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
-  font-weight: 500;
-  transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $text-primary;
 
   &:hover {
     opacity: 0.7;
   }
+
+  @media (max-width: $breakpoint-tablet) {
+    display: block;
+  }
 }
 
-.buttonText {
-  @media (max-width: $breakpoint-mobile) {
-    display: none;
+/* Mobile & Tablet Full-Screen Menu */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $background;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  z-index: 1000;
+}
+
+/* Close Button */
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $text-primary;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.3s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Navigation inside Modal */
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
+}
+
+.mobileNavLink {
+  font-size: $font-size-lg;
+  color: $text-primary;
+  text-decoration: none;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
   }
 }
