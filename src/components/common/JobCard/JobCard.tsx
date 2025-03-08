@@ -1,17 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import styles from "./JobCard.module.scss";
 import Button from "../Button/Button";
 import Link from "next/link";
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import Modal from "../Modal/Modal";
 import {
+  AccountBalance as BankIcon,
   AttachMoneyOutlined as MoneyIcon,
   FavoriteBorderOutlined as FavoriteIcon,
   WorkOutlineOutlined as WorkIcon,
   CalendarMonthOutlined as CalendarIcon,
 } from "@mui/icons-material";
-import Modal from "../Modal/Modal";
 
 interface JobCardProps {
   slug: string;
@@ -25,7 +25,7 @@ interface JobCardProps {
   workDays: string;
 }
 
-const JobCard: React.FC<JobCardProps> = ({
+const JobCard: FC<JobCardProps> = ({
   slug,
   id,
   jobTitle,
@@ -37,70 +37,50 @@ const JobCard: React.FC<JobCardProps> = ({
   workDays,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedJob, setSelectedJob] = useState<string | null>(null);
-  const [selectedJobId, setSelectedJobId] = useState<string | null>(null);
 
-  const handleOpenModal = () => {
-    setSelectedJob(jobTitle);
-    setSelectedJobId(id);
-    setIsModalOpen(true);
-  };
+  const handleModalToggle = () => setIsModalOpen((prev) => !prev);
 
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
         <div className={styles.iconSection}>
-          <p>
-            <AccountBalanceIcon />
-          </p>
-          <p>{id}</p>
+          <BankIcon className={styles.icon} />
+          <span className={styles.jobId}>{id}</span>
         </div>
         <div className={styles.jobInfo}>
-          <p>{jobTitle}</p>
+          <h3>{jobTitle}</h3>
           <p>{company}</p>
           <p>{location}</p>
         </div>
+
         <ul className={styles.jobDetails}>
-          <li>
-            <span>
-              <MoneyIcon color="disabled" />
-            </span>{" "}
-            {salary}
-          </li>
-          <li>
-            <span>
-              <FavoriteIcon color="disabled" />
-            </span>{" "}
-            {benefits}
-          </li>
-          <li>
-            <span>
-              <WorkIcon color="disabled" />
-            </span>{" "}
-            {schedule}
-          </li>
-          <li>
-            <span>
-              <CalendarIcon color="disabled" />
-            </span>{" "}
-            {workDays}
-          </li>
+          {[
+            { icon: <MoneyIcon />, text: salary },
+            { icon: <FavoriteIcon />, text: benefits },
+            { icon: <WorkIcon />, text: schedule },
+            { icon: <CalendarIcon />, text: workDays },
+          ].map(({ icon, text }, index) => (
+            <li key={index}>
+              <span>{icon}</span> {text}
+            </li>
+          ))}
         </ul>
         <hr />
       </div>
+
       <div className={styles.cardButtons}>
         <Link className={styles.link} href={`/jobs/${slug}`}>
           Ver mais
         </Link>
-        <Button onClick={handleOpenModal}>Candidatar-se</Button>
-
-        <Modal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          jobTitle={selectedJob}
-          jobId={selectedJobId}
-        />
+        <Button onClick={handleModalToggle}>Candidatar-se</Button>
       </div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleModalToggle}
+        jobTitle={jobTitle}
+        jobId={id}
+      />
     </div>
   );
 };
