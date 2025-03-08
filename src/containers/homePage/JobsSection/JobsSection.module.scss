@@ -3,15 +3,15 @@
 .jobGrid {
   display: grid;
   grid-template-columns: 1fr;
-  width: 100%;
   gap: 24px;
+  width: 100%;
 
-  @media (min-width: $breakpoint-mobile) {
+  @media (min-width: $breakpoint-desktop) {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 30px;
   }
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-desktop) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
