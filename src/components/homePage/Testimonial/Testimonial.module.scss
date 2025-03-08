@@ -1,4 +1,4 @@
-@use "@/styles/variables" as *;
+@use "@/styles/variables"as *;
 
 .testimonial {
   display: flex;
@@ -18,6 +18,11 @@
   font-size: $font-size-base;
   line-height: $line-height-base;
 
+  .icon {
+    color: $primary;
+    font-size: 40px;
+  }
+
   .text {
     font-style: italic;
   }
@@ -36,16 +41,20 @@
   object-fit: cover;
 }
 
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .name {
   font-size: $font-size-base;
-  line-height: $line-height-base;
-  text-transform: uppercase;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 .role {
   font-size: $font-size-base;
-  line-height: $line-height-base;
   text-transform: uppercase;
   color: $text-secondary;
 }
