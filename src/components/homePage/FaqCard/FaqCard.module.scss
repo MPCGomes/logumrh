@@ -4,12 +4,11 @@
   border-radius: 10px;
   background-color: transparent;
   border: 1px solid $border;
-  transition: all 0.3s ease;
+  transition: border 0.3s ease;
 }
 
 .faqCard:hover {
-  border: 1px solid $primary;
-  transition: 0.3s all ease-in-out;
+  border-color: $primary;
 }
 
 .question {
@@ -34,25 +33,23 @@
 }
 
 .answer {
-  display: none;
-  padding: 20px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
   font-size: $font-size-base;
   line-height: $line-height-base;
   color: $text-primary;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
 .open {
-  border-color: $border;
-}
+  .answer {
+    max-height: 500px;
+    padding: 0px 20px 20px;
+  }
 
-.open .answer {
-  display: block;
-}
-
-.open .icon {
-  color: $primary;
-}
-
-.rotated {
-  transform: rotate(180deg);
+  .icon {
+    color: $primary;
+    transform: rotate(180deg);
+  }
 }

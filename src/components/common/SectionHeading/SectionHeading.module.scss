@@ -1,30 +1,31 @@
-@use "@/styles/variables" as *;
+@use "@/styles/variables"as *;
 
 .sectionHeading {
   display: flex;
   gap: 10px;
   flex-direction: column;
-
   text-transform: uppercase;
+}
 
-  .subheading {
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-    font-weight: 600;
-    color: $primary;
-  }
+.subheading {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight: 600;
+  color: $primary;
+}
 
-  .heading {
-    font-weight: 800;
-    font-size: $font-size-lg;
-    line-height: $line-height-lg;
-  }
+.heading {
+  font-weight: 800;
+  font-size: $font-size-lg;
+  line-height: $line-height-lg;
 }
 
 .start {
+  align-items: flex-start;
   text-align: left;
 }
 
 .center {
+  align-items: center;
   text-align: center;
 }

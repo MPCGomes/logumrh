@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import styles from "./FeatureCard.module.scss";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 
@@ -7,16 +7,12 @@ interface FeatureCardProps {
   description: string;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ title, description }) => {
-  return (
-    <div className={styles.featureCard}>
-      <p className={styles.icon}>
-        <PeopleOutlineIcon />
-      </p>
-      <p className={styles.title}>{title}</p>
-      <p className={styles.description}>{description}</p>
-    </div>
-  );
-};
+const FeatureCard: FC<FeatureCardProps> = ({ title, description }) => (
+  <div className={styles.featureCard}>
+    <PeopleOutlineIcon className={styles.icon} />
+    <h3 className={styles.title}>{title}</h3>
+    <p className={styles.description}>{description}</p>
+  </div>
+);
 
 export default FeatureCard;

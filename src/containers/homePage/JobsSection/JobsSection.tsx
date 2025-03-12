@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import styles from "./JobsSection.module.scss";
 import SectionHeading from "@/components/common/SectionHeading/SectionHeading";
 import Link from "next/link";
@@ -17,11 +17,11 @@ interface JobData {
   workDays: string;
 }
 
-interface JobSectionProps {
+interface JobsSectionProps {
   limit?: number;
 }
 
-const JobSection: React.FC<JobSectionProps> = ({ limit = 3 }) => {
+const JobsSection: FC<JobsSectionProps> = ({ limit = 3 }) => {
   const jobs = limit ? jobsData.slice(0, limit) : jobsData;
 
   return (
@@ -35,18 +35,18 @@ const JobSection: React.FC<JobSectionProps> = ({ limit = 3 }) => {
         <p>Nenhuma vaga encontrada.</p>
       ) : (
         <div className={styles.jobGrid}>
-          {jobs.map((job: JobData) => (
+          {jobs.map((job) => (
             <JobCard key={job.slug} {...job} />
           ))}
         </div>
       )}
-      {limit && jobs.length > limit ? (
+      {limit && jobsData.length > limit && (
         <Link href="/jobs" className={styles.viewAll}>
           Ver todas as vagas
         </Link>
-      ) : null}
+      )}
     </section>
   );
 };
 
-export default JobSection;
+export default JobsSection;

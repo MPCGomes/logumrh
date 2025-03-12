@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import styles from "./ProcessCard.module.scss";
 
 interface ProcessCardProps {
@@ -7,20 +7,14 @@ interface ProcessCardProps {
   description: string;
 }
 
-const ProcessCard: React.FC<ProcessCardProps> = ({
-  icon,
-  title,
-  description,
-}) => {
-  return (
-    <div className={styles.processCard}>
-      <img src={icon} alt="process-icon" />
-      <div className={styles.text}>
-        <p className={styles.title}>{title}</p>
-        <p className={styles.description}>{description}</p>
-      </div>
+const ProcessCard: FC<ProcessCardProps> = ({ icon, title, description }) => (
+  <div className={styles.processCard}>
+    <img src={icon} alt="process-icon" className={styles.icon} />
+    <div className={styles.text}>
+      <h3 className={styles.title}>{title}</h3>
+      <p className={styles.description}>{description}</p>
     </div>
-  );
-};
+  </div>
+);
 
 export default ProcessCard;

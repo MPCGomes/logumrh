@@ -1,4 +1,4 @@
-@use "@/styles/variables" as *;
+@use "@/styles/variables"as *;
 
 .ctaSection {
   background: $primary;
@@ -24,9 +24,5 @@
     border: 1px solid $background;
     color: $background;
     font-size: $font-size-base;
-  }
-
-  :nth-child(1) {
-    text-align: center;
   }
 }

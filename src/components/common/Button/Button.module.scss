@@ -14,12 +14,16 @@
     transition: all 0.2s ease-in-out;
     color: $primary;
     border: 2px solid transparent;
+
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .icon {
     display: flex;
     align-items: center;
-    color: $primary;
+    color: inherit;
 }
 
 .outlined {
@@ -31,8 +35,4 @@
     background: $primary;
     color: $background;
     border-color: $primary;
-}
-
-.button:hover {
-    opacity: 0.8;
 }

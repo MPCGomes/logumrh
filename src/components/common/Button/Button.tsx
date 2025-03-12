@@ -1,28 +1,26 @@
-import React from "react";
-import styles from "./Button.module.scss";
+import { FC, ButtonHTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
+import styles from "./Button.module.scss";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "outlined" | "contained";
-  icon?: React.ReactNode;
+  icon?: ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   variant = "outlined",
   className,
   icon,
   children,
   ...props
-}) => {
-  return (
-    <button
-      className={clsx(styles.button, styles[variant], className)}
-      {...props}
-    >
-      {icon && <span className={styles.icon}>{icon}</span>}
-      {children}
-    </button>
-  );
-};
+}) => (
+  <button
+    className={clsx(styles.button, styles[variant], className)}
+    {...props}
+  >
+    {icon && <span className={styles.icon}>{icon}</span>}
+    {children}
+  </button>
+);
 
 export default Button;

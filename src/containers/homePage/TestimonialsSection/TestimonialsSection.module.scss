@@ -1,11 +1,28 @@
 @use "@/styles/variables"as *;
 
+.testimonialsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .gridContainer {
   display: grid;
-  gap: 60px;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-  @media (min-width: $breakpoint-desktop) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 36px;
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
   }
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid $border;
+  border-radius: 10px;
+  background: $background-light;
 }

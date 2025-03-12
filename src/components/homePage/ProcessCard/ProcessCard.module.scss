@@ -1,4 +1,4 @@
-@use "@/styles/variables" as *;
+@use "@/styles/variables"as *;
 
 .processCard {
   display: flex;
@@ -7,9 +7,10 @@
   gap: 32px;
   padding: 32px;
   width: 100%;
+  text-align: center;
 }
 
-.processCard img {
+.icon {
   max-width: 100px;
   max-height: 100px;
 }
@@ -18,18 +19,15 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  text-align: center;
 
   .title {
     font-size: $font-size-md;
-    line-height: $line-height-md;
     font-weight: bold;
     text-transform: uppercase;
   }
 
   .description {
     font-size: $font-size-base;
-    line-height: $line-height-base;
     color: $text-secondary;
   }
 }
