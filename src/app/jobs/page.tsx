@@ -3,51 +3,35 @@ export const metadata = {
   description:
     "Consultoria de Recursos Humanos em Caraguatatuba. Especialistas em processos seletivos, encontramos os melhores talentos para sua empresa no Litoral Norte e Vale do Paraíba.",
   openGraph: {
-    type: "website",
-    url: "https://www.logumrh.com.br/",
+    url: "https://www.logumrh.com.br/jobs/",
     title: "Logum RH | Recrutamento & Seleção",
     description:
       "Consultoria de Recursos Humanos em Caraguatatuba. Especialistas em processos seletivos, encontramos os melhores talentos para sua empresa no Litoral Norte e Vale do Paraíba.",
     images: [
       {
-        url: "https://www.logumrh.com.br/og-image.jpg",
+        url: "https://www.logumrh.com.br/jobs-og-image.jpg",
         width: 1200,
         height: 630,
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    site: "@logumrh",
     title: "Logum RH | Recrutamento & Seleção",
     description:
       "Consultoria de Recursos Humanos em Caraguatatuba. Especialistas em processos seletivos, encontramos os melhores talentos para sua empresa no Litoral Norte e Vale do Paraíba.",
-    image: "https://www.logumrh.com.br/og-image.jpg",
+    image: "https://www.logumrh.com.br/jobs-og-image.jpg",
   },
   alternates: {
-    canonical: "https://www.logumrh.com.br/",
+    canonical: "https://www.logumrh.com.br/jobs/",
   },
 };
 
-import "@fontsource/montserrat";
-import "../styles/globals.scss";
-import Header from "@/components/common/Header/Header";
-import BackToTop from "@/components/common/BackToTop/BackToTop";
-import Footer from "@/components/common/Footer/Footer";
+import JobsSection from "@/containers/homePage/JobsSection/JobsSection";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function JobsPage() {
   return (
-    <html lang="en">
-      <body>
-        <Header />
-        <BackToTop />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <div>
+      <JobsSection />
+    </div>
   );
 }
