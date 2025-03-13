@@ -1,4 +1,4 @@
-@use "@/styles/variables"as *;
+@use "@/styles/variables" as *;
 
 .section {
   gap: 24px;
@@ -33,5 +33,26 @@
 
   li {
     margin-bottom: 5px;
+  }
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.linkButton {
+  text-decoration: none;
+  color: $primary;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: $primary;
+    color: $background;
   }
 }

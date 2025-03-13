@@ -1,41 +1,52 @@
-import { notFound } from "next/navigation";
-import { promises as fs } from "fs";
-import path from "path";
-import jobsData from "@/data/jobs.json";
+"use client";
+
+import { useEffect, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
 import styles from "./page.module.scss";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Button from "@/components/common/Button/Button";
+import jobsData from "@/data/jobs.json";
 
-export function generateStaticParams() {
-  return jobsData.map((job) => ({
-    slug: job.slug,
-  }));
+interface JobData {
+  slug: string;
+  id: string;
+  jobTitle: string;
+  company: string;
+  location: string;
+  salary: string;
+  benefits: string;
+  schedule: string;
+  workDays: string;
 }
 
-const getJobContent = async (slug: string): Promise<string | null> => {
-  const filePath = path.join(process.cwd(), "public", "jobs", `${slug}.md`);
-  try {
-    return await fs.readFile(filePath, "utf-8");
-  } catch (error) {
-    console.error(`Erro ao carregar o Markdown: ${slug}.md`, error);
-    return null;
-  }
-};
+const JobDetailPage = () => {
+  const { slug } = useParams(); // Get slug dynamically
+  const router = useRouter();
 
-const JobDetailPage = async ({ params }: { params: { slug: string } }) => {
-  const job = jobsData.find((j) => j.slug === params.slug);
+  const [job, setJob] = useState<JobData | null>(null);
+  const [jobContent, setJobContent] = useState<string | null>(null);
 
-  if (!job) {
-    notFound();
-  }
+  useEffect(() => {
+    if (!slug) return;
 
-  const jobContent = await getJobContent(params.slug);
+    // Find job in JSON data
+    const foundJob = jobsData.find((j) => j.slug === slug);
+    if (!foundJob) {
+      router.push("/jobs"); // Redirect if not found
+      return;
+    }
+    setJob(foundJob);
 
-  if (!jobContent) {
-    return <p>Erro ao carregar a descrição da vaga.</p>;
-  }
+    // Fetch markdown content
+    fetch(`/jobs/${slug}.md`)
+      .then((res) => (res.ok ? res.text() : null))
+      .then((content) => setJobContent(content))
+      .catch(() => setJobContent(null));
+  }, [slug, router]);
+
+  if (!job) return <p>Carregando...</p>;
 
   return (
     <section className={"container section " + styles.section}>
@@ -55,13 +66,19 @@ const JobDetailPage = async ({ params }: { params: { slug: string } }) => {
         {job.workDays}
       </p>
 
-      <ReactMarkdown className={styles.markdown} remarkPlugins={[remarkGfm]}>
-        {jobContent}
-      </ReactMarkdown>
+      {jobContent ? (
+        <ReactMarkdown className={styles.markdown} remarkPlugins={[remarkGfm]}>
+          {jobContent}
+        </ReactMarkdown>
+      ) : (
+        <p>Erro ao carregar a descrição da vaga.</p>
+      )}
 
-      <div className={styles.buttons}>
-        <Button>Candidatar-se</Button>
-        <Link href="/jobs">Voltar</Link>
+      <div className={styles.buttonContainer}>
+        <Link href="/jobs" className={styles.linkButton}>
+          Voltar
+        </Link>
+        <Button variant="contained">Candidatar-se</Button>
       </div>
     </section>
   );
