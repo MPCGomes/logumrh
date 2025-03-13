@@ -1,92 +1,99 @@
-@use "@/styles/variables" as *;
+@use "@/styles/variables"as *;
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
+.footer {
+  background: $background;
   padding: 50px 16px;
 
-  width: 100%;
-  max-width: $breakpoint-mobile;
-  margin: 0 auto;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: $breakpoint-mobile;
+    margin: 0 auto;
 
-  @media (min-width: $breakpoint-tablet) {
-    max-width: 1024px;
+    @media (min-width: $breakpoint-tablet) {
+      max-width: 1024px;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      max-width: 1440px;
+      align-items: normal;
+      padding: 50px 120px;
+    }
   }
 
-  @media (min-width: $breakpoint-desktop) {
-    max-width: 1440px;
-    align-items: normal;
-    padding: 50px 120px;
-  }
-}
-
-.infoContainer{
+  .info {
     display: flex;
     flex-direction: column;
     gap: 40px;
 
     @media (min-width: $breakpoint-desktop) {
-        flex-direction: row;
-        align-items: start;
-        justify-content: space-between;
+      flex-direction: row;
+      justify-content: space-between;
     }
-}
 
-.logo {
-  max-width: 200px;
-  width: 100%;
-}
+    .logo {
+      max-width: 200px;
+      max-height: 65px;
+      width: 100%;
+    }
 
-.groupContainer {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    .group {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
 
-  @media (min-width: $breakpoint-desktop) {
-    text-align: start;
+      @media (min-width: $breakpoint-desktop) {
+        text-align: start;
+      }
+
+      .title {
+        font-size: $font-size-base;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+          font-size: $font-size-base;
+
+          a {
+            text-decoration: none;
+            color: $text-primary;
+          }
+        }
+      }
+    }
   }
-}
 
-.title {
-  font-size: $font-size-base;
-  font-weight: bold;
-  text-transform: uppercase;
-}
+  .hr {
+    width: 100%;
+    border: 1px solid #dee1e3;
+    border-top: 0;
+  }
 
-.list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-size: $font-size-base;
-}
+  .copyright {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
-.item {
-  font-size: $font-size-base;
-}
+    @media (min-width: $breakpoint-desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
-.link {
-  text-decoration: none;
-  color: $text-primary;
-}
-
-.hr {
-  width: 100%;
-  border: 1px solid #dee1e3;
-  border-top: 0px;
-}
-
-.copyrightContainer {
-  text-align: center;
-  display: flex;
-  gap: 20px;
-  flex-direction: column;
-
-  @media (min-width: $breakpoint-desktop) {
-    flex-direction: row;
-    justify-content: space-between;
+    a {
+      text-decoration: none;
+      color: $text-primary;
+      font-weight: bold;
+    }
   }
 }
