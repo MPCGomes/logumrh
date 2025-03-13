@@ -5,18 +5,6 @@ import Link from "next/link";
 import JobCard from "@/components/common/JobCard/JobCard";
 import jobsData from "@/data/jobs.json";
 
-interface JobData {
-  slug: string;
-  id: string;
-  jobTitle: string;
-  company: string;
-  location: string;
-  salary: string;
-  benefits: string;
-  schedule: string;
-  workDays: string;
-}
-
 interface JobsSectionProps {
   limit?: number;
 }
