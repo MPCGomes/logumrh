@@ -1,32 +1,49 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require __DIR__ . '/vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $name = htmlspecialchars($_POST['name']);
-  $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-  $phone = htmlspecialchars($_POST['phone']);
-  $jobTitle = htmlspecialchars($_POST['jobTitle']);
-  $jobId = htmlspecialchars($_POST['jobId']);
-  $file = $_FILES['file'];
-
-  // File upload handling
-  $uploadDir = 'uploads/';
-  if (!is_dir($uploadDir)) {
-    mkdir($uploadDir, 0777, true);
+  $smtpHost = $_ENV['HOSTINGER_SMTP_HOST'];
+  $smtpPort = $_ENV['HOSTINGER_SMTP_PORT'];
+  $smtpUser = $_ENV['HOSTINGER_SMTP_USER'];
+  $smtpPass = $_ENV['HOSTINGER_SMTP_PASS'];
+  $name = $_POST['name'] ?? '';
+  $email = $_POST['email'] ?? '';
+  $phone = $_POST['phone'] ?? '';
+  $jobTitle = $_POST['jobTitle'] ?? '';
+  $jobId = $_POST['jobId'] ?? '';
+  $fileTmp = $_FILES['file']['tmp_name'] ?? '';
+  $fileName = $_FILES['file']['name'] ?? '';
+  if (!$name || !$email || !$phone || !$fileTmp || !$jobTitle || !$jobId) {
+    http_response_code(400);
+    echo "Missing fields";
+    exit;
   }
-  $uploadFilePath = $uploadDir . basename($file['name']);
-  move_uploaded_file($file['tmp_name'], $uploadFilePath);
-
-  // Email sending
-  $to = "your-email@example.com";  // Change to your email
-  $subject = "Nova Candidatura: $jobTitle (ID: $jobId)";
-  $message = "Nome: $name\nE-mail: $email\nTelefone: $phone\n\nCurrículo anexado: " . $_SERVER['HTTP_HOST'] . "/$uploadFilePath";
-  $headers = "From: $email";
-
-  if (mail($to, $subject, $message, $headers)) {
+  try {
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = $smtpHost;
+    $mail->Port = $smtpPort;
+    $mail->SMTPAuth = true;
+    $mail->Username = $smtpUser;
+    $mail->Password = $smtpPass;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->setFrom($smtpUser, "Site Application");
+    $mail->addAddress("contato@logumrh.com.br", "Recruiter");
+    $mail->Subject = "$jobTitle - ID $jobId";
+    $mail->Body = "Nome: $name\nE-mail: $email\nTelefone: $phone\nVaga: $jobTitle (ID $jobId)";
+    if ($fileTmp && $fileName) {
+      $mail->addAttachment($fileTmp, $fileName);
+    }
+    $mail->send();
     echo "success";
-  } else {
-    echo "error";
+  } catch (Exception $e) {
+    http_response_code(500);
+    echo "Mailer Error: " . $mail->ErrorInfo;
   }
 } else {
-  echo "invalid_request";
+  http_response_code(405);
+  echo "Method not allowed";
 }
-?>
