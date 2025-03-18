@@ -28,21 +28,14 @@ jobs:
           echo "FTP_PASS length: ${#FTP_PASS}"  # Should NOT be 0
           echo "FTP_HOST=${{ secrets.FTP_HOST }}"
 
-      - name: Fix FTP_PASS Encoding Issues
-        run: |
-          echo -n "${{ secrets.FTP_PASS }}" > ftp_pass.txt  # Removes newlines
-          FTP_PASS=$(cat ftp_pass.txt)  # Read trimmed password
-          echo "::add-mask::$FTP_PASS"  # Hide it in logs
-          echo "FTP_PASS_FIXED=$FTP_PASS" >> $GITHUB_ENV  # Set env variable
-
       - name: Delete ALL files from FTP (except required files)
         run: |
           if ! command -v lftp &> /dev/null; then
             sudo apt-get install -y lftp
           fi
-          lftp -u "${{ secrets.FTP_USER }}",$FTP_PASS_FIXED "${{ secrets.FTP_HOST }}" <<EOF
+          lftp -u "${{ secrets.FTP_USER }}","${{ secrets.FTP_PASS }}" "${{ secrets.FTP_HOST }}" <<EOF
           set ssl:verify-certificate no
-          set ftp:ssl-allow no  # Ensure explicit FTP mode
+          set ftp:ssl-allow no
           cd /domains/logumrh.com.br/public_html
           find . -mindepth 1 ! -name 'config.php' ! -name 'submit_application.php' ! -name 'test_env.php' -exec rm -rf {} + || echo "⚠️ Falha ao remover alguns arquivos!"
           bye
@@ -56,7 +49,7 @@ jobs:
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
-          password: $FTP_PASS_FIXED
+          password: ${{ secrets.FTP_PASS }}
           local-dir: "out/"
           server-dir: "/domains/logumrh.com.br/public_html/"
           dangerous-clean-slate: true # Remove tudo antes do upload (exceto arquivos protegidos)
