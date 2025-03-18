@@ -22,7 +22,7 @@ jobs:
       - name: Verify build output
         run: ls -R out/ || echo "⚠️ Diretório out/ está vazio!"
 
-      - name: Delete ALL files from FTP (except required files and vendor/)
+      - name: Delete ALL files from FTP (except required files)
         run: |
           if ! command -v lftp &> /dev/null; then
             sudo apt-get install -y lftp
@@ -31,10 +31,10 @@ jobs:
           set ssl:verify-certificate no
           set ftp:ssl-allow no
           cd /domains/logumrh.com.br/public_html
-          find . -mindepth 1 -type f ! \( -name 'config.php' -o -name 'submit_application.php' -o -name 'test_env.php' \) -delete
-          find . -mindepth 1 -type d ! -name 'vendor' -empty -delete
+          rm -rf !(config.php|submit_application.php|test_env.php|vendor)
           bye
           EOF
+
 
       - name: Wait after delete
         run: sleep 5
