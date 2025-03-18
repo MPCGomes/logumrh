@@ -1,87 +1,51 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
-import styles from "./page.module.scss";
-import Link from "next/link";
+import fs from "fs";
+import path from "path";
+import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Button from "@/components/common/Button/Button";
+import remarkBreaks from "remark-breaks";
+import Link from "next/link";
+import styles from "./page.module.scss";
 import jobsData from "@/data/jobs.json";
+import ApplyModal from "./ApplyModal";
 
-interface JobData {
-  slug: string;
-  id: string;
-  jobTitle: string;
-  company: string;
-  location: string;
-  salary: string;
-  benefits: string;
-  schedule: string;
-  workDays: string;
+interface JobDetailPageProps {
+  params: { slug: string };
 }
 
-const JobDetailPage = () => {
-  const { slug } = useParams(); // Get slug dynamically
-  const router = useRouter();
+export async function generateStaticParams() {
+  return jobsData.map((job) => ({ slug: job.slug }));
+}
 
-  const [job, setJob] = useState<JobData | null>(null);
-  const [jobContent, setJobContent] = useState<string | null>(null);
+export default async function JobDetailPage({ params }: JobDetailPageProps) {
+  const { slug } = params;
+  const job = jobsData.find((j) => j.slug === slug);
+  if (!job) notFound();
 
-  useEffect(() => {
-    if (!slug) return;
-
-    // Find job in JSON data
-    const foundJob = jobsData.find((j) => j.slug === slug);
-    if (!foundJob) {
-      router.push("/jobs"); // Redirect if not found
-      return;
-    }
-    setJob(foundJob);
-
-    // Fetch markdown content
-    fetch(`/jobs/${slug}.md`)
-      .then((res) => (res.ok ? res.text() : null))
-      .then((content) => setJobContent(content))
-      .catch(() => setJobContent(null));
-  }, [slug, router]);
-
-  if (!job) return <p>Carregando...</p>;
+  let jobContent: string | null = null;
+  try {
+    jobContent = fs.readFileSync(
+      path.join(process.cwd(), "public", "jobs", `${slug}.md`),
+      "utf8"
+    );
+  } catch {}
 
   return (
     <section className={"container section " + styles.section}>
       <h1>{job.jobTitle}</h1>
-      <p>
-        <strong>Empresa:</strong> {job.company} - <strong>Local:</strong>{" "}
-        {job.location}
-      </p>
-      <p>
-        <strong>Salário:</strong> {job.salary}
-      </p>
-      <p>
-        <strong>Benefícios:</strong> {job.benefits}
-      </p>
-      <p>
-        <strong>Horário:</strong> {job.schedule} - <strong>Dias:</strong>{" "}
-        {job.workDays}
-      </p>
-
       {jobContent ? (
-        <ReactMarkdown className={styles.markdown} remarkPlugins={[remarkGfm]}>
+        <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
           {jobContent}
         </ReactMarkdown>
       ) : (
         <p>Erro ao carregar a descrição da vaga.</p>
       )}
-
       <div className={styles.buttonContainer}>
         <Link href="/jobs" className={styles.linkButton}>
           Voltar
         </Link>
-        <Button variant="contained">Candidatar-se</Button>
+        <ApplyModal jobId={job.id} jobTitle={job.jobTitle} />
       </div>
     </section>
   );
-};
-
-export default JobDetailPage;
+}

@@ -41,6 +41,7 @@
   display: flex;
   justify-content: flex-end;
   gap: 16px;
+  margin-top: 70px;
 }
 
 .linkButton {
@@ -50,9 +51,4 @@
   padding: 12px 24px;
   border-radius: 8px;
   transition: background 0.3s ease;
-
-  &:hover {
-    background: $primary;
-    color: $background;
-  }
 }
