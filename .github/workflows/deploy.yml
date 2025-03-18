@@ -22,22 +22,26 @@ jobs:
       - name: Verify build output
         run: ls -R out/ || echo "⚠️ Diretório out/ está vazio!"
 
+      - name: Debug Environment Variables
+        run: |
+          echo "FTP_USER=${{ secrets.FTP_USER }}"
+          echo "FTP_PASS length: ${#FTP_PASS}"
+          echo "FTP_HOST=${{ secrets.FTP_HOST }}"
+
       - name: Delete ALL files from FTP (except required files)
         run: |
           if ! command -v lftp &> /dev/null; then
             sudo apt-get install -y lftp
           fi
-          printf -v FTP_PASS_ESCAPED "%q" "$FTP_PASS"  # Escapa os caracteres especiais
-          lftp -u ${{ secrets.FTP_USER }},$FTP_PASS_ESCAPED ${{ secrets.FTP_HOST }} <<EOF
+          lftp -u "${{ secrets.FTP_USER }}",$FTP_PASS_FIXED "${{ secrets.FTP_HOST }}" <<EOF
           set ssl:verify-certificate no
           cd /domains/logumrh.com.br/public_html
-          find . -mindepth 1 ! -name 'config.php' ! -name 'submit_application.php' ! -name 'test_env.php' -exec rm -rf {} + || echo "⚠️ Falha ao remover alguns arquivos!"
+          ls
           bye
           EOF
 
-
       - name: Wait after delete
-        run: sleep 5 # Aguarda o servidor processar a remoção dos arquivos
+        run: sleep 5
 
       - name: Upload files to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -47,4 +51,4 @@ jobs:
           password: ${{ secrets.FTP_PASS }}
           local-dir: "out/"
           server-dir: "/domains/logumrh.com.br/public_html/"
-          dangerous-clean-slate: true # Remove qualquer coisa no servidor antes do upload (exceto arquivos protegidos)
+          dangerous-clean-slate: true
