@@ -27,12 +27,14 @@ jobs:
           if ! command -v lftp &> /dev/null; then
             sudo apt-get install -y lftp
           fi
-          lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }} ${{ secrets.FTP_HOST }} <<EOF
+          printf -v FTP_PASS_ESCAPED "%q" "$FTP_PASS"  # Escapa os caracteres especiais
+          lftp -u ${{ secrets.FTP_USER }},$FTP_PASS_ESCAPED ${{ secrets.FTP_HOST }} <<EOF
           set ssl:verify-certificate no
           cd /domains/logumrh.com.br/public_html
           find . -mindepth 1 ! -name 'config.php' ! -name 'submit_application.php' ! -name 'test_env.php' -exec rm -rf {} + || echo "⚠️ Falha ao remover alguns arquivos!"
           bye
           EOF
+
 
       - name: Wait after delete
         run: sleep 5 # Aguarda o servidor processar a remoção dos arquivos
