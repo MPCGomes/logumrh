@@ -22,11 +22,18 @@ jobs:
       - name: Verify build output
         run: ls -R out/ || echo "⚠️ Diretório out/ está vazio!"
 
-      - name: Debug Environment Variables
+      - name: Debug Secrets
         run: |
           echo "FTP_USER=${{ secrets.FTP_USER }}"
-          echo "FTP_PASS length: ${#FTP_PASS}"
+          echo "FTP_PASS length: ${#FTP_PASS}"  # Should NOT be 0
           echo "FTP_HOST=${{ secrets.FTP_HOST }}"
+
+      - name: Fix FTP_PASS Encoding Issues
+        run: |
+          echo -n "${{ secrets.FTP_PASS }}" > ftp_pass.txt  # Removes newlines
+          FTP_PASS=$(cat ftp_pass.txt)  # Read trimmed password
+          echo "::add-mask::$FTP_PASS"  # Hide it in logs
+          echo "FTP_PASS_FIXED=$FTP_PASS" >> $GITHUB_ENV  # Set env variable
 
       - name: Delete ALL files from FTP (except required files)
         run: |
@@ -35,20 +42,21 @@ jobs:
           fi
           lftp -u "${{ secrets.FTP_USER }}",$FTP_PASS_FIXED "${{ secrets.FTP_HOST }}" <<EOF
           set ssl:verify-certificate no
+          set ftp:ssl-allow no  # Ensure explicit FTP mode
           cd /domains/logumrh.com.br/public_html
-          ls
+          find . -mindepth 1 ! -name 'config.php' ! -name 'submit_application.php' ! -name 'test_env.php' -exec rm -rf {} + || echo "⚠️ Falha ao remover alguns arquivos!"
           bye
           EOF
 
       - name: Wait after delete
-        run: sleep 5
+        run: sleep 5 # Aguarda o servidor processar a remoção dos arquivos
 
       - name: Upload files to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
+          password: $FTP_PASS_FIXED
           local-dir: "out/"
           server-dir: "/domains/logumrh.com.br/public_html/"
-          dangerous-clean-slate: true
+          dangerous-clean-slate: true # Remove tudo antes do upload (exceto arquivos protegidos)
