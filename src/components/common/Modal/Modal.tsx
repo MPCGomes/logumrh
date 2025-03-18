@@ -1,9 +1,10 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useState, useRef } from "react";
 import { createPortal } from "react-dom";
 import styles from "./Modal.module.scss";
 import StickyNote2OutlinedIcon from "@mui/icons-material/StickyNote2Outlined";
+import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
 
 interface ModalProps {
   isOpen: boolean;
@@ -22,6 +23,7 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, jobTitle, jobId }) => {
 
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, files } = e.target;
@@ -29,6 +31,17 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, jobTitle, jobId }) => {
       ...prev,
       [name]: files ? files[0] : value,
     }));
+  };
+
+  const handleFileDrop = (e: React.DragEvent<HTMLLabelElement>) => {
+    e.preventDefault();
+    const droppedFile = e.dataTransfer.files[0];
+    if (droppedFile) {
+      setFormData((prev) => ({
+        ...prev,
+        file: droppedFile,
+      }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -129,17 +142,31 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, jobTitle, jobId }) => {
               />
             </label>
           </div>
-          <label className={styles.label}>
-            Currículo:
+
+          {/* Updated Upload Button with Drag-and-Drop Support */}
+          <label
+            className={styles.inputUpload}
+            onDrop={handleFileDrop}
+            onDragOver={(e) => e.preventDefault()}
+          >
+            <CloudUploadOutlinedIcon
+              sx={{ fontSize: 40, color: "var(--primary)" }}
+            />
+            <p>Selecionar ou Arrastar Arquivo</p>
             <input
-              className={styles.inputUpload}
+              ref={fileInputRef}
+              className={styles.hiddenInput}
               type="file"
               name="file"
               onChange={handleChange}
               accept=".pdf,.doc,.docx"
               required
             />
+            {formData.file && (
+              <p className={styles.fileName}>{formData.file.name}</p>
+            )}
           </label>
+
           {error && <p className={styles.error}>{error}</p>}
           <hr />
           <div className={styles.buttonContainer}>

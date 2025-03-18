@@ -75,6 +75,25 @@
   border-radius: 8px;
   padding: 50px 30px;
   text-align: center;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  &:hover {
+    background: rgba($primary, 0.1);
+  }
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.fileName {
+  font-size: $font-size-sm;
+  color: $text-secondary;
 }
 
 .buttonContainer {
