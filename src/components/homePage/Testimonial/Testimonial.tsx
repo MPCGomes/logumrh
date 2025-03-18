@@ -1,6 +1,7 @@
 import { FC } from "react";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import styles from "./Testimonial.module.scss";
+import Image from "next/image";
 
 interface TestimonialProps {
   text: string;
@@ -17,7 +18,13 @@ const Testimonial: FC<TestimonialProps> = ({ text, image, name, role }) => (
     </blockquote>
     <hr />
     <div className={styles.user}>
-      <img className={styles.image} src={image} alt={name} />
+      <Image
+        className={styles.image}
+        src={image}
+        alt={name}
+        width={60}
+        height={60}
+      />
       <div className={styles.userInfo}>
         <h3 className={styles.name}>{name}</h3>
         <p className={styles.role}>{role}</p>

@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Footer.module.scss";
 
 interface FooterLink {
@@ -51,12 +52,16 @@ const Footer: FC = () => {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.info}>
-          <img
+          <Image
             className={styles.logo}
             src="/assets/logo_horizontal.png"
             alt="Logum RH Logo"
+            width={300}
+            height={0}
+            sizes="auto"
+            style={{ width: "300px", height: "auto" }}
+            draggable="false"
           />
-
           {footerLinks.map(({ title, links }, index) => (
             <div key={index} className={styles.group}>
               <p className={styles.title}>{title}</p>

@@ -8,16 +8,16 @@ import Link from "next/link";
 import styles from "./page.module.scss";
 import jobsData from "@/data/jobs.json";
 import ApplyModal from "./ApplyModal";
-
-interface JobDetailPageProps {
-  params: { slug: string };
-}
+import { InferGetStaticPropsType } from "next";
+import { getStaticProps } from "next/dist/build/templates/pages";
 
 export async function generateStaticParams() {
   return jobsData.map((job) => ({ slug: job.slug }));
 }
 
-export default async function JobDetailPage({ params }: JobDetailPageProps) {
+export default async function JobDetailPage({
+  params,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const { slug } = params;
   const job = jobsData.find((j) => j.slug === slug);
   if (!job) notFound();

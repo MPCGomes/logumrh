@@ -1,6 +1,7 @@
 import { FC, ReactNode } from "react";
 import styles from "./ServiceCard.module.scss";
 import CheckIcon from "@mui/icons-material/Check";
+import Image from "next/image";
 
 interface ServiceCardProps {
   src: string;
@@ -19,7 +20,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
 }) => (
   <div className={styles.serviceCard}>
     <div className={styles.image}>
-      <img src={src} alt="service-image" />
+      <Image src={src} alt="service-image" width={300} height={200} />
     </div>
     <div className={styles.cardInfo}>
       <div className={styles.icon}>{icon}</div>

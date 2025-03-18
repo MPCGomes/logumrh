@@ -2,6 +2,7 @@ import { FC } from "react";
 import styles from "./HeroSection.module.scss";
 import clsx from "clsx";
 import Button from "@/components/common/Button/Button";
+import Image from "next/image";
 
 const HeroSection: FC = () => (
   <section className={clsx(styles.heroContainer, "container section")}>
@@ -16,7 +17,13 @@ const HeroSection: FC = () => (
         <Button>Ver Vagas</Button>
       </div>
     </div>
-    <img src="/assets/hero-img.svg" alt="Processo de recrutamento" />
+    <Image
+      src="/assets/hero-img.svg"
+      alt="Processo de recrutamento"
+      width={500}
+      height={400}
+      priority
+    />
   </section>
 );
 
