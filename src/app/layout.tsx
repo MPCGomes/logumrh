@@ -29,7 +29,6 @@ export const metadata = {
   },
 };
 
-import "@fontsource/montserrat";
 import "../styles/globals.scss";
 import Header from "@/components/common/Header/Header";
 import BackToTop from "@/components/common/BackToTop/BackToTop";
