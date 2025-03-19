@@ -25,8 +25,9 @@ const steps = [
 ];
 
 const ProcessSection: FC = () => (
-  <section className={styles.processSection}>
-    <div className="container section">
+  <section className="grayBackground">
+    <div className={styles.processSection}>
+      <div className="container section">
       <SectionHeading
         subheading="contrate em"
         heading="3 passos simples"
@@ -38,6 +39,8 @@ const ProcessSection: FC = () => (
         ))}
       </div>
     </div>
+    </div>
+    
   </section>
 );
 
