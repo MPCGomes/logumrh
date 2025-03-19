@@ -36,3 +36,13 @@
     color: $background;
     border-color: $primary;
 }
+
+.contained-white {
+    background: $background;
+    color: $primary;
+    border-color: $background;
+
+    &:hover {
+        background: rgba($primary, 0.05);
+    }
+}

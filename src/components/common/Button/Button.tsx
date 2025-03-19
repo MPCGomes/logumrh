@@ -1,9 +1,11 @@
+"use client";
+
 import { FC, ButtonHTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
 import styles from "./Button.module.scss";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "outlined" | "contained";
+  variant?: "outlined" | "contained" | "contained-white";
   icon?: ReactNode;
 }
 
