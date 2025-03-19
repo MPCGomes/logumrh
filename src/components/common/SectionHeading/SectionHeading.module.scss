@@ -29,3 +29,19 @@
   align-items: center;
   text-align: center;
 }
+
+.darkHeading{
+  color: $text-primary;
+}
+
+.lightHeading{
+  color: $background;
+}
+
+.darkSubHeading{
+  color: $primary;
+}
+
+.lightSubHeading{
+  color: $secondary;
+}
