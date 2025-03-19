@@ -1,7 +1,7 @@
 @use "@/styles/variables"as *;
 
 .ctaSection {
-  background: $primary;
+  background: $background-light;
   padding: 30px;
 
   div {
@@ -10,7 +10,7 @@
     flex-direction: column;
     gap: 30px;
     align-items: center;
-    color: $background;
+    color: $primary;
     font-size: $font-size-base;
     line-height: $line-height-base;
     text-align: center;
@@ -18,12 +18,16 @@
     @media (min-width: $breakpoint-tablet) {
       flex-direction: row;
     }
+
+    p{
+      font-weight: 600;
+    }
   }
 
   button {
     line-height: $line-height-base;
-    border: 1px solid $background;
     color: $background;
     font-size: $font-size-base;
+    background-color: $primary;
   }
 }
