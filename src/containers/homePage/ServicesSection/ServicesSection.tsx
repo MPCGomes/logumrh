@@ -51,8 +51,9 @@ const ServicesSection: FC = () => {
   }, []);
 
   return (
-    <section className="container section">
-      <div className={styles.servicesContainer}>
+    <section className="grayBackground">
+      <div className="container section">
+        <div className={styles.servicesContainer}>
         <div className={styles.servicesGrid}>
           {services.map((service, index) => (
             <ServiceCard key={index} {...service} />
@@ -77,6 +78,8 @@ const ServicesSection: FC = () => {
           <Button variant="contained">Fale conosco</Button>
         </div>
       </div>
+      </div>
+      
     </section>
   );
 };
