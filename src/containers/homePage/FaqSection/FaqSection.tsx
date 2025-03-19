@@ -54,6 +54,7 @@ const FaqSection: FC = () => (
       subheading="Respostas simples para ajudar você a fazer a escolha certa"
       heading="Perguntas Frequentes"
       variant="center"
+      
     />
     <div className={styles.faqGrid}>
       {faqs.map((faq, index) => (
