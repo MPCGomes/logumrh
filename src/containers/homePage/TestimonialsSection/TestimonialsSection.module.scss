@@ -8,11 +8,15 @@
 
 .gridContainer {
   display: grid;
-  gap: 40px;
+  gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-  @media (max-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-tablet) {
     grid-template-columns: 1fr;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
