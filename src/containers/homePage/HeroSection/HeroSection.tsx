@@ -9,21 +9,28 @@ const HeroSection: FC = () => (
     <div className={styles.textContainer}>
       <h1>Processos seletivos humanizados e eficientes</h1>
       <h3>
-        A melhor solução para seu Recrutamento e Seleção! Economize tempo e
-        dinheiro e encontre o candidato ideal com nossa equipe especializada.
+        A melhor solução para o Recrutamento e Seleção no Litoral Norte e Vale
+        do Paraíba! Economize tempo e dinheiro e encontre o candidato ideal com
+        nossa equipe especializada.
       </h3>
       <div className={styles.buttonContainer}>
         <Button variant="contained">Quero Contratar</Button>
         <Button>Ver Vagas</Button>
       </div>
     </div>
-    <Image
-      src="/assets/hero-img.svg"
-      alt="Processo de recrutamento"
-      width={500}
-      height={400}
-      priority
-    />
+    <div className={styles.heroImage}>
+      <Image
+        src="/assets/hero-img.svg"
+        alt="Processo de recrutamento"
+        style={{
+          width: "100%",
+          height: "auto",
+        }}
+        width={500}
+        height={400}
+        priority
+      />
+    </div>
   </section>
 );
 

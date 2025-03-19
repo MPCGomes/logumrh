@@ -1,22 +1,17 @@
 @use "@/styles/variables" as *;
 
 .heroContainer {
-  height: 100dvh;
-  
-  img {
-    display: none;
-  }
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 20px;
 
   @media (min-width: $breakpoint-desktop) {
-    display: flex;
     flex-direction: row !important;
     gap: 60px;
     align-items: center;
     margin-top: -80px;
-
-    img {
-      display: block;
-    }
+    height: 100dvh;
   }
 }
 
@@ -33,7 +28,7 @@
     text-transform: uppercase;
     font-weight: 800;
 
-    @media (min-width: $breakpoint-mobile) {
+    @media (min-width: $breakpoint-desktop) {
       font-size: $font-size-xl;
       line-height: $line-height-xl;
     }
@@ -44,7 +39,7 @@
     line-height: $line-height-base;
     font-weight: 400;
 
-    @media (min-width: $breakpoint-tablet) {
+    @media (min-width: $breakpoint-desktop) {
       font-size: $font-size-md;
       line-height: $line-height-md;
     }
@@ -61,18 +56,32 @@
   display: flex;
   gap: 20px;
   flex-direction: column;
+  width: 100%;
 
   button {
     text-transform: uppercase;
     font-size: $font-size-base;
-    line-height: $line-height-md;
+    line-height: $line-height-base;
+  }
 
-    @media (min-width: $breakpoint-tablet) {
-      font-size: $font-size-base;
-    }
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    justify-content: center;
   }
 
   @media (min-width: $breakpoint-desktop) {
-    flex-direction: row;
+    justify-content: start;
+  }
+}
+
+.heroImage{
+  width: 250px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 350px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 950px;
   }
 }
