@@ -1,12 +1,12 @@
-@use "@/styles/variables"as *;
+@use "@/styles/variables" as *;
 
 .cardsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 
-    @media (min-width: $breakpoint-desktop) {
-        flex-direction: row;
-        gap: 50px;
-    }
+  @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+    gap: 50px;
+  }
 }
