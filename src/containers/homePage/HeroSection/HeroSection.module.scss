@@ -1,14 +1,18 @@
 @use "@/styles/variables" as *;
 
 .heroContainer {
+  height: 100dvh;
+  
   img {
     display: none;
   }
 
   @media (min-width: $breakpoint-desktop) {
     display: flex;
-    flex-direction: row;
+    flex-direction: row !important;
     gap: 60px;
+    align-items: center;
+    margin-top: -80px;
 
     img {
       display: block;
@@ -19,7 +23,7 @@
 .textContainer {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
   align-items: center;
   text-align: center;
 
@@ -40,7 +44,7 @@
     line-height: $line-height-base;
     font-weight: 400;
 
-    @media (min-width: $breakpoint-mobile) {
+    @media (min-width: $breakpoint-tablet) {
       font-size: $font-size-md;
       line-height: $line-height-md;
     }
@@ -48,6 +52,7 @@
 
   @media (min-width: $breakpoint-desktop) {
     align-items: start;
+    justify-content: center;
     text-align: start;
   }
 }
@@ -62,8 +67,8 @@
     font-size: $font-size-base;
     line-height: $line-height-md;
 
-    @media (min-width: $breakpoint-mobile) {
-      font-size: $font-size-md;
+    @media (min-width: $breakpoint-tablet) {
+      font-size: $font-size-base;
     }
   }
 
