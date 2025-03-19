@@ -1,8 +1,9 @@
-@use "@/styles/variables"as *;
+@use "@/styles/variables" as *;
 
 .footer {
-  background: $background;
+  background: $primary;
   padding: 50px 16px;
+  color: $background;
 
   .container {
     display: flex;
@@ -66,7 +67,7 @@
 
           a {
             text-decoration: none;
-            color: $text-primary;
+            color: $background;
           }
         }
       }
@@ -92,7 +93,7 @@
 
     a {
       text-decoration: none;
-      color: $text-primary;
+      color: $background;
       font-weight: bold;
     }
   }

@@ -54,7 +54,7 @@ const Footer: FC = () => {
         <div className={styles.info}>
           <Image
             className={styles.logo}
-            src="/assets/logo_horizontal.png"
+            src="/assets/logo_horizontal_light.png"
             alt="Logum RH Logo"
             width={300}
             height={0}
