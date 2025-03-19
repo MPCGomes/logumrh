@@ -39,10 +39,9 @@
 }
 
 .cardInfo {
-  padding: 15px 30px;
+  padding: 15px 30px 25px;
   display: flex;
   flex-direction: column;
-  height: 100%;
   gap: 5px;
 
   .title {
@@ -95,4 +94,8 @@
       color: $primary;
     }
   }
+}
+
+.checkIcon{
+  color: $secondary;
 }
