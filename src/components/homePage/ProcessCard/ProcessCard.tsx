@@ -10,7 +10,7 @@ interface ProcessCardProps {
 
 const ProcessCard: FC<ProcessCardProps> = ({ icon, title, description }) => (
   <div className={styles.processCard}>
-    <Image src={icon} alt="process-icon" width={50} height={50} />
+    <Image src={icon} alt="process-icon" width={75} height={75} />
     <div className={styles.text}>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
