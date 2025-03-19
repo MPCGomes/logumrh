@@ -5,6 +5,7 @@
   border-radius: 18px;
   border: 1px solid $border;
   transition: 0.3s all ease-in-out;
+  background-color: $background;
 
   &:hover {
     border: 1px solid $primary;
