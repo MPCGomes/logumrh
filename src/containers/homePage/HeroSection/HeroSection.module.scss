@@ -1,4 +1,11 @@
-@use "@/styles/variables" as *;
+@use "@/styles/variables"as *;
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  /* Ensures the full section is within 100dvh */
+}
 
 .heroContainer {
   display: flex;
@@ -6,13 +13,14 @@
   align-items: center;
   gap: 20px;
   margin-top: -40px;
+  flex-grow: 1;
+  /* Takes remaining available space */
 
   @media (min-width: $breakpoint-desktop) {
     flex-direction: row !important;
     gap: 60px;
     align-items: center;
     margin-top: -80px;
-    height: 100dvh;
   }
 }
 
@@ -80,7 +88,7 @@
   }
 }
 
-.heroImage{
+.heroImage {
   width: 250px;
 
   @media (min-width: $breakpoint-tablet) {
@@ -90,4 +98,36 @@
   @media (min-width: $breakpoint-desktop) {
     width: 950px;
   }
+}
+
+.clientsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 42px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: $text-primary;
+  opacity: 0.5;
+}
+
+.title {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-primary;
+  font-weight: 300;
+  white-space: nowrap;
 }

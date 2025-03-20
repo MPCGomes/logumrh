@@ -40,7 +40,6 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <ClientsSection />
       <ProcessSection />
       <JobSection limit={3} />
       <FeaturesSection />

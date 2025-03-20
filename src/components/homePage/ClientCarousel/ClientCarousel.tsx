@@ -12,7 +12,7 @@ const clientLogos = [
   "/client-logos/jesse-aluguel.webp",
   "/client-logos/jj-shoes.webp",
   "/client-logos/menconi.webp",
-  "/client-logos/niloware.webp"
+  "/client-logos/niloware.webp",
 ];
 
 const settings = {
@@ -20,7 +20,7 @@ const settings = {
   arrows: false,
   infinite: true,
   speed: 500,
-  slidesToShow: 5,
+  slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 5000,
