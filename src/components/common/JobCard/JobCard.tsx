@@ -72,7 +72,9 @@ const JobCard: FC<JobCardProps> = ({
         <Link className={styles.link} href={`/jobs/${slug}`}>
           Ver mais
         </Link>
-        <Button onClick={handleModalToggle}>Candidatar-se</Button>
+        <Button variant="contained" onClick={handleModalToggle}>
+          Candidatar-se
+        </Button>
       </div>
 
       <Modal

@@ -1,0 +1,19 @@
+RewriteEngine On
+
+# Ensure /jobs redirects to /jobs/ (trailing slash for consistency)
+RewriteCond %{THE_REQUEST} \s/jobs(\s|/)
+RewriteRule ^jobs$ /jobs/ [R=301,L]
+
+# Remove .html from URLs while still serving correct files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Ensure /jobs/ loads /jobs.html without showing .html in URL
+RewriteRule ^jobs/$ /jobs.html [L]
+
+# Rewrite job slugs to their corresponding HTML files (hide .html)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^jobs/([^/]+)/?$ /jobs/$1.html [L]

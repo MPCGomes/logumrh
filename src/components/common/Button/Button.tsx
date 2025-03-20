@@ -1,10 +1,14 @@
+"use client";
+
 import { FC, ButtonHTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
 import styles from "./Button.module.scss";
+import Link from "next/link";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "outlined" | "contained";
+  variant?: "outlined" | "contained" | "contained-white";
   icon?: ReactNode;
+  href?: string; // Allow passing a link
 }
 
 const Button: FC<ButtonProps> = ({
@@ -12,15 +16,22 @@ const Button: FC<ButtonProps> = ({
   className,
   icon,
   children,
+  href,
   ...props
-}) => (
-  <button
-    className={clsx(styles.button, styles[variant], className)}
-    {...props}
-  >
-    {icon && <span className={styles.icon}>{icon}</span>}
-    {children}
-  </button>
-);
+}) => {
+  const classes = clsx(styles.button, styles[variant], className);
+
+  return href ? (
+    <Link href={href} className={classes}>
+      {icon && <span className={styles.icon}>{icon}</span>}
+      {children}
+    </Link>
+  ) : (
+    <button className={classes} {...props}>
+      {icon && <span className={styles.icon}>{icon}</span>}
+      {children}
+    </button>
+  );
+};
 
 export default Button;

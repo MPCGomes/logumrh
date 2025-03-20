@@ -1,15 +1,15 @@
 import { FC } from "react";
 import styles from "./FeatureCard.module.scss";
-import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 
 interface FeatureCardProps {
   title: string;
   description: string;
+  icon: React.ReactNode;
 }
 
-const FeatureCard: FC<FeatureCardProps> = ({ title, description }) => (
+const FeatureCard: FC<FeatureCardProps> = ({ title, description, icon }) => (
   <div className={styles.featureCard}>
-    <PeopleOutlineIcon className={styles.icon} />
+    <div className={styles.icon}>{icon}</div>
     <h3 className={styles.title}>{title}</h3>
     <p className={styles.description}>{description}</p>
   </div>

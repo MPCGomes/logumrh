@@ -8,6 +8,12 @@ import ServiceCard from "@/components/homePage/ServiceCard/ServiceCard";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import ListAltOutlinedIcon from "@mui/icons-material/ListAltOutlined";
 
+const WHATSAPP_NUMBER = "5512974096393";
+const WHATSAPP_MESSAGE = "Olá, estou interessado nos seus serviços!";
+const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  WHATSAPP_MESSAGE
+)}`;
+
 const services = [
   {
     src: "https://assets.shiftbase.com/hubfs/6a0fa8af-1b1a-4f25-aa51-3ae2579d4e95%5B1%5D.jpeg",
@@ -75,7 +81,12 @@ const ServicesSection: FC = () => {
             Recrutamento e Seleção, sua empresa ganha uma Descrição de Cargo
             GRATUITA!
           </p>
-          <Button variant="contained">Fale conosco</Button>
+          <Button
+            variant="contained"
+            onClick={() => window.open(whatsappLink, "_blank")}
+          >
+            Fale Conosco
+          </Button>
         </div>
       </div>
       </div>

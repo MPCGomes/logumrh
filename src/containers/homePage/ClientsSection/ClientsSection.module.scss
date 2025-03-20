@@ -1,0 +1,30 @@
+@use "@/styles/variables"as *;
+
+.clients {
+  background: $background;
+  text-align: center;
+  width: 100%;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 42px;
+  width: 100%;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: $text-light;
+  opacity: 0.5;
+}
+
+.title {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-light;
+  font-weight: 300;
+  white-space: nowrap;
+}
