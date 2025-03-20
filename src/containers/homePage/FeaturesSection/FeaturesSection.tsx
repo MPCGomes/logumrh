@@ -7,7 +7,7 @@ import SectionHeading from "@/components/common/SectionHeading/SectionHeading";
 import FeatureCard from "@/components/homePage/FeatureCard/FeatureCard";
 
 import GroupsRoundedIcon from "@mui/icons-material/GroupsRounded";
-import ScheduleRoundedIcon from "@mui/icons-material/ScheduleRounded";
+import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import HandshakeRoundedIcon from "@mui/icons-material/HandshakeRounded";
 import SmartToyRoundedIcon from "@mui/icons-material/SmartToyRounded";
 import HowToRegRoundedIcon from "@mui/icons-material/HowToRegRounded";
@@ -28,7 +28,7 @@ const features = [
   {
     title: "Planos Rápidos e Flexíveis",
     description: "Opções de contratação em até 2 semanas.",
-    icon: <ScheduleRoundedIcon />,
+    icon: <WatchLaterIcon />,
   },
   {
     title: "Serviço Personalizado",
