@@ -1,9 +1,11 @@
+"use client";
+
 import { FC } from "react";
 import styles from "./JobsSection.module.scss";
 import SectionHeading from "@/components/common/SectionHeading/SectionHeading";
-import Link from "next/link";
 import JobCard from "@/components/common/JobCard/JobCard";
 import jobsData from "@/data/jobs.json";
+import Button from "@/components/common/Button/Button";
 
 interface JobsSectionProps {
   limit?: number;
@@ -29,9 +31,11 @@ const JobsSection: FC<JobsSectionProps> = ({ limit = 3 }) => {
         </div>
       )}
       {limit && jobsData.length > limit && (
-        <Link href="/jobs" className={styles.viewAll}>
-          Ver todas as vagas
-        </Link>
+        <div className={styles.viewAll}>
+          <Button href="/jobs" variant="contained-white">
+            Ver todas as vagas
+          </Button>
+        </div>
       )}
     </section>
   );

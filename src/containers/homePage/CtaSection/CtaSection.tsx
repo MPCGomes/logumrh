@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 import styles from "./CtaSection.module.scss";
 import Button from "@/components/common/Button/Button";
