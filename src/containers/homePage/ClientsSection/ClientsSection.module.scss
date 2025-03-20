@@ -17,14 +17,14 @@
 .line {
   flex: 1;
   height: 1px;
-  background: $text-light;
+  background: $text-primary;
   opacity: 0.5;
 }
 
 .title {
   font-size: $font-size-base;
   line-height: $line-height-base;
-  color: $text-light;
+  color: $text-primary;
   font-weight: 300;
   white-space: nowrap;
 }

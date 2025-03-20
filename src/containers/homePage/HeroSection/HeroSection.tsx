@@ -3,6 +3,7 @@ import styles from "./HeroSection.module.scss";
 import clsx from "clsx";
 import Button from "@/components/common/Button/Button";
 import Image from "next/image";
+import ClientCarousel from "@/components/homePage/ClientCarousel/ClientCarousel";
 
 const HeroSection: FC = () => (
   <section className={clsx(styles.heroContainer, "container section")}>

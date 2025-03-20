@@ -20,7 +20,7 @@ const settings = {
   arrows: false,
   infinite: true,
   speed: 500,
-  slidesToShow: 3,
+  slidesToShow: 5,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 5000,
@@ -41,9 +41,9 @@ const ClientCarousel: React.FC = () => {
               alt="Client Logo"
               className={styles.image}
               width={0}
-              height={36}
+              height={24}
               sizes="auto"
-              style={{ width: "auto", height: "36px" }}
+              style={{ width: "auto", height: "24px" }}
               draggable="false"
             />
           </div>
