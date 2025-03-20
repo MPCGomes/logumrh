@@ -34,7 +34,6 @@ import ProcessSection from "@/containers/homePage/ProcessSection/ProcessSection"
 import JobSection from "@/containers/homePage/JobsSection/JobsSection";
 import ServicesSection from "@/containers/homePage/ServicesSection/ServicesSection";
 import TestimonialsSection from "@/containers/homePage/TestimonialsSection/TestimonialsSection";
-import ClientsSection from "@/containers/homePage/ClientsSection/ClientsSection";
 
 export default function Home() {
   return (
