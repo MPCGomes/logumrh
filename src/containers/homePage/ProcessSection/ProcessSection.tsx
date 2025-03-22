@@ -5,19 +5,19 @@ import ProcessCard from "@/components/homePage/ProcessCard/ProcessCard";
 
 const steps = [
   {
-    icon: "/assets/balloon-icon.svg",
+    icon: "/assets/balloon-icon-colored.svg",
     title: "Contato",
     description:
       "Avaliamos suas necessidades e encontramos o perfil ideal para sua empresa.",
   },
   {
-    icon: "/assets/clock-icon.svg",
+    icon: "/assets/clock-icon-colored.svg",
     title: "Poupe Tempo",
     description:
       "Deixe a triagem de currículos, testes e entrevistas com a gente.",
   },
   {
-    icon: "/assets/person-icon.svg",
+    icon: "/assets/person-icon-colored.svg",
     title: "Recomendação",
     description:
       "Receba relatórios sobre os melhores candidatos: a decisão é sua!",
