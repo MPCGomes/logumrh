@@ -1,9 +1,17 @@
+'use client'
+
 import { FC } from "react";
 import styles from "./HeroSection.module.scss";
 import clsx from "clsx";
 import Button from "@/components/common/Button/Button";
 import Image from "next/image";
 import ClientCarousel from "@/components/homePage/ClientCarousel/ClientCarousel";
+
+const WHATSAPP_NUMBER = "5512974096393";
+const WHATSAPP_MESSAGE = "Olá, estou interessado nos seus serviços!";
+const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  WHATSAPP_MESSAGE
+)}`;
 
 const HeroSection: FC = () => (
   <section className={clsx(styles.mainContainer, "container section")}>
@@ -16,8 +24,13 @@ const HeroSection: FC = () => (
           com nossa equipe especializada.
         </h3>
         <div className={styles.buttonContainer}>
-          <Button variant="contained">Quero Contratar</Button>
-          <Button>Ver Vagas</Button>
+          <Button 
+           variant="contained"
+           onClick={() => window.open(whatsappLink, "_blank")}
+           >Quero Contratar</Button>
+          <Button
+          href="/jobs"
+          >Ver Vagas</Button>
         </div>
       </div>
       <div className={styles.heroImage}>
