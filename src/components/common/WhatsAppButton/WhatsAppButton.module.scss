@@ -1,7 +1,7 @@
-.backToTop{
+.whatsApp{
     position: fixed;
     z-index: 6;
-    bottom: 75px;
+    bottom: 20px;
     right: 20px;
     border: none;
     border-radius: 50%;
@@ -13,7 +13,6 @@
     align-items: center;
     justify-content: center;
 
-    background: rgba(0, 0, 0, 1);
+    background: #39b44c;
     color: white;
-    opacity: 50%;
 }

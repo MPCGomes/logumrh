@@ -33,6 +33,8 @@ const settings = {
 const ClientCarousel: React.FC = () => {
   return (
     <div className={styles.wrapper}>
+      <span className={styles.gradientLeft}></span>
+      <span className={styles.gradientRight}></span>
       <Slider {...settings} className={styles.carousel}>
         {clientLogos.map((src) => (
           <div key={src} className={styles.imageWrapper}>

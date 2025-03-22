@@ -32,6 +32,7 @@ export const metadata = {
 import "../styles/globals.scss";
 import Header from "@/components/common/Header/Header";
 import BackToTop from "@/components/common/BackToTop/BackToTop";
+import WhatsAppButton from "@/components/common/WhatsAppButton/WhatsAppButton";
 import Footer from "@/components/common/Footer/Footer";
 
 export default function RootLayout({
@@ -44,6 +45,7 @@ export default function RootLayout({
       <body>
         <Header />
         <BackToTop />
+        <WhatsAppButton />
         {children}
         <Footer />
       </body>
