@@ -2,9 +2,11 @@ import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Footer.module.scss";
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 interface FooterLink {
-  name: string;
+  name: React.ReactNode;
   href?: string;
   external?: boolean;
 }
@@ -34,12 +36,22 @@ const footerLinks: FooterSection[] = [
     title: "Redes Sociais",
     links: [
       {
-        name: "@logumrh",
+        name: (
+          <>
+            <InstagramIcon style={{ verticalAlign: "middle", marginRight: 5 }} />
+            @logumrh
+          </>
+        ),
         href: "https://www.instagram.com/logumrh/",
         external: true,
       },
       {
-        name: "linkedin.com/LogumRH",
+        name: (
+          <>
+            <LinkedInIcon style={{ verticalAlign: "middle", marginRight: 5 }} />
+            linkedin.com/LogumRH
+          </>
+        ),
         href: "https://www.linkedin.com/company/logumrh/posts/?feedView=all",
         external: true,
       },
