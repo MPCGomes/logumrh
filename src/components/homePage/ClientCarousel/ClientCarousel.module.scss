@@ -5,6 +5,7 @@
   height: 100px;
   overflow: hidden;
   white-space: nowrap;
+  position: relative;
 }
 
 .carousel {
@@ -23,4 +24,25 @@
 
 .image {
   user-select: none;
+}
+
+.gradientLeft{
+  content: '';
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 100%); 
+  z-index: 2; 
+  width: 120px;
+  height: 30px;
+  position: absolute;
+}
+
+.gradientRight{
+  content: '';
+  background: rgb(255,255,255);
+  background: linear-gradient(270deg, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 100%); 
+  z-index: 2; 
+  width: 120px;
+  height: 30px;
+  position: absolute;
+  right: 0;
 }
