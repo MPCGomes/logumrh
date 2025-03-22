@@ -27,7 +27,7 @@ export const metadata = {
 };
 
 import FaqSection from "@/containers/homePage/FaqSection/FaqSection";
-import CtaSection from "@/containers/homePage/CtaSection/CtaSection";
+import CtaSection from "@/containers/homePage/CtaSection/CtaSection"; 
 import FeaturesSection from "@/containers/homePage/FeaturesSection/FeaturesSection";
 import HeroSection from "@/containers/homePage/HeroSection/HeroSection";
 import ProcessSection from "@/containers/homePage/ProcessSection/ProcessSection";
