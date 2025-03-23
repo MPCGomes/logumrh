@@ -1,0 +1,17 @@
+.jobsSection {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  min-height: 130vh;
+}
+
+.jobsContainer {
+  width: 100%;
+}
+
+.jobGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin-top: 1rem;
+}
