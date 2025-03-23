@@ -1,5 +1,15 @@
 @use "@/styles/variables"as *;
 
+.jobsSection {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  min-height: 130vh;
+}
+
+.jobsContainer {
+  width: 100%;
+}
+
 .jobGrid {
   display: grid;
   grid-template-columns: 1fr;
@@ -14,9 +24,4 @@
   @media (min-width: $breakpoint-desktop) {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-
-.viewAll {
-  display: flex;
-  justify-content: center;
 }

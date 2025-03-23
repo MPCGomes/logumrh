@@ -26,12 +26,28 @@ export const metadata = {
   },
 };
 
-import JobsSection from "@/containers/homePage/JobsSection/JobsSection";
+import { FC } from "react";
+import styles from "./page.module.scss";
+import JobCard from "@/components/common/JobCard/JobCard";
+import jobsData from "@/data/jobs.json";
+import clsx from "clsx";
 
-export default function JobsPage() {
+const JobsPage: FC = () => {
   return (
-    <div>
-      <JobsSection />
-    </div>
+    <section className={clsx("container section", styles.jobsSection)}>
+      <div className={styles.jobsContainer}>
+        {jobsData.length === 0 ? (
+          <p>Nenhuma vaga encontrada.</p>
+        ) : (
+          <div className={styles.jobGrid}>
+            {jobsData.map((job) => (
+              <JobCard key={job.slug} {...job} />
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
   );
-}
+};
+
+export default JobsPage;

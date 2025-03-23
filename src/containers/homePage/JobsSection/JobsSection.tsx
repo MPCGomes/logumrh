@@ -8,41 +8,32 @@ import jobsData from "@/data/jobs.json";
 import clsx from "clsx";
 import Button from "@/components/common/Button/Button";
 
-interface JobsSectionProps {
-  limit?: number;
-}
-
-const JobsSection: FC<JobsSectionProps> = ({ limit = 3 }) => {
-  const jobs = limit ? jobsData.slice(0, limit) : jobsData;
-
+const JobsSection: FC = () => {
   return (
     <section className="primaryBackground">
       <div className={clsx("container section", styles.jobsContainer)}>
         <SectionHeading
-        headingColor="lightHeading"
-        subHeadingColor="lightSubHeading"
-        subheading="Procurando Emprego?"
-        heading="Confira Nossas Vagas"
-        variant="center"
-      />
-      {jobs.length === 0 ? (
-        <p>Nenhuma vaga encontrada.</p>
-      ) : (
-        <div className={styles.jobGrid}>
-          {jobs.map((job) => (
-            <JobCard key={job.slug} {...job} />
-          ))}
-        </div>
-      )}
-      {limit && jobsData.length > limit && (
+          headingColor="lightHeading"
+          subHeadingColor="lightSubHeading"
+          subheading="Procurando Emprego?"
+          heading="Confira Nossas Vagas"
+          variant="center"
+        />
+        {jobsData.length === 0 ? (
+          <p>Nenhuma vaga encontrada.</p>
+        ) : (
+          <div className={styles.jobGrid}>
+            {jobsData.map((job) => (
+              <JobCard key={job.slug} {...job} />
+            ))}
+          </div>
+        )}
         <div className={styles.viewAll}>
           <Button href="/jobs" variant="contained-white">
-            Ver todas as vagas
+            Ver Todas as Vagas
           </Button>
         </div>
-      )}
       </div>
-      
     </section>
   );
 };

@@ -4,6 +4,9 @@ import Image from "next/image";
 import styles from "./Footer.module.scss";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import EmailIcon from '@mui/icons-material/Email';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
 interface FooterLink {
   name: React.ReactNode;
@@ -27,9 +30,24 @@ const footerLinks: FooterSection[] = [
   {
     title: "Sobre Nós",
     links: [
-      { name: "Caraguatatuba, SP" },
-      { name: "contato@logumrh.com" },
-      { name: "+55 (12) 97409-6393" },
+      { name: (
+        <>
+          <LocationOnIcon style={{ verticalAlign: "middle", marginRight: 5 }} />
+          Caraguatatuba, SP
+        </>
+      ), },
+      { name: (
+        <>
+          <EmailIcon style={{ verticalAlign: "middle", marginRight: 5 }} />
+          contato@logumrh.com
+        </>
+      ), },
+      { name: (
+        <>
+          <LocalPhoneIcon style={{ verticalAlign: "middle", marginRight: 5 }} />
+          +55 (12) 97409-6393
+        </>
+      ), },
     ],
   },
   {

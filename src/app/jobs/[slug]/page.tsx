@@ -32,14 +32,20 @@ export default async function JobDetailPage({
 
   return (
     <section className={"container section " + styles.section}>
-      <h1>{job.jobTitle}</h1>
-      {jobContent ? (
-        <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
-          {jobContent}
-        </ReactMarkdown>
-      ) : (
-        <p>Erro ao carregar a descrição da vaga.</p>
-      )}
+      <div className={styles.markdownWrapper}>
+        <h1>{job.jobTitle}</h1>
+        {jobContent ? (
+          <ReactMarkdown
+            className={styles.markdown}
+            remarkPlugins={[remarkGfm, remarkBreaks]}
+          >
+            {jobContent}
+          </ReactMarkdown>
+        ) : (
+          <p>Erro ao carregar a descrição da vaga.</p>
+        )}
+      </div>
+
       <div className={styles.buttonContainer}>
         <Link href="/jobs/" className={styles.linkButton}>
           Voltar

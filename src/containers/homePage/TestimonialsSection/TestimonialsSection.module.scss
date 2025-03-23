@@ -8,25 +8,14 @@
 
 .gridContainer {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-  @media (min-width: $breakpoint-tablet) {
-    grid-template-columns: 1fr;
-  }
-
-  @media (min-width: $breakpoint-desktop) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
-.testimonial {
+.testimonialWrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding: 20px;
-  border: 1px solid $border;
-  border-radius: 10px;
-  background: $background-light;
+  justify-content: center;
+  align-items: stretch;
+  flex-grow: 1;
+  padding: 0 10px;
 }
