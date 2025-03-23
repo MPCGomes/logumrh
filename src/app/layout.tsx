@@ -1,3 +1,16 @@
+import "../styles/globals.scss";
+import Header from "@/components/common/Header/Header";
+import BackToTop from "@/components/common/BackToTop/BackToTop";
+import WhatsAppButton from "@/components/common/WhatsAppButton/WhatsAppButton";
+import Footer from "@/components/common/Footer/Footer";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+  display: "swap",
+});
+
 export const metadata = {
   title: "Logum RH | Recrutamento & Seleção",
   description:
@@ -29,12 +42,6 @@ export const metadata = {
   },
 };
 
-import "../styles/globals.scss";
-import Header from "@/components/common/Header/Header";
-import BackToTop from "@/components/common/BackToTop/BackToTop";
-import WhatsAppButton from "@/components/common/WhatsAppButton/WhatsAppButton";
-import Footer from "@/components/common/Footer/Footer";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -42,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={montserrat.className}>
         <Header />
         <BackToTop />
         <WhatsAppButton />
