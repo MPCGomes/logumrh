@@ -23,7 +23,7 @@ const JobsSection: FC = () => {
           <p>Nenhuma vaga encontrada.</p>
         ) : (
           <div className={styles.jobGrid}>
-            {jobsData.map((job) => (
+            {jobsData.slice(0, 3).map((job) => (
               <JobCard key={job.slug} {...job} />
             ))}
           </div>
