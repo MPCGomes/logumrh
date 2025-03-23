@@ -44,6 +44,7 @@
     border-color: $background;
 
     &:hover {
+        color: $background;
         background: rgba($primary, 0.05);
     }
 }

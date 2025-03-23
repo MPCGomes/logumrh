@@ -8,7 +8,7 @@ import Link from "next/link";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "outlined" | "contained" | "contained-white";
   icon?: ReactNode;
-  href?: string; // Allow passing a link
+  href?: string;
 }
 
 const Button: FC<ButtonProps> = ({
