@@ -1,3 +1,5 @@
+@use "@/styles/variables"as *;
+
 .jobsSection {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -10,8 +12,16 @@
 
 .jobGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 24px;
   width: 100%;
-  margin-top: 1rem;
+
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
