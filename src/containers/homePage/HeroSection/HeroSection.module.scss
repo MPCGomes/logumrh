@@ -1,12 +1,12 @@
-@use "@/styles/variables" as *;
+@use "@/styles/variables"as *;
 
 .mainContainer {
   display: flex;
   flex-direction: column;
   margin-top: -50px;
 
-  @media (min-width: $breakpoint-desktop) {
-    height: 100dvh;
+  @media (min-width: #{$breakpoint-desktop}) {
+    height: 100vh;
     margin-top: -80px;
   }
 }
