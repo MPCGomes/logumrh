@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -34,7 +35,6 @@ jobs:
           rm -rf !(config.php|submit_application.php|test_env.php|vendor)
           bye
           EOF
-
 
       - name: Wait after delete
         run: sleep 5
