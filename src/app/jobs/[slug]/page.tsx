@@ -34,10 +34,10 @@ export default async function JobDetailPage({
   return (
     <section className={"container section " + styles.section}>
       <div className={styles.markdownWrapper}>
-        <div className={styles.shareContainer}>
-          <ShareModal slug={slug} />
-        </div>
         <div className={styles.titleContainer}>
+          <div className={styles.shareContainer}>
+            <ShareModal slug={slug} />
+          </div>
           <h1>{job.jobTitle}</h1>
         </div>
 

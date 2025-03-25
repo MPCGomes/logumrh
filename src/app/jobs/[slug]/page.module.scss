@@ -1,4 +1,4 @@
-@use "@/styles/variables"as *;
+@use "@/styles/variables" as *;
 
 .section {
   display: flex;
@@ -8,14 +8,12 @@
 
 .titleContainer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .shareContainer {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 8px;
+  align-self: flex-end;
 }
 
 .markdownWrapper {
