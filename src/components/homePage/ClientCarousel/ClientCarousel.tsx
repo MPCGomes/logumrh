@@ -43,7 +43,7 @@ const ClientCarousel: React.FC = () => {
               alt="Client Logo"
               className={styles.image}
               width={0}
-              height={24}
+              height={0}
               sizes="auto"
               style={{ width: "auto", height: "24px" }}
               draggable="false"

@@ -41,8 +41,8 @@ const HeroSection: FC = () => (
             width: "100%",
             height: "auto",
           }}
-          width={500}
-          height={400}
+          width={0}
+          height={0}
           priority
         />
       </div>
