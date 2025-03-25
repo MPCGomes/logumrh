@@ -51,9 +51,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className}>
         <Header />
+        <main>{children}</main>
         <BackToTop />
         <WhatsAppButton />
-        {children}
         <Footer />
       </body>
     </html>

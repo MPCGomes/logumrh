@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const testimonials = [
   {
-    text: "Tive o privilégio de acompanhar de perto o desenvolvimento da Logum, desde sua concepção inicial, passando pelos primeiros processos de recrutamento e seleção, até sua entrada no mercado. E posso afirmar com confiança que a qualidade dos serviços prestados reflete um compromisso genuíno com a excelência, sempre alinhado aos mais altos padrões de atendimento e dedicação ao cliente. A Logum se destaca pela inovação constante e pela sua habilidade em compreender as necessidades do mercado de recrutamento e seleção, oferecendo soluções criativas e eficazes. Além disso, a atenção minuciosa aos detalhes e a transparência em cada etapa do processo são aspectos que fazem toda a diferença.",
+    text: "Tive o privilégio de acompanhar de perto o desenvolvimento da Logum, desde sua concepção inicial, passando pelos primeiros processos de recrutamento e seleção, até sua entrada no mercado. E posso afirmar com confiança que a qualidade dos serviços prestados reflete um compromisso genuíno com a excelência, sempre alinhado aos mais altos padrões de atendimento e dedicação ao cliente.",
     image: "/testimonial-avatars/bragantin.webp",
     name: "Tcharla Bragantin",
     role: "Proprietária Bragantin Soluções em Gestão Empresarial",
@@ -40,6 +40,7 @@ const TestimonialsSection: FC = () => {
   const settings = {
     dots: false,
     infinite: true,
+    arrows: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,

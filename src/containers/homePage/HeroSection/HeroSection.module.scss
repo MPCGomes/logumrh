@@ -3,12 +3,7 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  margin-top: -50px;
-  min-height: 100vh;
-
-  @media (min-width: $breakpoint-desktop) {
-    margin-top: -80px !important;
-  }
+  height: calc(100vh - 80px);
 }
 
 .heroContainer {
