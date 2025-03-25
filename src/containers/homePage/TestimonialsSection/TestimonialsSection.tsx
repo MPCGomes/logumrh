@@ -11,20 +11,26 @@ import "slick-carousel/slick/slick-theme.css";
 
 const testimonials = [
   {
+    text: "Tive o privilégio de acompanhar de perto o desenvolvimento da Logum, desde sua concepção inicial, passando pelos primeiros processos de recrutamento e seleção, até sua entrada no mercado. E posso afirmar com confiança que a qualidade dos serviços prestados reflete um compromisso genuíno com a excelência, sempre alinhado aos mais altos padrões de atendimento e dedicação ao cliente. A Logum se destaca pela inovação constante e pela sua habilidade em compreender as necessidades do mercado de recrutamento e seleção, oferecendo soluções criativas e eficazes. Além disso, a atenção minuciosa aos detalhes e a transparência em cada etapa do processo são aspectos que fazem toda a diferença.",
+    image: "/testimonial-avatars/bragantin.webp",
+    name: "Tcharla Bragantin",
+    role: "Proprietária Bragantin Soluções em Gestão Empresarial",
+  },
+  {
     text: "A Logum nos ajudou a encontrar candidatos altamente qualificados para nossas franquias. O processo de recrutamento foi ágil e eficiente, permitindo-nos focar no crescimento da Caraguá Shake sem preocupações com contratações.",
-    image: "/testimonial-avatars/caragua-shake.jpeg",
+    image: "/testimonial-avatars/caragua-shake.webp",
     name: "Adriana Scotti",
     role: "Proprietária Caraguá Shake",
   },
   {
     text: "A Logum foi essencial para encontrar estagiários qualificados para a Menconi Contabilidade. Tive dificuldades em acessar currículos por meio das universidades, mas a Logum cuidou de todo o processo, desde o contato com as instituições até a seleção dos candidatos. Excelente suporte e eficiência!",
-    image: "/testimonial-avatars/menconi.jpeg",
+    image: "/testimonial-avatars/menconi.webp",
     name: "Olivia Menconi",
     role: "Proprietária Menconi Contabilidade",
   },
   {
     text: "Com a Logum, conseguimos recrutar desenvolvedores com precisão e rapidez. A triagem e os testes técnicos foram conduzidos com excelência, garantindo contratações certeiras para nossa equipe.",
-    image: "/testimonial-avatars/niloware.jpeg",
+    image: "/testimonial-avatars/niloware.webp",
     name: "Júlia Miosso",
     role: "Co-Proprietária Niloware",
   },
