@@ -6,11 +6,22 @@
   gap: 24px;
 }
 
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shareContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
 .markdownWrapper {
   border: 1px solid $border;
   border-radius: 18px;
   padding: 24px;
-  margin-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 36px;

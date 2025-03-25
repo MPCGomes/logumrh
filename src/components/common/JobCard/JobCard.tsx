@@ -5,8 +5,8 @@ import styles from "./JobCard.module.scss";
 import Button from "../Button/Button";
 import Link from "next/link";
 import Modal from "../Modal/Modal";
+import ShareModal from "@/components/common/ShareModal/ShareModal";
 import {
-  AccountBalance as BankIcon,
   AttachMoneyOutlined as MoneyIcon,
   FavoriteBorderOutlined as FavoriteIcon,
   WorkOutlineOutlined as WorkIcon,
@@ -43,8 +43,8 @@ const JobCard: FC<JobCardProps> = ({
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
-        <div className={styles.iconSection}>
-          <BankIcon className={styles.icon} />
+        <div className={styles.topRow}>
+          <ShareModal slug={slug} />
           <span className={styles.jobId}>{id}</span>
         </div>
         <div className={styles.jobInfo}>

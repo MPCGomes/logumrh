@@ -10,6 +10,7 @@ import jobsData from "@/data/jobs.json";
 import ApplyModal from "./ApplyModal";
 import { InferGetStaticPropsType } from "next";
 import { getStaticProps } from "next/dist/build/templates/pages";
+import ShareModal from "@/components/common/ShareModal/ShareModal";
 
 export async function generateStaticParams() {
   return jobsData.map((job) => ({ slug: job.slug }));
@@ -33,7 +34,13 @@ export default async function JobDetailPage({
   return (
     <section className={"container section " + styles.section}>
       <div className={styles.markdownWrapper}>
-        <h1>{job.jobTitle}</h1>
+        <div className={styles.shareContainer}>
+          <ShareModal slug={slug} />
+        </div>
+        <div className={styles.titleContainer}>
+          <h1>{job.jobTitle}</h1>
+        </div>
+
         {jobContent ? (
           <ReactMarkdown
             className={styles.markdown}

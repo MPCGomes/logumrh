@@ -1,4 +1,4 @@
-@use "@/styles/variables"as *;
+@use "@/styles/variables" as *;
 
 .card {
   padding: 30px 25px;
@@ -24,23 +24,18 @@
   gap: 20px;
 }
 
-.iconSection {
+.topRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
 
-  .icon {
-    color: #dee1e3;
-    font-size: 3rem;
-  }
-
-  .jobId {
-    background-color: hsla(33, 96%, 52%, 0.4);
-    font-size: $font-size-base;
-    padding: 10px 16px;
-    border-radius: 30px;
-    font-weight: 600;
-  }
+.jobId {
+  background-color: hsla(33, 96%, 52%, 0.4);
+  font-size: $font-size-base;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: 600;
 }
 
 .jobInfo {
