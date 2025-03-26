@@ -1,35 +1,24 @@
 [
   {
-    "slug": "frontend-developer",
-    "id": "1",
-    "jobTitle": "Desenvolvedor Frontend",
-    "company": "Tech Corp",
-    "location": "Remoto",
-    "salary": "R$ 8.000,00",
-    "benefits": "Vale Refeição, Plano de Saúde",
-    "schedule": "Tempo integral",
-    "workDays": "Seg-Sex"
+    "slug": "menconi-estagiario-contabil",
+    "id": "0001",
+    "jobTitle": "Estagiário Contábil",
+    "company": "Menconi Contabilidade",
+    "location": "Centro, Pindamonhangaba (Presencial)",
+    "salary": "R$ 1.000,00",
+    "benefits": "Vale Refeição, Vale Transporte",
+    "schedule": "Estágio",
+    "workDays": "Seg à Sex - 9h às 16h"
   },
   {
-    "slug": "frontend-developer2",
-    "id": "1",
-    "jobTitle": "Desenvolvedor Frontend",
-    "company": "Tech Corp",
-    "location": "Remoto",
-    "salary": "R$ 8.000,00",
-    "benefits": "Vale Refeição, Plano de Saúde",
-    "schedule": "Tempo integral",
-    "workDays": "Seg-Sex"
-  },
-  {
-    "slug": "frontend-developer3",
-    "id": "1",
-    "jobTitle": "Desenvolvedor Frontend",
-    "company": "Tech Corp",
-    "location": "Remoto",
-    "salary": "R$ 8.000,00",
-    "benefits": "Vale Refeição, Plano de Saúde",
-    "schedule": "Tempo integral",
-    "workDays": "Seg-Sex"
+    "slug": "shake-auxiliar",
+    "id": "0002",
+    "jobTitle": "Auxiliar de Sorveteria Freelancer",
+    "company": "Caraguá Shake",
+    "location": "Centro, Caraguatatuba (Presencial)",
+    "salary": "R$ 74,12/dia",
+    "benefits": "Vale Alimentação",
+    "schedule": "Intermitende (Freelancer)",
+    "workDays": "Variável - Noturno"
   }
 ]

@@ -22,7 +22,12 @@ const JobsSection: FC = () => {
         {jobsData.length === 0 ? (
           <p>Nenhuma vaga encontrada.</p>
         ) : (
-          <div className={styles.jobGrid}>
+          <div
+            className={clsx(
+              styles.jobGrid,
+              jobsData.slice(0, 3).length <= 2 && styles.centered
+            )}
+          >
             {jobsData.slice(0, 3).map((job) => (
               <JobCard key={job.slug} {...job} />
             ))}

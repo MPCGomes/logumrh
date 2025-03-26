@@ -17,3 +17,5 @@ A Menconi Contabilidade não para de crescer! Estamos com mais uma vaga aberta p
 •Bolsa Auxílio: R$ 1.000,00
 •Vale Refeição: R$ 10,00/dia
 •Vale Transporte em dinheiro
+
+📥 Se interessou? Envie seu currículo pelo botão baixo!
