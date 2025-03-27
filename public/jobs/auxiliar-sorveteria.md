@@ -3,15 +3,11 @@
 📍 Local: Centro, Caraguatatuba
 💻 Modalidade: Presencial
 📄 Tipo: Intermitente (Freelance)
-
 🕒 Carga Horária: 4 dias por semana (7h por dia)
 📆 Escala:
 •Terça e Quinta: 14h - 22h | Sábado: 17h - 01h | Domingo: 16h - 00h
 ou
 •Segunda: 14h - 22h | Sexta: 16h - 00h | Sábado: 17h - 01h | Domingo: 16h - 00h
-
-💵 Salário: R$ 74,12 / Dia + R$ 10,28 VA / Dia
-💪 Função: Atuar na produção de milk-shakes e açaís, cuidar da limpeza e manutenção do espaço de trabalho de acordo com as normas sanitárias e atender clientes em ocasiões pontuais.
 
 📋 Requisitos:
 •Gênero: Feminino
@@ -19,6 +15,9 @@ ou
 •Residir do Indaiá ao Sumaré
 •Ensino Médio Completo
 •Experiência desejável: 6 meses no ramo alimentício (cozinha, sorveteria, etc)
+
+💵 Salário: R$ 74,12 / Dia + R$ 10,28 VA / Dia
+💪 Função: Atuar na produção de milk-shakes e açaís, cuidar da limpeza e manutenção do espaço de trabalho de acordo com as normas sanitárias e atender clientes em ocasiões pontuais.
 
 📝 Descrição das Atividades:
 ✔️ Preparar e montar milk shakes e açaís de acordo com as receitas e especificações da loja, garantindo sabor e qualidade consistentes.
