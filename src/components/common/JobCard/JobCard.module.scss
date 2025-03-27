@@ -7,6 +7,11 @@
   transition: 0.3s all ease-in-out;
   background-color: $background;
 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+
   &:hover {
     border: 1px solid $primary;
     transform: scale(1.02);

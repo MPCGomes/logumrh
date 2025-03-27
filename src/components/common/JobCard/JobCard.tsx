@@ -65,16 +65,18 @@ const JobCard: FC<JobCardProps> = ({
             </li>
           ))}
         </ul>
-        <hr />
       </div>
 
-      <div className={styles.cardButtons}>
-        <Link className={styles.link} href={`/jobs/${slug}`}>
-          Ver mais
-        </Link>
-        <Button variant="contained" onClick={handleModalToggle}>
-          Candidatar-se
-        </Button>
+      <div className={styles.cardBottom}>
+        <hr />
+        <div className={styles.cardButtons}>
+          <Link className={styles.link} href={`/jobs/${slug}`}>
+            Ver mais
+          </Link>
+          <Button variant="contained" onClick={handleModalToggle}>
+            Candidatar-se
+          </Button>
+        </div>
       </div>
 
       <Modal
