@@ -8,13 +8,23 @@
 
 .titleContainer {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media (min-width: $breakpoint-tablet) {
+    align-items: center;
+  }
 }
 
-.shareContainer {
-  align-self: flex-end;
+.shareContainer{
+  margin-top: 8px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: 0;
+  }
 }
+
 
 .markdownWrapper {
   border: 1px solid $border;
