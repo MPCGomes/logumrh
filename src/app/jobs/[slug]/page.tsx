@@ -35,10 +35,10 @@ export default async function JobDetailPage({
     <section className={"container section " + styles.section}>
       <div className={styles.markdownWrapper}>
         <div className={styles.titleContainer}>
+          <h1>{job.jobTitle}</h1>
           <div className={styles.shareContainer}>
             <ShareModal slug={slug} />
           </div>
-          <h1>{job.jobTitle}</h1>
         </div>
 
         {jobContent ? (
@@ -51,13 +51,12 @@ export default async function JobDetailPage({
         ) : (
           <p>Erro ao carregar a descrição da vaga.</p>
         )}
-      </div>
-
-      <div className={styles.buttonContainer}>
-        <Link href="/jobs/" className={styles.linkButton}>
-          Voltar
-        </Link>
-        <ApplyModal jobId={job.id} jobTitle={job.jobTitle} />
+        <div className={styles.buttonContainer}>
+          <Link href="/jobs/" className={styles.linkButton}>
+            Voltar
+          </Link>
+          <ApplyModal jobId={job.id} jobTitle={job.jobTitle} />
+        </div>
       </div>
     </section>
   );
