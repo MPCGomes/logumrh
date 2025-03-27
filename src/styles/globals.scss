@@ -1,4 +1,5 @@
-@use '_variables'as *;
+/* globals.scss */
+@use '_variables' as *;
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
@@ -39,11 +40,11 @@ body {
   flex-direction: column;
   gap: 56px;
 
-  @media (min-width: $breakpoint-mobile) {
-    padding: 72px 20px;
+  @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+    padding: 72px 60px;
   }
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-desktop) {
     padding: 72px 120px;
   }
 }
@@ -57,7 +58,7 @@ body {
 }
 
 .slick-list {
-  display: flex !important; 
+  display: flex !important;
 }
 
 .slick-track {

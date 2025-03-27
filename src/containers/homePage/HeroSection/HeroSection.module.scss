@@ -3,7 +3,12 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
+
+  @media (max-width: 767px) {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
 }
 
 .heroContainer {
@@ -33,18 +38,13 @@
     text-transform: uppercase;
     font-weight: 800;
 
-    @media (min-width: $breakpoint-tablet) {
-      font-size: $font-size-lg;
-      line-height: $line-height-lg;
-    }
-
-    @media (min-width: $breakpoint-desktop) {
+    @media (min-width: 768px) {
       font-size: $font-size-xl;
       line-height: $line-height-xl;
     }
 
-    @media (max-width: 320px) {
-      font-size: 1rem;
+    @media (max-width: 767px) {
+      font-size: 0.875rem;
       line-height: 1.2rem;
     }
   }
@@ -54,14 +54,14 @@
     line-height: $line-height-base;
     font-weight: 400;
 
-    @media (min-width: $breakpoint-desktop) {
+    @media (min-width: 768px) {
       font-size: $font-size-md;
       line-height: $line-height-md;
     }
 
-    @media (max-width: 320px) {
-      font-size: 0.85rem;
-      line-height: 1.1rem;
+    @media (max-width: 767px) {
+      font-size: 0.875rem;
+      line-height: 1.2rem;
     }
   }
 
@@ -73,37 +73,20 @@
 
 .buttonContainer {
   display: flex;
-  flex-direction: row;
   gap: 10px;
-  width: 100%;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+  }
 
   button {
     text-transform: uppercase;
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-  }
+    white-space: nowrap;
 
-  @media (max-width: $breakpoint-desktop) {
-    button {
-      flex: 1;
-    }
-  }
-
-  @media (max-width: 320px) {
-    gap: 6px;
-
-    button {
-      font-size: 0.75rem;
-      line-height: 0.9rem;
-      padding: 4px 8px;
-    }
-  }
-
-  @media (max-height: 800px) {
-    button {
-      font-size: 0.7rem;
-      line-height: 0.85rem;
-      padding: 4px 8px;
+    @media (max-width: 767px) {
+      font-size: 0.875rem;
+      line-height: 1.2rem;
     }
   }
 }
@@ -118,15 +101,25 @@
   @media (min-width: $breakpoint-desktop) {
     width: 950px;
   }
+
+  @media (max-width: 360px) {
+    width: 200px;
+  }
 }
 
 .clientsSection {
-  margin-top: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px 0;
+}
+
+/* Hide clients if screen is no bigger than 360 wide and 740 tall */
+@media (max-width: 360px) and (max-height: 740px) {
+  .clientsSection {
+    display: none !important;
+  }
 }
 
 .titleContainer {
