@@ -12,6 +12,7 @@ ou
 📋 Requisitos:
 •Gênero: Feminino
 •Disponibilidade para trabalho noturno (Obrigatório)
+•Disponibilidade para finais de semana e feriados (Obrigatório)
 •Residir do Indaiá ao Sumaré
 •Ensino Médio Completo
 •Experiência desejável: 6 meses no ramo alimentício (cozinha, sorveteria, etc)
