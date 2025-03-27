@@ -1,8 +1,8 @@
 RewriteEngine On
 
-# Ensure /jobs redirects to /jobs (no trailing slash)
-RewriteCond %{REQUEST_URI} ^/jobs/?$
-RewriteRule ^jobs/?$ /jobs.html [L]
+# Ensure /vagas redirects to /vagas (no trailing slash)
+RewriteCond %{REQUEST_URI} ^/vagas/?$
+RewriteRule ^vagas/?$ /vagas.html [L]
 
 # Remove .html from URLs while still serving correct files
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -13,4 +13,4 @@ RewriteRule ^(.+?)/?$ $1.html [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^jobs/([^/]+)/?$ /jobs/$1.html [L]
+RewriteRule ^vagas/([^/]+)/?$ /vagas/$1.html [L]

@@ -34,7 +34,7 @@ const JobsSection: FC = () => {
           </div>
         )}
         <div className={styles.viewAll}>
-          <Button href="/jobs" variant="contained-white">
+          <Button href="/vagas" variant="contained-white">
             Ver Todas as Vagas
           </Button>
         </div>

@@ -35,7 +35,7 @@ const Header: FC = () => {
             <Link href="/" className={styles.navLink}>
               Início
             </Link>
-            <Link href="/jobs" className={styles.navLink}>
+            <Link href="/vagas" className={styles.navLink}>
               Vagas
             </Link>
             <Button onClick={() => window.open(whatsappLink, "_blank")}>
@@ -68,7 +68,7 @@ const Header: FC = () => {
               Início
             </Link>
             <Link
-              href="/jobs"
+              href="/vagas"
               className={styles.mobileNavLink}
               onClick={handleMenuToggle}
             >

@@ -70,7 +70,7 @@ const JobCard: FC<JobCardProps> = ({
       <div className={styles.cardBottom}>
         <hr />
         <div className={styles.cardButtons}>
-          <Link className={styles.link} href={`/jobs/${slug}`}>
+          <Link className={styles.link} href={`/vagas/${slug}`}>
             Ver mais
           </Link>
           <Button variant="contained" onClick={handleModalToggle}>

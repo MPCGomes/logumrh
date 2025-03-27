@@ -52,7 +52,7 @@ export default async function JobDetailPage({
           <p>Erro ao carregar a descrição da vaga.</p>
         )}
         <div className={styles.buttonContainer}>
-          <Link href="/jobs/" className={styles.linkButton}>
+          <Link href="/vagas/" className={styles.linkButton}>
             Voltar
           </Link>
           <ApplyModal jobId={job.id} jobTitle={job.jobTitle} />

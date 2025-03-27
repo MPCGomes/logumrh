@@ -8,7 +8,7 @@ interface ShareModalProps {
 }
 
 export default function ShareModal({ slug }: ShareModalProps) {
-  const url = `https://www.logumrh.com.br/jobs/${slug}`;
+  const url = `https://www.logumrh.com.br/vagas/${slug}`;
 
   const handleShare = () => {
     if (navigator.share) {

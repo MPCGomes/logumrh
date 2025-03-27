@@ -27,7 +27,7 @@ const HeroSection: FC = () => (
           <Button variant="contained" onClick={() => window.open(whatsappLink, "_blank")}>
             Quero Contratar
           </Button>
-          <Button href="/jobs">Ver Vagas</Button>
+          <Button href="/vagas">Ver Vagas</Button>
         </div>
       </div>
       <div className={styles.heroImage}>

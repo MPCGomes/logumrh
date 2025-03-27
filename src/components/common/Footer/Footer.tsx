@@ -24,7 +24,7 @@ const footerLinks: FooterSection[] = [
     title: "Links",
     links: [
       { name: "Início", href: "/" },
-      { name: "Vagas", href: "/jobs" },
+      { name: "Vagas", href: "/vagas" },
     ],
   },
   {
