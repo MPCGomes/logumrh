@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Ensure /vagas redirects to /vagas (no trailing slash)
+RewriteCond %{REQUEST_URI} ^/vagas/?$
+RewriteRule ^vagas/?$ /vagas.html [L]
+
+# Remove .html from URLs while still serving correct files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Rewrite job slugs to their corresponding HTML files (hide .html)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^vagas/([^/]+)/?$ /vagas/$1.html [L]
