@@ -10,12 +10,10 @@
   padding-left: 20px;
   padding-right: 20px;
 
-  /* Tablet & Desktop: Fill remaining viewport height */
   @media (min-width: $breakpoint-tablet) {
-    height: calc(100vh - 80px); /* Adjusted for Header height */
+    height: calc(100vh - 80px);
   }
 
-  /* Mobile: Allow natural height (scrollable if needed) */
   @media (max-width: 767px) {
     height: auto;
     padding-top: 20px;
