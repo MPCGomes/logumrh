@@ -7,9 +7,9 @@ import SectionHeading from "@/components/common/SectionHeading/SectionHeading";
 import FeatureCard from "@/components/homePage/FeatureCard/FeatureCard";
 
 import GroupsRoundedIcon from "@mui/icons-material/GroupsRounded";
-import WatchLaterIcon from '@mui/icons-material/WatchLater';
-import HandshakeRoundedIcon from "@mui/icons-material/HandshakeRounded";
-import SmartToyRoundedIcon from "@mui/icons-material/SmartToyRounded";
+import WatchLaterIcon from "@mui/icons-material/WatchLater";
+import DesignServicesRoundedIcon from "@mui/icons-material/DesignServicesRounded";
+import FaceRoundedIcon from "@mui/icons-material/FaceRounded";
 import HowToRegRoundedIcon from "@mui/icons-material/HowToRegRounded";
 import SavingsRoundedIcon from "@mui/icons-material/SavingsRounded";
 
@@ -33,12 +33,12 @@ const features = [
   {
     title: "Serviço Personalizado",
     description: "Cada negócio, uma solução.",
-    icon: <HandshakeRoundedIcon />,
+    icon: <DesignServicesRoundedIcon />,
   },
   {
     title: "Tecnologia e Humanização",
     description: "Eficiência tecnológica, seleção humanizada.",
-    icon: <SmartToyRoundedIcon />,
+    icon: <FaceRoundedIcon />,
   },
   {
     title: "Contratações Assertivas",

@@ -3,13 +3,22 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 80px);
+  justify-content: space-between;
+  box-sizing: border-box; /* Include padding in the calculation */
+  
+  /* Mobile */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: calc(100vh - 80px); /* 80px = your header's height */
 
-  @media (max-width: 767px) {
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: 72px;
+    padding-bottom: 72px;
+    height: calc(100vh - 80px); /* Still subtracting the header height */
   }
 }
+
+
 
 .heroContainer {
   flex: 1;
@@ -17,24 +26,24 @@
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
 
   @media (min-width: $breakpoint-desktop) {
     flex-direction: row !important;
-    gap: 60px;
+    gap: 50px;
   }
 }
 
 .textContainer {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   align-items: center;
   text-align: center;
 
   h1 {
-    font-size: 1.2rem;
-    line-height: 31px;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
     text-transform: uppercase;
     font-weight: 800;
 
@@ -53,6 +62,11 @@
     font-size: $font-size-base;
     line-height: $line-height-base;
     font-weight: 400;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: $font-size-md;
+      line-height: $line-height-md;
+    }
 
     @media (min-width: $breakpoint-desktop) {
       font-size: $font-size-md;
@@ -90,14 +104,14 @@
 }
 
 .heroImage {
-  width: 250px;
+  width: 230px;
 
   @media (min-width: $breakpoint-tablet) {
-    width: 350px;
+    width: 340px;
   }
 
   @media (min-width: $breakpoint-desktop) {
-    width: 950px;
+    width: 900px;
   }
 }
 
@@ -106,7 +120,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px 0;
+  padding: 15px 0;
+  margin-top: auto;
+  max-height: 200px;
+
+  @media (min-width: $breakpoint-desktop) {
+    max-height: 250px;
+  }
 }
 
 @media (max-width: 360px) and (max-height: 740px) {
@@ -121,7 +141,7 @@
   justify-content: center;
   gap: 42px;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .line {
