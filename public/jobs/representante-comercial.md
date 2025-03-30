@@ -27,7 +27,6 @@
 ✔️ Registrar informações em relatórios: Manter relatórios atualizados sobre os clientes atendidos e negociações realizadas.
 ✔️ Fechar contratos: Formalizar os acordos comerciais com os clientes e garantir que todos os detalhes estejam devidamente registrados.
 ✔️ Informar sobre valores e condições: Explicar claramente os preços, condições e modalidades de pagamento do serviço.
-✔️ Instalar programa para suporte remoto: Configurar o acesso remoto quando necessário para garantir o suporte adequado.
 ✔️ Identificar necessidades do cliente: Compreender as necessidades específicas dos clientes para oferecer soluções personalizadas.
 ✔️ Alinhamento: Participar de reuniões pontuais presenciais ou remotas para alinhamento.
 
