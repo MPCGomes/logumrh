@@ -4,32 +4,13 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  box-sizing: border-box;
   min-height: calc(100vh - 80px);
-  padding-top: 72px;
-  padding-bottom: 72px;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  @media (max-height: 850px) and (min-width: $breakpoint-desktop) {
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-
-  @media (max-width: 767px) {
-    min-height: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
 
   @media (min-width: $breakpoint-desktop) {
-    padding-left: 120px;
-    padding-right: 120px;
+    gap: 60px;
+    justify-content: center;
+    padding-bottom: 0;
+    padding-top: 0;
   }
 }
 
@@ -105,7 +86,6 @@
   display: flex;
   gap: 10px;
   flex-direction: column;
-  width: 100%;
 
   button {
     text-transform: uppercase;
@@ -142,6 +122,8 @@
   align-items: center;
   justify-content: center;
   padding: 20px 0;
+
+  width: 100%;
 }
 
 @media (max-width: 360px) and (max-height: 740px) {
