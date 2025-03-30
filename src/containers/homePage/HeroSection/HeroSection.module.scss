@@ -9,8 +9,8 @@
   @media (min-width: $breakpoint-desktop) {
     gap: 60px;
     justify-content: center;
-    padding-bottom: 0;
-    padding-top: 0;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
   }
 }
 
