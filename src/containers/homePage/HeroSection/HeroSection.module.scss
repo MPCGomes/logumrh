@@ -3,19 +3,21 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
+  gap: 20px;
   box-sizing: border-box;
+  min-height: calc(100vh - 80px);
   padding-top: 72px;
   padding-bottom: 72px;
   padding-left: 20px;
   padding-right: 20px;
 
-  @media (min-width: $breakpoint-tablet) {
-    height: calc(100vh - 80px);
+  @media (max-height: 850px) and (min-width: $breakpoint-desktop) {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
   @media (max-width: 767px) {
-    height: auto;
+    min-height: auto;
     padding-top: 20px;
     padding-bottom: 20px;
   }

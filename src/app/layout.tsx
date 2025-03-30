@@ -42,19 +42,19 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <Header />
-        <main>{children}</main>
-        <BackToTop />
-        <WhatsAppButton />
-        <Footer />
+        <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+          <Header />
+          <main style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+            {children}
+          </main>
+          <BackToTop />
+          <WhatsAppButton />
+          <Footer />
+        </div>
       </body>
     </html>
   );
