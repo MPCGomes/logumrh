@@ -20,5 +20,16 @@
     "benefits": "Vale Alimentação",
     "schedule": "Intermitende (Freelancer)",
     "workDays": "Variável - Noturno"
+  },
+  {
+    "slug": "representante-comercial",
+    "id": "0003",
+    "jobTitle": "Representante Comercial PJ",
+    "company": "Bittencourt Tecnologia",
+    "location": "Caraguatatuba (Presencial)",
+    "salary": "R$ 1500,00",
+    "benefits": "Ajuda de Custo + Comissão",
+    "schedule": "Pessoa Jurídica (MEI)",
+    "workDays": "Flexível"
   }
 ]
