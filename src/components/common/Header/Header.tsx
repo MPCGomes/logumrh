@@ -7,7 +7,7 @@ import Button from "../Button/Button";
 import { WhatsApp, Menu, Close } from "@mui/icons-material";
 import styles from "./Header.module.scss";
 
-const WHATSAPP_NUMBER = "5512974096393";
+const WHATSAPP_NUMBER = "5512981924558";
 const WHATSAPP_MESSAGE = "Olá, estou interessado nos seus serviços!";
 const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE
@@ -40,7 +40,7 @@ const Header: FC = () => {
             </Link>
             <Button onClick={() => window.open(whatsappLink, "_blank")}>
               <WhatsApp fontSize="small" />
-              <span className={styles.buttonText}>+55 12 97409-6393</span>
+              <span className={styles.buttonText}>+55 12 98192-4558</span>
             </Button>
           </nav>
 
@@ -76,7 +76,7 @@ const Header: FC = () => {
             </Link>
             <Button onClick={() => window.open(whatsappLink, "_blank")}>
               <WhatsApp fontSize="small" />
-              <span>+55 12 97409-6393</span>
+              <span>+55 12 98192-4558</span>
             </Button>
           </nav>
         </div>

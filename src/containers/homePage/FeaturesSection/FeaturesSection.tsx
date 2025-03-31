@@ -13,7 +13,7 @@ import FaceRoundedIcon from "@mui/icons-material/FaceRounded";
 import HowToRegRoundedIcon from "@mui/icons-material/HowToRegRounded";
 import SavingsRoundedIcon from "@mui/icons-material/SavingsRounded";
 
-const WHATSAPP_NUMBER = "5512974096393";
+const WHATSAPP_NUMBER = "5512981924558";
 const WHATSAPP_MESSAGE = "Olá, estou interessado nos seus serviços!";
 const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE
