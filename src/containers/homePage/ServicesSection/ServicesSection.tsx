@@ -8,7 +8,7 @@ import ServiceCard from "@/components/homePage/ServiceCard/ServiceCard";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import ListAltOutlinedIcon from "@mui/icons-material/ListAltOutlined";
 
-const WHATSAPP_NUMBER = "5512974096393";
+const WHATSAPP_NUMBER = "5512981924558";
 const WHATSAPP_MESSAGE = "Olá, estou interessado nos seus serviços!";
 const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE

@@ -7,7 +7,7 @@ import Button from "@/components/common/Button/Button";
 import Image from "next/image";
 import ClientCarousel from "@/components/homePage/ClientCarousel/ClientCarousel";
 
-const WHATSAPP_NUMBER = "5512974096393";
+const WHATSAPP_NUMBER = "5512981924558";
 const WHATSAPP_MESSAGE = "Olá, estou interessado nos seus serviços!";
 const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE
