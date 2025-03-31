@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const BackToTop = () => {
   return (
-    <Link className={styles.backToTop} href={"#"}>
+    <Link className={styles.backToTop} href={"#header"}>
       <ExpandLessRoundedIcon sx={{ fontSize: 45 }} />
     </Link>
   );

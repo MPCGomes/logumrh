@@ -18,7 +18,7 @@ const Header: FC = () => {
   const handleMenuToggle = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} id="header">
       <div className={styles.container}>
         <div className={styles.headerSection}>
           <Link href="/" passHref>
