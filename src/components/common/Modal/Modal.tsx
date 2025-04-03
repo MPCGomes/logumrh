@@ -160,7 +160,6 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, jobTitle, jobId }) => {
               name="file"
               onChange={handleChange}
               accept=".pdf,.doc,.docx"
-              required
             />
             {formData.file && (
               <p className={styles.fileName}>{formData.file.name}</p>
